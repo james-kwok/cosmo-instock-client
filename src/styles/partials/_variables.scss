@@ -1,3 +1,36 @@
 //tablet and desktop breakpoints
 $screen-tablet-min: 768px;
 $screen-desktop-min: 1280px;
+
+//general verticle paddings
+$mobile-verticle: 1rem;
+$tablet-verticle: 2rem;
+$desktop-verticle:8.125rem;
+
+//component overflow from header
+$mobile-overflow: 4rem;
+$tablet-overflow: 5.875rem;
+$desktop-overflow: 5.875rem;
+
+//button measurements
+$button-height-mobile:2rem;
+$button-height-tablet:2.375rem;
+$button-border-radius:20px;
+$button-verticle-padding:1rem;
+
+//form measurements
+$form-height-mobile:2rem;
+$form-height-tablet: 2.375rem;
+$form-border-radius: 20px;
+$form-verticle-padding:1rem;
+$form-horizontal-padding:0.25rem;
+
+//radio button measurements
+$radio-horizontal-space:0.25rem;
+$radio-verticle-space:0.5rem;
+
+//tag measurements
+$tag-height-mobile:1.5rem;
+$tag-height-tablet:1.625rem;
+$tag-verticle-padding:0.5rem;
+$tag-border-radius:20px;

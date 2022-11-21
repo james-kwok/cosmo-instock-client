@@ -1,2 +1,8 @@
-body{font-family: 'Titillium Web', sans-serif;}
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/colors" as *;
+
+body{
+    font-family: 'Titillium Web', sans-serif;
+}
 

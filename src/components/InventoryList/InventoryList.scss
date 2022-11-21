@@ -1,0 +1,58 @@
+.inventory-list {
+  &__input {
+    width: 85%;
+    height: 30px;
+    background-image: url("../../assets/Icons/search-24px.svg");
+    background-repeat: no-repeat;
+    background-position-x: 0.5rem;
+    background-position-y: 0.5rem;
+    border: 1px solid black;
+    border-radius: 4px;
+    @include tablet {
+      width: 70%;
+      margin-left: 30%;
+    }
+    @include desktop {
+      width: 40%;
+      margin-left: 60%;
+    }
+    &:focus {
+      outline: none;
+      border: 2px solid blue;
+    }
+    &::placeholder {
+      color: black;
+      @include labels;
+      font-weight: 400;
+    }
+    &::placeholder {
+      position: relative;
+      left: 2rem;
+    }
+  }
+  &__button {
+    background-color: blue;
+    background-image: url("../../assets/Icons/edit-24px.svg");
+    background-repeat: no-repeat;
+    background-position-x: 0.5rem;
+    background-position-y: 0.5rem;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    line-height: 40px;
+    font-size: 0.8rem;
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid white;
+    @include tablet {
+      width: 40%;
+    }
+    @include desktop {
+      width: 25%;
+    }
+    &:hover {
+      background-color: blueviolet;
+    }
+  }
+}

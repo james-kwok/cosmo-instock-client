@@ -2,6 +2,10 @@ import "./Modal.scss";
 import xIcon from "../../assets/icons/close-24px.svg";
 
 const Modal = ({ warehouseName }) => {
+  const handleClick = () => {
+    // Add request to delete warehouse
+  };
+
   return (
     <>
       <div className="modal">
@@ -30,7 +34,9 @@ const Modal = ({ warehouseName }) => {
           <div className="modal__container-cta">
             <div className="modal__cta">
               <button className="modal__cta-cancel">Cancel</button>
-              <button className="modal__cta-delete">Delete</button>
+              <button onClick={handleClick} className="modal__cta-delete">
+                Delete
+              </button>
             </div>
           </div>
         </div>

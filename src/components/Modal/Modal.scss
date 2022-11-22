@@ -13,10 +13,11 @@
 
   @include tablet {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     height: 100vh;
+    padding-top: 10rem;
   }
 
   &__container {

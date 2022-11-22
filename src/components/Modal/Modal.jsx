@@ -3,6 +3,7 @@ import xIcon from "../../assets/icons/close-24px.svg";
 
 const Modal = ({ warehouseName }) => {
   const handleClick = () => {
+    console.log("Button clicked")
     // Add request to delete warehouse
   };
 

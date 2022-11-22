@@ -1,5 +1,13 @@
 import "./InventoryEdit.scss";
 function InventoryEdit() {
+  function yesnoCheck() {
+    if (document.getElementById("instock").checked) {
+      document.getElementById("quant").type = "text";
+    } else {
+      document.getElementById("quant").type = "hidden";
+    }
+  }
+
   return (
     <>
       <h2>Edit Inventory Item</h2>
@@ -29,17 +37,20 @@ function InventoryEdit() {
                 value="instock"
                 name="instock"
                 type="radio"
+                onClick={yesnoCheck}
               ></input>
-              <label for="instock">In stock</label>
+              <label htmlFor="instock">In stock</label>
               <input
                 id="outstock"
                 name="outstock"
-                value="outstock"
+                defaultValue="outstock"
                 type="radio"
               ></input>
-              <label for="outstock">Out of stock</label>
+              <label htmlFor="outstock">Out of stock</label>
             </div>
           </div>
+          <label for="quant">Quantity</label>
+          <input id="quant" name="quant" value="quant" type="text"></input>
           <div className="edit-availability__warehouse">
             <label htmlFor="warehouse">Warehouse</label>
             <select id="warehouse">

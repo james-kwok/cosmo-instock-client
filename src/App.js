@@ -1,9 +1,6 @@
-import './App.scss';
-
+import Modal from "./components/Modal/Modal";
 function App() {
-  return (
-<></>
-  );
+  return <Modal warehouseName={"Washington"} />;
 }
 
 export default App;

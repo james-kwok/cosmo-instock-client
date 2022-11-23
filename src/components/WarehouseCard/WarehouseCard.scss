@@ -51,7 +51,7 @@
 
   &__contact {
     order: 2;
-    width: 61.25%;
+    width: 50%;
     @include tablet {
       order: 3;
       width: 16%;
@@ -63,7 +63,7 @@
 
   &__contact-info {
     order: 4;
-    width: 61.25%;
+    width: 50%;
     margin-top: 1rem;
 
     @include tablet {

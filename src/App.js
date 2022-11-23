@@ -14,7 +14,7 @@ import InventoryAdd from "./components/InventoryAdd/InventoryAdd.jsx";
 
 import NotFound from "./components/NotFound/NotFound.jsx";
 import Modal from "./components/Modal/Modal";
-import "./App.scss";
+
 import "./App.scss";
 
 function App() {

@@ -1,28 +1,38 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
 .inventory-list {
+  margin: 36px;
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $cloud;
+  }
+  &__title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+    margin: 0;
+  }
   &__input {
-    width: 85%;
+    width: 100%;
     height: 30px;
-    background-image: url("../../assets/Icons/search-24px.svg");
+    background-image: url("../../assets/icons/search-24px.svg");
     background-repeat: no-repeat;
-    background-position-x: 0.5rem;
-    background-position-y: 0.5rem;
-    border: 1px solid black;
-    border-radius: 4px;
-    @include tablet {
-      width: 70%;
-      margin-left: 30%;
-    }
-    @include desktop {
-      width: 40%;
-      margin-left: 60%;
-    }
+    background-position-x: 99%;
+    background-position-y: 50%;
+    border: 1px solid #bdc5d5;
+    border-radius: 20px;
     &:focus {
       outline: none;
       border: 2px solid blue;
     }
     &::placeholder {
-      color: black;
-      @include labels;
+      color: #5c667e;
       font-weight: 400;
     }
     &::placeholder {
@@ -31,11 +41,7 @@
     }
   }
   &__button {
-    background-color: blue;
-    background-image: url("../../assets/Icons/edit-24px.svg");
-    background-repeat: no-repeat;
-    background-position-x: 0.5rem;
-    background-position-y: 0.5rem;
+    background-color: #2e66e6;
     color: white;
     text-align: center;
     text-decoration: none;
@@ -43,14 +49,8 @@
     font-size: 0.8rem;
     width: 100%;
     height: 40px;
-    border-radius: 4px;
+    border-radius: 20px;
     border: 1px solid white;
-    @include tablet {
-      width: 40%;
-    }
-    @include desktop {
-      width: 25%;
-    }
     &:hover {
       background-color: blueviolet;
     }

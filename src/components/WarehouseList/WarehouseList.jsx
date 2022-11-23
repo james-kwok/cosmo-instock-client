@@ -1,7 +1,7 @@
 import WarehouseCard from "../WarehouseCard/WarehouseCard";
 import searchIcon from "../../assets/icons/search-24px.svg";
 import sortIcon from "../../assets/icons/sort-24px.svg";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./WarehouseList.scss";
 
 const WarehouseList = () => {
@@ -22,11 +22,11 @@ const WarehouseList = () => {
               alt="static search icon"
             />
           </div>
-          {/* <Link to="/warehouses/add" className="WarehouseList__button-add"> */}
+          <Link to="/warehouses/add" className="WarehouseList__button-add">
           <div className="WarehouseList__button-wrapper">
-            <a className="WarehouseList__button-text">+ Add New Warehouse</a>
+            <p className="WarehouseList__button-text">+ Add New Warehouse</p>
           </div>
-          {/* </Link> */}
+          </Link>
         </div>
         <div className="WarehouseList__sort-row">
           <div className="WarehouseList__sort-warehouse">

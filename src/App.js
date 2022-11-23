@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import WarehousesDetails from "./components/WarehouseDetails/WarehouseDetails.jsx";
-import WarehousesList from "./components/WarehouseList/WarehouseList.jsx";
+import WarehouseListPage from "./pages/WarehouseList/WarehouseListPage.jsx";
 import WarehousesEdit from "./components/WarehouseEdit/WarehouseEdit.jsx";
 import WarehousesAdd from "./components/WarehouseAdd/WarehouseAdd.jsx";
 
@@ -22,7 +22,7 @@ function App() {
     <Routes>
       {/* <Route path="/" element={<Navigate to ="/warehouses"/>}/> */}
 
-      <Route path="/warehouses" element ={<WarehousesList/>}/>
+      <Route path="/warehouses" element ={<WarehouseListPage/>}/>
       {/* <Route path="/warehouses/add" element = {<WarehousesAdd/>}/>
       <Route path="/warehouses/edit/:id" element = {<WarehousesEdit/>}/>
       <Route path="/warehouses/:id" element = {<WarehousesDetails/>}/>

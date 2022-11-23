@@ -33,13 +33,13 @@ function WarehouseDetails() {
           <div className="wh__contact">
             <div className="wh__contact-left">
               <p className="wh__contact-title">Contact Name:</p>
-              <p className="wh__contact-">Graeme Lyon</p>
-              <p>Warehouse Manager</p>
+              <p className="wh__contact-name">Graeme Lyon</p>
+              <p className="wh__contact-job">Warehouse Manager</p>
             </div>
             <div className="wh__contact-right">
-              <p>Contact Information:</p>
-              <p>+1 (647) 504-0911</p>
-              <p>glyon@instock.com</p>
+              <p className="wh__contact-info">Contact Information:</p>
+              <p className="wh__contact-phone">+1 (647) 504-0911</p>
+              <p className="wh__contact-email">glyon@instock.com</p>
             </div>
           </div>
         </div>

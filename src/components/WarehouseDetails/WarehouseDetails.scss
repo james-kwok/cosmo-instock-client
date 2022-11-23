@@ -5,20 +5,28 @@
 
 .wh {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   font-family: "Titillium Web";
 
+  @include tablet {
+    flex-direction: column;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
     width: 90%;
     background-color: white;
     box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+
+    @include tablet {
+      flex-direction: column;
+    }
   }
 
   &__header {
@@ -33,7 +41,8 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      background-color: aqua;
+      background-color: white;
+      padding: 0rem 1.5rem;
     }
 
     &-name {
@@ -70,13 +79,32 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    border-bottom: 1px solid $cloud;
+
+    @include tablet {
+      flex-direction: row;
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+      align-items: center;
+
+      width: 85%;
+
+      @include tablet {
+        flex-direction: row;
+      }
+    }
 
     &-section {
       width: 100%;
-      background-color: bisque;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
+
+      @include tablet {
+        width: 50%;
+      }
     }
   }
 
@@ -85,7 +113,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 0.25rem;
+    padding-bottom: 2.25rem;
+
+    @include tablet {
+      width: 100%;
+      padding-bottom: 0%;
+    }
 
     &-title {
       margin: 0%;
@@ -94,6 +127,10 @@
       text-transform: uppercase;
       font-size: 0.6875rem;
       line-height: 1rem;
+
+      @include tablet {
+        margin-top: 0rem;
+      }
     }
 
     &-info {
@@ -108,6 +145,13 @@
     justify-content: space-between;
     align-items: flex-end;
     width: 100%;
+    padding-bottom: 1rem;
+
+    @include tablet {
+      justify-self: center;
+      width: 50%;
+      padding-bottom: 0rem;
+    }
 
     &-left {
       display: flex;
@@ -118,47 +162,215 @@
 
     &-title {
       margin: 0%;
-      font-size: .6875rem;
+      font-size: 0.6875rem;
       line-height: 1rem;
       text-transform: uppercase;
     }
 
     &-name {
       margin: 0%;
-      font-size: .8125rem;
+      font-size: 0.8125rem;
       line-height: 1.25rem;
     }
 
     &-job {
       margin: 0%;
-      font-size: .8125rem;
+      font-size: 0.8125rem;
       line-height: 1.25rem;
     }
 
     &-right {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
     }
 
     &-info {
-        margin: 0%;
-        font-size: .6875rem;
-        line-height: 1rem;
+      margin: 0%;
+      font-size: 0.6875rem;
+      line-height: 1rem;
+      text-transform: uppercase;
     }
 
     &-phone {
-        margin: 0%;
-        font-size: .8125rem;
-        line-height: 1.25rem;  
+      margin: 0%;
+      font-size: 0.8125rem;
+      line-height: 1.25rem;
     }
 
     &-email {
-        margin: 0%;
-        font-size: .8125rem;
-        line-height: 1.25rem;
-  
+      margin: 0%;
+      font-size: 0.8125rem;
+      line-height: 1.25rem;
+    }
+  }
+}
+
+.inventory {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @include tablet {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 85%;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+
+    @include tablet {
+      flex-direction: row;
+      width: 50%;
+    }
+  }
+
+  &__item {
+    padding: 0.25rem 0rem;
+    &-title {
+      margin: 0%;
+      font-size: 0.6875rem;
+      line-height: 1rem;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &-name {
+      margin: 0%;
+      font-size: 0.8125rem;
+      line-height: 1.25rem;
+      
+    }
+  }
+
+  &__type {
+    width: 100%;
+    &-title {
+      margin: 0%;
+      font-size: 0.6875rem;
+      line-height: 1rem;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &-name {
+      margin: 0%;
+      font-size: 0.8125rem;
+      line-height: 1.25rem;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    padding-right: 4.5rem;
+
+    @include tablet {
+      flex-direction: row;
+      padding-right: 0rem;
+      width: 50%;
+    }
+  }
+
+  &__status {
+    width: 100%;
+    padding: 0.25rem 0rem;
+
+    @include tablet {
+      width: auto;
+    }
+
+    &-title {
+      margin: 0%;
+      font-size: 0.6875rem;
+      line-height: 1rem;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &-info {
+      margin: 0%;
+      font-size: 0.8125rem;
+      line-height: 1.25rem;
+
+      @include tablet {
+        width: 3.0625rem;
+      }
+    }
+  }
+
+  &__qty {
+    width: 100%;
+
+    &-title {
+      margin: 0%;
+      font-size: 0.6875rem;
+      line-height: 1rem;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &-num {
+      margin: 0%;
+      font-size: 0.8125rem;
+      line-height: 1.25rem;
+
+      @include tablet {
+        width: auto;
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    @include tablet {
+      width: 0%;
+    }
+
+    &-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 87%;
+
+      @include tablet {
+        justify-content: center;
+      }
     }
   }
 }

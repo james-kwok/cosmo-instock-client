@@ -13,10 +13,15 @@
     margin: 2rem;
   }
 
+  @include desktop {
+    max-width: 1020px;
+    margin: 2rem auto;
+  }
+
   &__container {
     @include tablet {
-        display: flex;
-        padding: 2rem 0 1.5rem 0;
+      display: flex;
+      padding: 2rem 0 1.5rem 0;
     }
   }
 
@@ -28,8 +33,14 @@
     padding: 1rem 1.5rem;
 
     @include tablet {
-        flex-grow: 1;
-        padding: 0 2rem;
+      font-size: 2rem;
+      line-height: 2.5rem;
+      flex-grow: 1;
+      padding: 0 2rem;
+    }
+
+    @include desktop {
+      padding: 0 2.5rem;
     }
   }
 
@@ -41,13 +52,18 @@
     display: flex;
 
     @include tablet {
-        width: 11.5625rem;
-        margin: 0;
+      height: 2.375rem;
+      width: 11.5625rem;
+      margin: 0;
+    }
+    @include desktop {
+      width: 17.125rem;
     }
   }
 
   &__input {
     width: 100%;
+    height: 100%;
     margin-left: 1rem;
     border: none;
     padding: 0;
@@ -82,8 +98,13 @@
     }
 
     @include tablet {
-        width: 10.5rem;
-        margin: 0 2rem 0 1rem;
+      height: 2.375rem;
+      width: 10.5rem;
+      margin: 0 2rem 0 1rem;
+    }
+
+    @include desktop {
+      margin-right: 2.5rem;
     }
   }
 
@@ -98,17 +119,68 @@
     display: none;
 
     @include tablet {
-        background-color: rgb(247 248 249 / 0.7);
-        height: 2.5rem;
-        display: flex;
-        align-items: center;
-        padding: 0 2rem;
+      background-color: rgb(247 248 249 / 0.7);
+      height: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    @include desktop {
+      padding: 0 2.5rem;
     }
   }
 
-  &__sort-container {
-    display: flex;
-    flex-grow: 1;
+  &__sort-warehouse {
+    @include tablet {
+      display: flex;
+      width: 19.5%;
+    }
+    @include desktop {
+      width: 17.2%;
+    }
+  }
+
+  &__sort-address {
+    @include tablet {
+      display: flex;
+      width: 15.75%;
+    }
+    @include desktop {
+      width: 20.4%;
+    }
+  }
+
+  &__sort-contact {
+    @include tablet {
+      display: flex;
+      width: 16%;
+    }
+    @include desktop {
+      width: 13.6%;
+    }
+  }
+
+  &__sort-contact-info {
+    @include tablet {
+      display: flex;
+      width: 23%;
+    }
+    @include desktop {
+      width: 17.2%;
+    }
+  }
+
+  &__sort-action {
+    @include tablet {
+      display: flex;
+      width: 13.8%;
+      justify-content: flex-end;
+    }
+    @include desktop {
+      width: 5%;
+    }
   }
 
   &__sort-text {
@@ -117,6 +189,13 @@
     font-size: 0.75rem;
     line-height: 1.125rem;
     margin-right: 0.25rem;
+  }
+
+  &__sort-action-text {
+    color: $slate;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
   }
 
   &__sort-icon {
@@ -128,7 +207,7 @@
     border-top: 1px solid $cloud;
 
     @include tablet {
-        border-top: none;
+      border-top: none;
     }
   }
 }

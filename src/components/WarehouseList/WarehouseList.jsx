@@ -29,42 +29,44 @@ const WarehouseList = () => {
           {/* </Link> */}
         </div>
         <div className="WarehouseList__sort-row">
-            <div className="WarehouseList__sort-container">
-              <span className="WarehouseList__sort-text">Warehouse</span>
-              <img
-                className="WarehouseList__sort-icon"
-                src={sortIcon}
-                alt="sorting icon"
-              />
-            </div>
-            <div className="WarehouseList__sort-container">
-              <span className="WarehouseList__sort-text">Address</span>
-              <img
-                className="WarehouseList__sort-icon"
-                src={sortIcon}
-                alt="sorting icon"
-              />
-            </div>
-            <div className="WarehouseList__sort-container">
-              <span className="WarehouseList__sort-text">Contact Name</span>
-              <img
-                className="WarehouseList__sort-icon"
-                src={sortIcon}
-                alt="sorting icon"
-              />
-            </div>
-            <div className="WarehouseList__sort-container">
-              <span className="WarehouseList__sort-text">Contact Information</span>
-              <img
-                className="WarehouseList__sort-icon"
-                src={sortIcon}
-                alt="sorting icon"
-              />
-            </div>
-            {/* <div className="WarehouseList__sort-container"> */}
-              <span className="WarehouseList__sort-text">Actions</span>
-            {/* </div> */}
+          <div className="WarehouseList__sort-warehouse">
+            <span className="WarehouseList__sort-text">Warehouse</span>
+            <img
+              className="WarehouseList__sort-icon"
+              src={sortIcon}
+              alt="sorting icon"
+            />
           </div>
+          <div className="WarehouseList__sort-address">
+            <span className="WarehouseList__sort-text">Address</span>
+            <img
+              className="WarehouseList__sort-icon"
+              src={sortIcon}
+              alt="sorting icon"
+            />
+          </div>
+          <div className="WarehouseList__sort-contact">
+            <span className="WarehouseList__sort-text">Contact Name</span>
+            <img
+              className="WarehouseList__sort-icon"
+              src={sortIcon}
+              alt="sorting icon"
+            />
+          </div>
+          <div className="WarehouseList__sort-contact-info">
+            <span className="WarehouseList__sort-text">
+              Contact Information
+            </span>
+            <img
+              className="WarehouseList__sort-icon"
+              src={sortIcon}
+              alt="sorting icon"
+            />
+          </div>
+          <div className="WarehouseList__sort-action">
+            <span className="WarehouseList__sort-action-text">Actions</span>
+          </div>
+        </div>
         <div className="WarehouseList__cards">
           <WarehouseCard />
           <WarehouseCard />

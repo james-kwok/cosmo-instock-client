@@ -3,15 +3,76 @@
 @use "../../styles/partials/variables" as *;
 
 .WarehouseCard {
-  height: 12.25rem;
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   border-bottom: 1px solid $cloud;
-  padding: 0 1.5rem;
-  &__container {
-    width: 50%;
-    flex-direction: column;
+  padding: 1rem 1.5rem 0 1.5rem;
+
+  @include tablet {
+    height: 6.125rem;
+    padding: 0 2rem;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  @include desktop {
+    cursor: pointer;
+    padding: 0 2.5rem;
+    &:hover {
+      background-color: rgb(46 102 229 / 0.07);
+    }
+  }
+
+  &__warehouse {
+    order: 1;
+    width: 37.5%;
+    @include tablet {
+      width: 19.5%;
+    }
+    @include desktop {
+      width: 17.2%;
+    }
+  }
+
+  &__address {
+    order: 3;
+    width: 37.5%;
     margin-top: 1rem;
+    @include tablet {
+      order: 2;
+      width: 15.75%;
+      margin-top: 0;
+    }
+    @include desktop {
+      width: 20.4%;
+    }
+  }
+
+  &__contact {
+    order: 2;
+    width: 61.25%;
+    @include tablet {
+      order: 3;
+      width: 16%;
+    }
+    @include desktop {
+      width: 13.6%;
+    }
+  }
+
+  &__contact-info {
+    order: 4;
+    width: 61.25%;
+    margin-top: 1rem;
+
+    @include tablet {
+      width: 23%;
+      margin-top: 0;
+    }
+    @include desktop {
+      width: 17.2%;
+    }
   }
 
   &__title {
@@ -20,6 +81,9 @@
     font-size: 0.6875rem;
     line-height: 1rem;
     margin: 0;
+    @include tablet {
+      display: none;
+    }
   }
 
   &__text {
@@ -27,17 +91,24 @@
     font-size: 0.8125rem;
     line-height: 1.25rem;
     margin: 0.25rem 0 0 0;
+    @include tablet {
+      margin: 0;
+    }
   }
 
   &__link {
     display: flex;
-    margin: 0.25rem 0.25rem 0 0;
+    margin-top: 0.25rem;
+    @include tablet {
+      margin: 0;
+    }
   }
 
   &__link-text {
     color: $instock-indigo;
     font-size: 0.8125rem;
     line-height: 1.25rem;
+    margin-right: 0.25rem;
   }
 
   &__chevron {
@@ -46,16 +117,34 @@
   }
 
   &__icon-group {
+    order: 5;
     width: 100%;
     display: flex;
     margin: 1rem 0 1.5rem 0;
+    @include tablet {
+      width: 13.8%;
+      justify-content: flex-end;
+    }
+    @include desktop {
+      width: 5%;
+    }
   }
 
   &__delete-icon {
+    width: 1.5rem;
+    height: 1.5rem;
     margin-right: auto;
+    @include tablet {
+      margin-right: 1rem;
+    }
   }
 
   &__edit-icon {
+    width: 1.5rem;
+    height: 1.5rem;
     margin-left: auto;
+    @include tablet {
+      margin-left: 0;
+    }
   }
 }

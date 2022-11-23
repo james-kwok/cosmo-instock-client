@@ -3,17 +3,23 @@
 @use "./styles/partials/colors" as *;
 @use "./styles/partials/fonts" as *;
 
-*, *::before, *::after{box-sizing:border-box;}
-
-body{
-    font-family: 'Titillium Web', sans-serif, Verdana;
-    a{
-        text-decoration:none;
-    }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-h1, h2, h3{
-    margin:0;
-    padding:0;
+body {
+  font-family: "Titillium Web", sans-serif, Verdana;
+  a {
+    text-decoration: none;
+  }
+  margin: 0;
 }
 
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}

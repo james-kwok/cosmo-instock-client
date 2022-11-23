@@ -20,10 +20,10 @@ function App() {
   <>
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Navigate to ="/warehouses"/>}/>
+      {/* <Route path="/" element={<Navigate to ="/warehouses"/>}/> */}
 
       <Route path="/warehouses" element ={<WarehousesList/>}/>
-      <Route path="/warehouses/add" element = {<WarehousesAdd/>}/>
+      {/* <Route path="/warehouses/add" element = {<WarehousesAdd/>}/>
       <Route path="/warehouses/edit/:id" element = {<WarehousesEdit/>}/>
       <Route path="/warehouses/:id" element = {<WarehousesDetails/>}/>
 
@@ -32,7 +32,7 @@ function App() {
       <Route path="/inventory/edit/:id" element = {<InventoryEdit/>}/>
       <Route path="/inventory/:id" element = {<InventoryDetails/>}/>
 
-      <Route path="*" element= {<NotFound/>}/>
+      <Route path="*" element= {<NotFound/>}/> */}
 
     </Routes>
   </BrowserRouter>

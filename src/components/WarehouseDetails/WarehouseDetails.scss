@@ -1,0 +1,124 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.wh {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: "Titillium Web";
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    background-color: white;
+    box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid $cloud;
+
+    &-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: aqua;
+    }
+
+    &-name {
+      font-size: 1.75rem;
+      line-height: 2.25rem;
+    }
+
+    &-edit {
+      &-img {
+        fill: white;
+        // background-color: $instock-indigo;
+      }
+    }
+  }
+
+  &__btn-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__btn-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    &-section {
+        width: 100%;
+        background-color: bisque;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: .25rem;
+
+    &-title {
+        margin: 0%;
+        margin-top: 1rem;
+        color: $slate;
+        text-transform: uppercase;
+        font-size: .6875rem;
+        line-height: 1rem;
+    }
+
+    &-info {
+        margin: 0%;
+        font-size: .8125rem;
+        line-height: 1.25rem;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    &-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-title {
+        margin: 0%;
+    }
+  }
+
+}

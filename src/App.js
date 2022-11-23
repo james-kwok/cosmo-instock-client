@@ -12,6 +12,7 @@ import InventoryAdd from "./components/InventoryAdd/InventoryAdd.jsx";
 
 import NotFound from "./components/NotFound/NotFound.jsx";
 import Modal from "./components/Modal/Modal";
+import WarehouseDetailsPage from "./pages/WarehouseDetailsPage.jsx";
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
       <Route path="/warehouses" element ={<WarehousesList/>}/>
       <Route path="/warehouses/add" element = {<WarehousesAdd/>}/>
       <Route path="/warehouses/edit/:id" element = {<WarehousesEdit/>}/>
-      <Route path="/warehouses/:id" element = {<WarehousesDetails/>}/>
+      <Route path="/warehouses/:id" element = {<WarehouseDetailsPage/>}/>
 
       <Route path="/inventory" element = {<InventoryList/>}/>
       <Route path="/inventory/add" element = {<InventoryAdd/>}/>
@@ -36,7 +37,7 @@ function App() {
 
     </Routes>
   </BrowserRouter>
-    <Modal warehouseName={"Washington"} />
+    {/* <Modal warehouseName={"Washington"} /> */}
   </>
   );
 }

@@ -17,6 +17,7 @@ const InventoryList = () => {
     axios
       .get(getURL)
       .then((response) => {
+        console.log(response)
         setInventories(response.data);
       })
       .catch((error) => {
@@ -28,6 +29,8 @@ const InventoryList = () => {
     axios
       .get(getURL2)
       .then((response) => {
+        console.log(response)
+
         setWarehouses(response.data);
       })
       .catch((error) => {

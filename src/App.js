@@ -36,7 +36,7 @@ function App() {
 
     </Routes>
   </BrowserRouter>
-    <Modal warehouseName={"Washington"} />
+    {/* <Modal warehouseName={"Washington"} /> */}
   </>
   );
 }

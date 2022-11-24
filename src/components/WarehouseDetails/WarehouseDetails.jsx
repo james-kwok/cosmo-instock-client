@@ -31,7 +31,7 @@ function WarehouseDetails() {
           <span className="WarehouseDetails__label">
             Warehouse Address
           </span>
-          <p className="WarehouseDetails__address-text">
+          <p className="WarehouseDetails__text">
             33 Pearl Street SW, Washington, USA
           </p>
         </div>
@@ -40,15 +40,15 @@ function WarehouseDetails() {
             <span className="WarehouseDetails__label">
               Contact Name:
             </span>
-            <p className="WarehouseDetails__contact-person">Graeme Lyon</p>
-            <p className="WarehouseDetails__contact-position">
+            <p className="WarehouseDetails__text">Graeme Lyon</p>
+            <p className="WarehouseDetails__text">
               Warehouse Manager
             </p>
           </div>
           <div className="WarehouseDetails__contact-info">
             <span className="WarehouseDetails__label">Contact Information:</span>
-            <p className="WarehouseDetails__phone">+1(647)504-0911</p>
-            <p className="WarehouseDetails__email">glyon@instock.com</p>
+            <p className="WarehouseDetails__text">+1(647)504-0911</p>
+            <p className="WarehouseDetails__text">glyon@instock.com</p>
           </div>
         </div>
       </div>

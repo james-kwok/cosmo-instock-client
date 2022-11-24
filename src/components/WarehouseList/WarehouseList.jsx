@@ -4,6 +4,7 @@ import sortIcon from "../../assets/icons/sort-24px.svg";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./WarehouseList.scss";
 
 const WarehouseList = () => {
   const getURL = "http://localhost:8080/api/warehouses";

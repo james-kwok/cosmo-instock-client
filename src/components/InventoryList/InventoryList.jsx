@@ -1,6 +1,6 @@
 function InventoryList (){
     return (
-        <p>this is InventoryList</p>
+        <p>This is InventoryList</p>
     )
 }
 

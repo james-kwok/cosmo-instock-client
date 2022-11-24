@@ -116,6 +116,7 @@ const InventoryList = () => {
       {inventories.map((item) => {
         return (
           <InventoryItem
+            key={item.id}
             Inventory={item.item_name}
             Category={item.category}
             Status={item.status}

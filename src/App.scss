@@ -14,7 +14,10 @@ body {
   a {
     text-decoration: none;
   }
-
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
 }
 
 h1,

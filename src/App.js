@@ -18,6 +18,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <InventoryList />
         <Routes>
           <Route path="/" element={<Navigate to="/warehouses" />} />
 
@@ -34,7 +35,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-      <InventoryList />
+
       {/* <Modal warehouseName={"Washington"} /> */}
     </>
   );

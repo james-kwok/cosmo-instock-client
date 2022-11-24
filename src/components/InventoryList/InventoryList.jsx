@@ -2,38 +2,33 @@ import "./InventoryList.scss";
 import InventoryItem from "../InventoryItem/InventoryItem";
 import searchIcon from "../../assets/icons/search-24px.svg";
 import sortIcon from "../../assets/icons/sort-24px.svg";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-// const inventoryList = [
-//   {
-//     Inventory: "Television",
-//     Category: "Electronics",
-//     Status: "In stock",
-//     Quantity: 500,
-//     Warehouse: "Manhanttan",
-//   },
-//   {
-//     Inventory: "Gym Bag",
-//     Category: "Gear",
-//     Status: "In stock",
-//     Quantity: 0,
-//     Warehouse: "Manhanttan",
-//   },
-// ];
 
 const InventoryList = () => {
   const getURL = "http://localhost:8000/api/inventories";
+  const getURL2 = "http://localhost:8000/api/warehouses";
 
   const [inventories, setInventories] = useState([]);
+  const [warehouses, setWarehouses] = useState([]);
+
   useEffect(() => {
     axios
       .get(getURL)
       .then((response) => {
         setInventories(response.data);
-        // setTimeout(() => {
-        //   setWarehouses(response);
-        // }, 1000);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(getURL2)
+      .then((response) => {
+        setWarehouses(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -43,7 +38,11 @@ const InventoryList = () => {
   if (inventories.length === 0) {
     return <h1>LOADING...</h1>;
   }
-  console.log(inventories);
+
+  if (warehouses.length === 0) {
+    return <h1>LOADING...</h1>;
+  }
+
   return (
     <div className="inventory-list">
       <div className="inventory-list__nav">
@@ -60,9 +59,11 @@ const InventoryList = () => {
             alt="search icon"
           />
         </div>
-        <div className="inventory-list__button-wrapper">
-          <span className="inventory-list__button-text">+ Add New Item</span>
-        </div>
+        <Link to="/inventory/add" className="WarehouseList__button-add">
+          <div className="inventory-list__button-wrapper">
+            <span className="inventory-list__button-text">+ Add New Item</span>
+          </div>
+        </Link>
       </div>
       <div className="inventory-list__sort-row">
         <div className="inventory-list__sort-inventory">
@@ -116,7 +117,10 @@ const InventoryList = () => {
             Category={item.category}
             Status={item.status}
             Quantity={item.quantity}
-            Warehouse={item.warehouse_id}
+            Warehouse={
+              warehouses.find((warehouse) => warehouse.id === item.warehouse_id)
+                .warehouse_name
+            }
           />
         );
       })}

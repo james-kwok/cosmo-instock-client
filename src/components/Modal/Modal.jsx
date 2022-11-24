@@ -30,6 +30,9 @@ const Modal = ({ warehouse, modalHandler }) => {
                 src={xIcon}
                 className="modal__close-img"
                 alt="closing icon"
+                onClick={() => {
+                  modalHandler(false);
+                }}
               />
             </div>
             <div className="modal__header">

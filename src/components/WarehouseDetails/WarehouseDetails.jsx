@@ -1,8 +1,7 @@
 import "./WarehouseDetails.scss";
-import backIcon from "../../assets/icons/arrow_back-24px.svg";
-import edit from "../../assets/icons/edit-24px.svg";
-import sortIcon from "../../assets/icons/sort-24px.svg";
 import { Link } from "react-router-dom";
+import backIcon from "../../assets/icons/arrow_back-24px.svg";
+import sortIcon from "../../assets/icons/sort-24px.svg";
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px-white.svg";
@@ -52,6 +51,45 @@ function WarehouseDetails() {
           </div>
         </div>
       </div>
+      <div className="WarehouseDetails__sort-row">
+          <div className="WarehouseDetails__sort-inventory">
+            <span className="WarehouseDetails__sort-text">Inventory Item</span>
+            <img
+              className="WarehouseDetails__sort-icon"
+              src={sortIcon}
+              alt="sorting icon"
+            />
+          </div>
+          <div className="WarehouseDetails__sort-category">
+            <span className="WarehouseDetails__sort-text">Category</span>
+            <img
+              className="WarehouseDetails__sort-icon"
+              src={sortIcon}
+              alt="sorting icon"
+            />
+          </div>
+          <div className="WarehouseDetails__sort-status">
+            <span className="WarehouseDetails__sort-text">Status</span>
+            <img
+              className="WarehouseDetails__sort-icon"
+              src={sortIcon}
+              alt="sorting icon"
+            />
+          </div>
+          <div className="WarehouseDetails__sort-qty">
+            <span className="WarehouseDetails__sort-text">
+              Quantity
+            </span>
+            <img
+              className="WarehouseDetails__sort-icon"
+              src={sortIcon}
+              alt="sorting icon"
+            />
+          </div>
+          <div className="WarehouseDetails__sort-action">
+            <span className="WarehouseDetails__sort-action-text">Actions</span>
+          </div>
+        </div>
     </div>
   );
 }

@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.scss";
 
+import Header from "./components/Header/Header.jsx";
+
 import WarehousesDetails from "./components/WarehouseDetails/WarehouseDetails.jsx";
-import WarehousesList from "./components/WarehouseList/WarehouseList.jsx";
+import WarehouseListPage from "./pages/WarehouseList/WarehouseListPage.jsx";
 import WarehousesEdit from "./components/WarehouseEdit/WarehouseEdit.jsx";
 import WarehousesAdd from "./components/WarehouseAdd/WarehouseAdd.jsx";
 
@@ -13,6 +15,7 @@ import InventoryAdd from "./components/InventoryAdd/InventoryAdd.jsx";
 
 import NotFound from "./components/NotFound/NotFound.jsx";
 import Modal from "./components/Modal/Modal";
+
 
 function App() {
   return (
@@ -38,6 +41,7 @@ function App() {
 
       {/* <Modal warehouseName={"Washington"} /> */}
     </>
+
   );
 }
 

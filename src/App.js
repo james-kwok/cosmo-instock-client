@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import "./App.scss";
 
 import Header from "./components/Header/Header.jsx";
 
@@ -15,17 +16,14 @@ import InventoryAdd from "./components/InventoryAdd/InventoryAdd.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
 import Modal from "./components/Modal/Modal";
 
-import "./App.scss";
-
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
         <Routes>
           <Route path="/" element={<Navigate to="/warehouses" />} />
 
-          <Route path="/warehouses" element={<WarehouseListPage />} />
+          <Route path="/warehouses" element={<WarehousesList />} />
           <Route path="/warehouses/add" element={<WarehousesAdd />} />
           <Route path="/warehouses/edit/:id" element={<WarehousesEdit />} />
           <Route path="/warehouses/:id" element={<WarehousesDetails />} />

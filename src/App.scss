@@ -1,19 +1,23 @@
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/colors" as *;
-@use "./styles/partials/fonts" as *;
 
-*, *::before, *::after{box-sizing:border-box;}
-
-body{
-    font-family: 'Titillium Web', sans-serif, Verdana;
-    a{
-        text-decoration:none;
-    }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-h1, h2, h3{
-    margin:0;
-    padding:0;
+body {
+  font-family: "Titillium Web", sans-serif;
+  a {
+    text-decoration: none;
+  }
 }
 
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}

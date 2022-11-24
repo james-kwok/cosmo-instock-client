@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import "./App.scss";
 
 import WarehousesDetails from "./components/WarehouseDetails/WarehouseDetails.jsx";
 import WarehousesList from "./components/WarehouseList/WarehouseList.jsx";
@@ -33,6 +34,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <InventoryList />
       {/* <Modal warehouseName={"Washington"} /> */}
     </>
   );

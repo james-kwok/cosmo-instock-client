@@ -133,6 +133,10 @@
       }
     }
 
+    &-cancel:hover {
+      cursor: pointer;
+    }
+
     &-delete {
       width: 100%;
       height: $button-height-mobile;
@@ -148,6 +152,10 @@
         margin-bottom: 2.5rem;
         margin-right: 4rem;
       }
+    }
+
+    &-delete:hover {
+      cursor: pointer;
     }
   }
 }

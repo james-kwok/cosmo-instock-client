@@ -1,18 +1,16 @@
 import "./Modal.scss";
 import xIcon from "../../assets/icons/close-24px.svg";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+
 
 const Modal = ({ warehouse, modalHandler }) => {
-  // console.log(warehouses)
-  const getURL = "http://localhost:8080/api/warehouses";
-  const getId = warehouse.id;
-  console.log(getId);
+  const URL = "http://localhost:8080/api/warehouses";
+  const id = warehouse.id;
 
   const handleDelete = () => {
     console.log("Warehouse", warehouse);
     axios
-      .delete(`${getURL}/${getId}`)
+      .delete(`${URL}/${id}`)
       .then((response) => {
         console.log("Deleted warehouse" + response);
         modalHandler(false);

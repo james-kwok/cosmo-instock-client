@@ -26,9 +26,9 @@ const WarehouseList = () => {
   }, [showModal]);
 
   const modalHandler = (warehouse, modal) => {
-    setToDelete(warehouse)
     console.log(warehouse)
-    setShowModal(modal);
+    setShowModal(modal)
+    setToDelete(warehouse)
   };
 
   const clickedInfo = () => {

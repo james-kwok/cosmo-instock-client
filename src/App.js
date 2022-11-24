@@ -16,14 +16,21 @@ import InventoryAdd from "./components/InventoryAdd/InventoryAdd.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
 import Modal from "./components/Modal/Modal";
 
-
 function App() {
+<<<<<<< HEAD
+  return(
+  <>
+  <BrowserRouter>
+  <Header />
+    <Routes>
+      <Route path="/" element={<Navigate to ="/warehouses"/>}/>
+=======
   return (
     <>
       <BrowserRouter>
-        <InventoryList />
         <Routes>
           <Route path="/" element={<Navigate to="/warehouses" />} />
+>>>>>>> develop
 
           <Route path="/warehouses" element={<WarehousesList />} />
           <Route path="/warehouses/add" element={<WarehousesAdd />} />
@@ -38,10 +45,8 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-
       {/* <Modal warehouseName={"Washington"} /> */}
     </>
-
   );
 }
 

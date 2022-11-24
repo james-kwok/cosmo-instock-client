@@ -24,7 +24,6 @@ function App() {
   <Header />
     <Routes>
       <Route path="/" element={<Navigate to ="/warehouses"/>}/>
-
       <Route path="/warehouses" element ={<WarehouseListPage/>}/>
       <Route path="/warehouses/add" element = {<WarehousesAdd/>}/>
       <Route path="/warehouses/edit/:id" element = {<WarehousesEdit/>}/>
@@ -34,9 +33,7 @@ function App() {
       <Route path="/inventory/add" element = {<InventoryAdd/>}/>
       <Route path="/inventory/edit/:id" element = {<InventoryEdit/>}/>
       <Route path="/inventory/:id" element = {<InventoryDetails/>}/>
-
       <Route path="*" element= {<NotFound/>}/>
-
     </Routes>
   </BrowserRouter>
   </>

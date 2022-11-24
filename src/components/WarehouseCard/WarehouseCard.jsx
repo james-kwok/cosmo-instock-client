@@ -4,7 +4,7 @@ import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 import "./WarehouseCard.scss";
 
-const WarehouseCard = ({ warehouse }) => {
+const WarehouseCard = ({ warehouse, modalHandler }) => {
   return (
     <div className="WarehouseCard">
       <div className="WarehouseCard__warehouse">
@@ -40,6 +40,9 @@ const WarehouseCard = ({ warehouse }) => {
           className="WarehouseCard__delete-icon"
           src={deleteIcon}
           alt="delete warehouse"
+          onClick={() => {
+            modalHandler(warehouse, true);
+          }}
         />
         <img
           className="WarehouseCard__edit-icon"

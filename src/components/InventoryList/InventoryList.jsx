@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const InventoryList = () => {
-  const getURL = "http://localhost:8000/api/inventories";
-  const getURL2 = "http://localhost:8000/api/warehouses";
+  const getURL = "http://localhost:8080/api/inventories";
+  const getURL2 = "http://localhost:8080/api/warehouses";
 
   const [inventories, setInventories] = useState([]);
   const [warehouses, setWarehouses] = useState([]);

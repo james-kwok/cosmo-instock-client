@@ -18,28 +18,28 @@ import Modal from "./components/Modal/Modal";
 import "./App.scss";
 
 function App() {
-  return(
-  <>
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Navigate to ="/warehouses"/>}/>
+  return (
+    <>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Navigate to="/warehouses" />} />
 
-      <Route path="/warehouses" element ={<WarehouseListPage/>}/>
-      <Route path="/warehouses/add" element = {<WarehousesAdd/>}/>
-      <Route path="/warehouses/edit/:id" element = {<WarehousesEdit/>}/>
-      <Route path="/warehouses/:id" element = {<WarehousesDetails/>}/>
+          <Route path="/warehouses" element={<WarehouseListPage />} />
+          <Route path="/warehouses/add" element={<WarehousesAdd />} />
+          <Route path="/warehouses/edit/:id" element={<WarehousesEdit />} />
+          <Route path="/warehouses/:id" element={<WarehousesDetails />} />
 
-      <Route path="/inventory" element = {<InventoryList/>}/>
-      <Route path="/inventory/add" element = {<InventoryAdd/>}/>
-      <Route path="/inventory/edit/:id" element = {<InventoryEdit/>}/>
-      <Route path="/inventory/:id" element = {<InventoryDetails/>}/>
+          <Route path="/inventory" element={<InventoryList />} />
+          <Route path="/inventory/add" element={<InventoryAdd />} />
+          <Route path="/inventory/edit/:id" element={<InventoryEdit />} />
+          <Route path="/inventory/:id" element={<InventoryDetails />} />
 
-      <Route path="*" element= {<NotFound/>}/>
-
-    </Routes>
-  </BrowserRouter>
-    {/* <Modal warehouseName={"Washington"} /> */}
-  </>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+      {/* <Modal warehouseName={"Washington"} /> */}
+    </>
   );
 }
 

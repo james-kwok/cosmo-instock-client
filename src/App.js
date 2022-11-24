@@ -13,12 +13,14 @@ import InventoryAdd from "./components/InventoryAdd/InventoryAdd.jsx";
 
 import NotFound from "./components/NotFound/NotFound.jsx";
 import Modal from "./components/Modal/Modal";
+import WarehouseInventory from "./components/WarehouseInventory/WarehouseInventory";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <InventoryList />
+        {/* <InventoryList /> */}
+        <WarehouseInventory />
         <Routes>
           <Route path="/" element={<Navigate to="/warehouses" />} />
 

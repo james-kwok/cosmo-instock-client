@@ -1,7 +1,6 @@
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/colors" as *;
-@use "./styles/partials/fonts" as *;
 
 *,
 *::before,
@@ -10,14 +9,18 @@
 }
 
 body {
-  font-family: "Titillium Web", sans-serif, Verdana;
+  font-family: "Titillium Web", sans-serif;
   a {
     text-decoration: none;
   }
+<<<<<<< HEAD
   margin: 0;
   position: absolute;
   width: 100%;
   z-index: -1;
+=======
+
+>>>>>>> develop
 }
 
 h1,

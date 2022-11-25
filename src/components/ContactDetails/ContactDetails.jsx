@@ -9,7 +9,7 @@ const ContactDetails = ({handleChangeContactName, handleChangePosition, handleCh
             <h2 className="Warehouse_detail_container__titlebox--title">Contact Details</h2>
         </div>
 
-        <form className="Warehouse_detail_container__form">
+        <div className="Warehouse_detail_container__form">
             <div className="Warehouse_detail_container__form__box">
                 <label for="ContactName" className="Warehouse_detail_container__form__box--label">Contact Name </label>
                 <input name="ContanctName"  className="Warehouse_detail_container__form__box--input" placeholder="Contact Name" 
@@ -39,7 +39,7 @@ const ContactDetails = ({handleChangeContactName, handleChangePosition, handleCh
             </div>   
 
 
-        </form> 
+        </div> 
     </div>
 
 

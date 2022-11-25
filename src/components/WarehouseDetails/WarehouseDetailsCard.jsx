@@ -10,7 +10,7 @@ country, submit}) => {
             <h2 className="Warehouse_detail_container__titlebox--title">Warehouse Details</h2>
         </div>
 
-        <form className="Warehouse_detail_container__form">
+        <div className="Warehouse_detail_container__form">
             
             <div className="Warehouse_detail_container__form__box">
                 <label for="warehouseName" className="Warehouse_detail_container__form__box--label">Warehouse Name</label>
@@ -43,7 +43,7 @@ country, submit}) => {
  
    
 
-        </form> 
+        </div> 
     </div>
 
 

@@ -1,22 +1,15 @@
-import "./InventoryItem.scss";
+import "./WarehouseInventoryItem.scss";
 import deleteImage from "../../assets/icons/delete_outline-24px.svg";
 import editImage from "../../assets/icons/edit-24px.svg";
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import { Link } from "react-router-dom";
 
-function InventoryItem({
-  Inventory,
-  Category,
-  Status,
-  Quantity,
-  Warehouse,
-  id,
-}) {
+function WarehouseInventoryItem({ Inventory, Category, Status, Quantity }) {
   return (
     <div className="inventory-item">
       <div className="inventory-item__inventory">
         <span className="inventory-item__title">INVENTORY ITEM</span>
-        <Link to={`/inventory/${id}`} className="inventory-item__link">
+        <Link to="/inventory/:id" className="inventory-item__link">
           <div className="inventory-item__link">
             <span className="inventory-item__link-text">{Inventory}</span>
             <img
@@ -47,10 +40,6 @@ function InventoryItem({
         <span className="inventory-item__title">QTY</span>
         <span className="inventory-item__text">{Quantity}</span>
       </div>
-      <div className="inventory-item__warehouse">
-        <span className="inventory-item__title">WAREHOUSE</span>
-        <span className="inventory-item__text">{Warehouse}</span>
-      </div>
       <div className="inventory-item__icons">
         <img
           className="inventory-item__delete-icon"
@@ -68,4 +57,4 @@ function InventoryItem({
     </div>
   );
 }
-export default InventoryItem;
+export default WarehouseInventoryItem;

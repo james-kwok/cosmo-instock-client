@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "./InventoryEdit.scss";
 function InventoryEdit() {
   function yesnoCheck() {
@@ -68,3 +69,12 @@ function InventoryEdit() {
   );
 }
 export default InventoryEdit;
+=======
+function InventoryEdit (){
+    return (
+        <p>this is InventoryEdit</p>
+    )
+}
+
+export default InventoryEdit;
+>>>>>>> develop

@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import backarrow from "../../assets/icons/arrow_back-24px.svg";
 import EditWarehouseForm from "../EditWarehouseForm/EditWarehouseForm";
 
+import "./WareHouseEdit.scss"
+/* eslint-disable no-useless-escape */
 
 
 function WarehouseEdit (){
@@ -67,23 +69,26 @@ function WarehouseEdit (){
     const isPhoneNumberValidTwo = () => specialChars;
 
     //email validation
-    const emailValidator = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2, 3})+$/.test(email);
+    const emailValidator = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
     const isEmailValid = () => emailValidator;
 
     const isFormValid = () =>{
         if (warehouse ==="" || streetAddress === "" || city === "" || country ===""|| contactName===""|| position===""|| phoneNumber==="" || email ===""){
+            console.log("form incomplete")
             return setEmpty(true);
         }
 
         setEmpty(false);
 
         if(!isPhoneNumberValid() || !isPhoneNumberValidTwo()){
+            console.log("phone incomplete")
             return setPhoneError(true);
         }
 
         setPhoneError(false);
 
         if(!isEmailValid()){
+            console.log("email incomplete")
             return setEmailError(true);
         }
         setEmailError(false);
@@ -120,7 +125,7 @@ function WarehouseEdit (){
                 {phoneError && <p>Please enter a 7-15 digit phone number</p>}
                 {emailError && <p>Please enter an email in the following format: info@domain2.domain1</p>}
                 {empty && <p>Please fill all fields</p>}
-                {edit && <p>Successfully added warehouse! Retruning to warehouse page</p>}
+                {edit && <p>Successfully edit warehouse {warehouse}! Returning to warehouse page</p>}
             </div>
             <EditWarehouseForm 
             handleSubmit={handleSubmit} 

@@ -1,6 +1,5 @@
 import "./WarehouseInventory.scss";
 import WarehouseInventoryItem from "../WarehouseInventoryItem/WarehouseInventoryItem";
-import { Link } from "react-router-dom";
 import sortIcon from "../../assets/icons/sort-24px.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";

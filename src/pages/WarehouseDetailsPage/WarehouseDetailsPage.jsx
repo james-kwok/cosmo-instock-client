@@ -1,9 +1,11 @@
-import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails";
+import WarehouseDetails from "../../components/WarehouseDetails";
+import WarehouseInventory from "../../components/WarehouseInventory";
 
 const WarehouseDetailsPage = () => {
   return (
     <>
       <WarehouseDetails />
+      <WarehouseInventory />
     </>
   );
 };

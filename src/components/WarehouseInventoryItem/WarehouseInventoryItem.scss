@@ -4,10 +4,10 @@
 
 .inventory-item {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   border-bottom: 1px solid $cloud;
   padding: 1rem 1.5rem 0 1.5rem;
-  justify-content: space-between;
   @include tablet {
     height: 6.125rem;
     padding: 0 2rem;
@@ -95,20 +95,6 @@
     }
     @include desktop {
       width: 9%;
-    }
-  }
-  &__warehouse {
-    order: 5;
-    width: 50%;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    @include tablet {
-      width: 17%;
-      margin-top: 0;
-    }
-    @include desktop {
-      width: 22%;
     }
   }
   &__title {

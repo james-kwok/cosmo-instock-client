@@ -1,0 +1,120 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.body {
+    margin: 0;
+}
+
+.add_new_warehouse{
+
+    font-family: "Titillium Web";
+    position: relative;
+
+    &__notifications {
+        color: red;
+        font-weight: 700;
+        position: absolute;
+            top: 2rem;
+            left: 1rem;
+
+        @include tablet {
+            left: 2rem;
+            bottom: 0;
+            top: 2rem;
+            
+        }
+
+    }
+
+    &__details {
+
+        @include tablet {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        &__detail {
+            width: 50%;
+        }
+    }
+
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &__titleblock {
+
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            border-bottom: 1px solid $cloud;
+            padding: $mobile-verticle 0;
+
+            @include tablet {
+                margin: 0 0 $tablet-verticle 0;
+            }
+
+            &--icons {
+                margin: 0 1rem 0 0;
+            }
+
+            &--title {
+                font-size: 1.75rem; 
+                
+                @include tablet {
+                    font-size: 2rem;
+                }
+            }
+
+        }
+    }
+
+    &__container {
+        background-color: $light-grey ;
+        padding: 1rem 0;
+
+        @include tablet {
+            margin: $tablet-verticle  0 0 0;
+        }
+
+        &__buttons {
+            display: flex;
+            justify-content: center;
+            margin: 0 1rem 0 1rem;
+            gap: 1rem;
+
+            @include tablet {
+                justify-content: flex-end;
+                margin: 0 2rem 0 0rem;
+            }
+
+            &--button {
+                font-size: .8125rem;
+                width: 100%;
+                height: $form-height-mobile;
+                border: 1px solid $cloud;
+                border-radius: $button-border-radius;
+
+                @include tablet {
+                    width: fit-content;
+                    padding: 0 1rem;
+
+                }
+            }
+
+            &--cancel {
+                background-color: $white;
+            }
+
+            &--add {
+                color: $white;
+                background-color: $instock-indigo;
+            }
+
+        }
+    }
+}

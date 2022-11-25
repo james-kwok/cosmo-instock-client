@@ -2,8 +2,8 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.inventory-list {
-  margin: 1rem;
+.WarehouseInventory {
+  margin: 0 1rem;
   padding: 1rem 0;
   border-radius: 3px;
   box-shadow: 0 2px 5px rgb(19 24 44 / 0.1);

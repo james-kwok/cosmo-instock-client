@@ -7,10 +7,14 @@
   padding: 1rem 0;
   border-radius: 3px;
   box-shadow: 0 2px 5px rgb(19 24 44 / 0.1);
+  position: relative;
+  background-color: $white;
+  top: -4.75rem;
 
   @include tablet {
     padding: 0;
     margin: 2rem;
+    top: -8rem;
   }
 
   @include desktop {

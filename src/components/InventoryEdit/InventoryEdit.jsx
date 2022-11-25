@@ -1,17 +1,23 @@
-<<<<<<< HEAD
 import "./InventoryEdit.scss";
-function InventoryEdit() {
-  function yesnoCheck() {
-    if (document.getElementById("instock").checked) {
-      document.getElementById("quant").type = "text";
-    } else {
-      document.getElementById("quant").type = "hidden";
-    }
-  }
+import React from "react";
+import backarrow from "../../assets/icons/arrow_back-24px.svg";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+const InventoryEdit = () => {
+  // function yesnoCheck() {
+  //   if (document.getElementById("instock").checked) {
+  //     document.getElementById("quant").type = "text";
+  //   } else {
+  //     document.getElementById("quant").type = "hidden";
+  //   }
+  // }
+  const [itemName, setItemname] = useState("");
+  const [description, setDescription] = useState("");
 
   return (
     <>
-      <h2>Edit Inventory Item</h2>
+      {/* <h2>Edit Inventory Item</h2>
       <section className="edit-details">
         <h3>Item Details</h3>
         <form action="" className="edit-details__form">
@@ -64,17 +70,8 @@ function InventoryEdit() {
       <div className="edit__buttons">
         <span className="edit__button">Cancel</span>
         <span className="edit__button">Save</span>
-      </div>
+      </div> */}
     </>
   );
-}
+};
 export default InventoryEdit;
-=======
-function InventoryEdit (){
-    return (
-        <p>this is InventoryEdit</p>
-    )
-}
-
-export default InventoryEdit;
->>>>>>> develop

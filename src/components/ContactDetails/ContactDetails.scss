@@ -80,19 +80,5 @@
             }
         }
 
-        &--input {
-            font-size: 0.8125rem;
-            height: $form-height-mobile;
-            border: 1px solid $cloud;
-            border-radius: $button-border-radius; 
-            margin: 0 1rem $mobile-verticle 1rem;
-            padding: 0 0 0 1rem;
-
-            @include tablet {
-                margin: 0 2rem $tablet-verticle 2rem;
-                font-size: .875rem;
-                }
-
-        }
     }
 }

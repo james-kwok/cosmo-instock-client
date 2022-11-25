@@ -1,6 +1,8 @@
+import AddNewWarehouse from "../AddNewWarehouse/AddNewWarehouse";
+
 function WarehouseAdd (){
     return (
-        <p>this is WarehouseAdd </p>
+        <AddNewWarehouse/>
     )
 }
 

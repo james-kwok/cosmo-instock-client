@@ -62,7 +62,7 @@ const AddNewWarehouse = () => {
     }; 
 
     //special characters and space to validate user inputted phone number against 
-    const specialChars = /^\d{15}$/.test(phoneNumber);
+    const specialChars = /^[0-9]*$/.test(phoneNumber);
 
     //validating phone number length and makes sure it includes only numbers 
     const isPhoneNumberValid = () => phoneNumber.length >= 7 && phoneNumber.length <= 15 
@@ -118,13 +118,14 @@ const AddNewWarehouse = () => {
 
     if (isFormValid()) {
         console.log("add axios request here, to add warehouse to db")
-        return SetAdd(true) && navigate("/warehouse");
+        SetAdd(true)
+        return setTimeout(() => {navigate("/warehouses")}, 2000) ;
     } 
 
 }
 
     const handleCancel = () => {
-        return navigate("/warehouse");
+        return navigate("/warehouses");
     }
 
     return (

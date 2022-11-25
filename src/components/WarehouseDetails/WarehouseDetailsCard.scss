@@ -51,37 +51,16 @@
             font-size: .875rem;
 
             }
+
+            :active {
+                border: 1px solid red;
+            }
+
+            
         }
 
     }
 
-        &--label {
-            font-weight: 600;
-            margin: 0 0 0.25rem 1rem;
-            font-size: .8125rem;
-
-            @include tablet {
-                margin: 0 0 0.25rem 2rem;
-                font-size: .875rem;
-            }
-        }
-
-        &--input {
-            font-size: 0.8125rem;
-            height: $form-height-mobile;
-            border: 1px solid $cloud;
-            border-radius: $button-border-radius; 
-            margin: 0 1rem $mobile-verticle 1rem;
-            padding: 0 0 0 1rem;
-
-
-            @include tablet {
-            margin: 0 2rem $tablet-verticle 2rem;
-            font-size: .875rem;
-
-            }
-    
-        }
     }
 }
 

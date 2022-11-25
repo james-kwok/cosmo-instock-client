@@ -11,29 +11,29 @@ const ContactDetails = ({handleChangeContactName, handleChangePosition, handleCh
 
         <form className="Warehouse_detail_container__form">
             <div className="Warehouse_detail_container__form__box">
-                <label for="videoTitle" className="Warehouse_detail_container__form--label">Contact Name </label>
-                <input name="videoTitle"  className="Warehouse_detail_container__form--input" placeholder="Contact Name" 
+                <label for="ContactName" className="Warehouse_detail_container__form__box--label">Contact Name </label>
+                <input name="ContanctName"  className="Warehouse_detail_container__form__box--input" placeholder="Contact Name" 
                 type="text" value={contactName} onChange={handleChangeContactName}/>
                 {submit===true && !contactName===true && <ErrorState/>}
             </div>
 
             <div className="Warehouse_detail_container__form__box">
-                <label for="videoDescription" className="Warehouse_detail_container__form--label">Position</label>
-                <input name="videoDescription" className="Warehouse_detail_container__form--input" placeholder="Position" 
+                <label for="position" className="Warehouse_detail_container__form__box--label">Position</label>
+                <input name="position" className="Warehouse_detail_container__form__box--input" placeholder="Position" 
                 type="text" value={position} onChange={handleChangePosition}/> 
                 {submit===true && !position===true && <ErrorState/>}
             </div>  
 
             <div className="Warehouse_detail_container__form__box">
-                <label for="videoDescription" className="Warehouse_detail_container__form--label">Phone Number</label>
-                <input name="videoDescription" className="Warehouse_detail_container__form--input" placeholder="Phone Number" 
+                <label for="phoneNumber" className="Warehouse_detail_container__form__box--label">Phone Number</label>
+                <input name="phoneNumber" className="Warehouse_detail_container__form__box--input" placeholder="Phone Number" 
                 type="text" value={phoneNumber} onChange={handleChangePhoneNumber}/>
                 {submit===true && !phoneNumber===true && <ErrorState/>}
             </div>   
 
             <div className="Warehouse_detail_container__form__box">
-                <label for="videoDescription" className="Warehouse_detail_container__form--label">Email</label>
-                <input name="videoDescription" className="Warehouse_detail_container__form--input" placeholder="Email" 
+                <label for="email" className="Warehouse_detail_container__form__box--label">Email</label>
+                <input name="email" className="Warehouse_detail_container__form__box--input" placeholder="Email" 
                 type="text" value={email} onChange={handleChangeEmail}/>  
                 {submit===true && !email===true && <ErrorState/>}
             </div>   

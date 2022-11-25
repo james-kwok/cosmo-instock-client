@@ -13,30 +13,30 @@ country, submit}) => {
         <form className="Warehouse_detail_container__form">
             
             <div className="Warehouse_detail_container__form__box">
-                <label for="videoTitle" className="Warehouse_detail_container__form__box--label">Warehouse Name</label>
-                <input name="videoTitle"  className="Warehouse_detail_container__form__box--input" placeholder="Warehouse Name" 
+                <label for="warehouseName" className="Warehouse_detail_container__form__box--label">Warehouse Name</label>
+                <input name="warehouseName"  className="Warehouse_detail_container__form__box--input" placeholder="Warehouse Name" 
                 type="text" value = {warehouse} onChange = {handleChangeWarehouse} />
                 {submit===true && !warehouse===true && <ErrorState/>}
             </div>
 
             <div className="Warehouse_detail_container__form__box">               
-                <label for="videoDescription" className="Warehouse_detail_container__form--label">Street Address</label>
-                <input name="videoDescription" className="Warehouse_detail_container__form--input" placeholder="Street Address" 
+                <label for="StreetAddress" className="Warehouse_detail_container__form__box--label">Street Address</label>
+                <input name="StreetAddress" className="Warehouse_detail_container__form__box--input" placeholder="Street Address" 
                 type="text" value={streetAddress} onChange = {handleChangeStreetAddress}/>
                 {submit===true && !streetAddress===true && <ErrorState/>}
             </div>
 
             <div className="Warehouse_detail_container__form__box"> 
-                <label for="videoDescription" className="Warehouse_detail_container__form--label">City</label>
-                <input name="videoDescription" className="Warehouse_detail_container__form--input" placeholder="City" 
+                <label for="City" className="Warehouse_detail_container__form__box--label">City</label>
+                <input name="City" className="Warehouse_detail_container__form__box--input" placeholder="City" 
                 type="text" value={city} onChange={handleChangeCity}/>
                 {submit===true && !city===true && <ErrorState/>}
             </div>
 
    
             <div className="Warehouse_detail_container__form__box"> 
-                <label for="videoDescription" className="Warehouse_detail_container__form--label">Country</label>
-                <input name="videoDescription" className="Warehouse_detail_container__form--input" placeholder="Country" 
+                <label for="Country" className="Warehouse_detail_container__form__box--label">Country</label>
+                <input name="Country" className="Warehouse_detail_container__form__box--input" placeholder="Country" 
                 type="text" value={country} onChange={handleChangeCountry}/>
                 {submit===true && !country===true && <ErrorState/>}
             </div>

@@ -1,4 +1,4 @@
-import ErrorState from "../ErrorState.js/ErrorState"
+import ErrorState from "../EmptyState/EmptyState";
 
 function EditWarehouseForm ({handleSubmit, handleCancel, handleChangeWarehouse, handleChangeStreetAddress, handleChangeCity, handleChangeCountry, handleChangeContactName, handleChangePosition, handleChangePhoneNumber, handleChangeEmail, submit, warehouse, streetAddress, city, country, contactName, position, phoneNumber, email}){
 

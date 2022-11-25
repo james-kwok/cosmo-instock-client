@@ -1,5 +1,5 @@
 import "./InventoryDetails.scss";
-import editImage from "../../assets/icons/edit-white.svg";
+import editImage from "../../assets/icons/edit-24px-white.svg";
 import backIcon from "../../assets/icons/arrow_back-24px.svg";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -66,34 +66,38 @@ function InventoryDetails() {
           <p className="inventoryitem__edit-text">Edit</p>
         </div>
       </div>
-      <div className='inventoryitem"__align'>
-        <div className="inventoryitem__description">
-          <span className="inventoryitem__title">ITEM DESCRIPTION:</span>
-          <span className="inventoryitem__text">{itemDescription}</span>
+      <div className="inventoryitem__align">
+        <div className="inventoryitem__left">
+          <div className="inventoryitem__description">
+            <span className="inventoryitem__title">ITEM DESCRIPTION:</span>
+            <span className="inventoryitem__text">{itemDescription}</span>
+          </div>
+          <div className="inventoryitem__category">
+            <span className="inventoryitem__title">CATEGORY:</span>
+            <span className="inventoryitem__text">{itemCategory}</span>
+          </div>
         </div>
-        <div className="inventoryitem__category">
-          <span className="inventoryitem__title">CATEGORY:</span>
-          <span className="inventoryitem__text">{itemCategory}</span>
-        </div>
-        <div className="inventoryitem__status">
-          <span className="inventoryitem__title">STATUS:</span>
-          <span
-            className={`inventoryitem__status-text  ${
-              itemStatus === "In Stock"
-                ? "inventory-item__instock"
-                : "inventory-item__outofstock"
-            }`}
-          >
-            {itemStatus}
-          </span>
-        </div>
-        <div className="inventoryitem__quantity">
-          <span className="inventoryitem__title">QUANTITY:</span>
-          <span className="inventoryitem__text">{itemQuantity}</span>
-        </div>
-        <div className="inventoryitem__warehouse">
-          <span className="inventoryitem__title">WAREHOUSE:</span>
-          <span className="inventoryitem__text">{warehouseName}</span>
+        <div className="inventoryitem__right">
+          <div className="inventoryitem__status">
+            <span className="inventoryitem__title">STATUS:</span>
+            <span
+              className={`inventoryitem__status-text  ${
+                itemStatus === "In Stock"
+                  ? "inventory-item__instock"
+                  : "inventory-item__outofstock"
+              }`}
+            >
+              {itemStatus}
+            </span>
+          </div>
+          <div className="inventoryitem__quantity">
+            <span className="inventoryitem__title">QUANTITY:</span>
+            <span className="inventoryitem__text">{itemQuantity}</span>
+          </div>
+          <div className="inventoryitem__warehouse">
+            <span className="inventoryitem__title">WAREHOUSE:</span>
+            <span className="inventoryitem__text">{warehouseName}</span>
+          </div>
         </div>
       </div>
     </div>

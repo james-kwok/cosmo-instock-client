@@ -4,8 +4,14 @@
 
 .inventoryitem {
   margin: 1rem;
+  padding: 1rem 0;
   border-radius: 3px;
-  box-shadow: 0 2px 5px rgb(19 24 44 / 0.1);
+  box-shadow: 0 2px 5px rgb(19 24 44 / 10%);
+  position: relative;
+  z-index: 1;
+  background-color: #ffffff;
+  top: -4rem;
+  margin-top: 0rem;
 
   @include tablet {
     padding: 0;
@@ -70,85 +76,91 @@
     }
   }
   &__align {
-    display: flex;
-    //justify-content: space-between;
     flex-wrap: wrap;
-    border-bottom: 1px solid $cloud;
+    display: flex;
     padding: 1rem 1.5rem 0 1.5rem;
     @include tablet {
-      height: 6.125rem;
       padding: 0 2rem;
       align-items: center;
-      //flex-wrap: nonwrap;
+      display: flex;
+      align-items: baseline;
+    }
+  }
+  &__left {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @include tablet {
+      width: 50%;
+      margin: 1rem 0;
+      padding-right: 1rem;
+      border-right: 1px solid $cloud;
+    }
+  }
+  &__right {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @include tablet {
+      width: 50%;
+      margin: 1rem 0;
+      padding-left: 1rem;
     }
   }
   &__description {
-    order: 1;
     width: 100%;
     display: flex;
     flex-direction: column;
-    @include tablet {
-      width: 50%;
-    }
-    @include desktop {
-      width: 21%;
-    }
   }
   &__category {
-    order: 2;
     width: 100%;
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    @include tablet {
-      width: 50%;
-      margin-top: 0;
-    }
-    @include desktop {
-      width: 18%;
-    }
   }
   &__status {
-    order: 3;
+    order: 1;
     width: 40%;
     display: flex;
     flex-direction: column;
-    @include tablet {
-      width: 20%;
-    }
-    @include desktop {
-      width: 18%;
-    }
+  }
+  &__status-text {
+    border-radius: 20px;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    text-align: center;
+  }
+  &__instock {
+    color: $green;
+    background: rgba(21, 132, 99, 0.07);
+    width: 3.8125rem;
+    height: 1.5rem;
+  }
+  &__outofstock {
+    color: $red;
+    background: rgba(201, 69, 21, 0.07);
+    width: 5.75rem;
+    height: 1.625rem;
   }
   &__quantity {
-    order: 4;
+    order: 1;
     width: 40%;
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
-
-    @include tablet {
-      width: 20%;
-      margin-top: 0;
-    }
-    @include desktop {
-      width: 9%;
-    }
   }
   &__warehouse {
-    order: 5;
+    order: 3;
     width: 100%;
     margin-left: auto;
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    @include tablet {
-      width: 50%;
-      margin-top: 0;
-    }
-    @include desktop {
-      width: 22%;
-    }
   }
   &__title {
     color: $slate;

@@ -5,7 +5,7 @@ import backarrow from "../../assets/icons/arrow_back-24px.svg";
 import ContactDetails from '../ContactDetails/ContactDetails';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+/* eslint-disable no-useless-escape */
 
 const AddNewWarehouse = () => {
 
@@ -62,7 +62,7 @@ const AddNewWarehouse = () => {
     }; 
 
     //special characters and space to validate user inputted phone number against 
-    const specialChars = /^\d{7}$/.test(phoneNumber);
+    const specialChars = /^\d{15}$/.test(phoneNumber);
 
     //validating phone number length and makes sure it includes only numbers 
     const isPhoneNumberValid = () => phoneNumber.length >= 7 && phoneNumber.length <= 15 

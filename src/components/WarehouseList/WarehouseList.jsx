@@ -105,7 +105,7 @@ const WarehouseList = () => {
       {showModal ? (
         <>
           <Modal modalHandler={modalHandler} warehouse={toDelete} />
-          <div className="WarehouseList">
+          <div className="WarehouseList mobile-hider">
             <div className="WarehouseList__container">
               <h1 className="WarehouseList__title">Warehouses</h1>
               <div className="WarehouseList__search">

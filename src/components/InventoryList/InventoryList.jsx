@@ -38,13 +38,6 @@ const InventoryList = () => {
       });
   }, []);
 
-  if (inventories.length === 0) {
-    return <h1>LOADING...</h1>;
-  }
-
-  if (warehouses.length === 0) {
-    return <h1>LOADING...</h1>;
-  }
 
   return (
     <div className="inventory-list">
@@ -113,7 +106,7 @@ const InventoryList = () => {
           <span className="inventory-list__sort-action-text">ACTIONS</span>
         </div>
       </div>
-      {inventories.map((item) => {
+      {inventories.length !== 0 && warehouses.length !== 0 ? inventories.map((item) => {
         return (
           <InventoryItem
             key={item.id}
@@ -128,7 +121,7 @@ const InventoryList = () => {
             }
           />
         );
-      })}
+      }) : <></>}
     </div>
   );
 };

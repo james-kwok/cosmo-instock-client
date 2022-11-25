@@ -6,7 +6,7 @@
 .header{
     background-color: $graphite;
     position: relative;
-    z-index: -5;
+    z-index: 0;
 
     &__container{
         display: flex;
@@ -84,6 +84,7 @@
 
         &:hover{
             text-decoration: underline $cloud;
+            cursor: pointer;
 
         }
     }

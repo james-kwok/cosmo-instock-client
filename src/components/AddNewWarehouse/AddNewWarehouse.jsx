@@ -1,5 +1,5 @@
 import React from 'react';
-import WarehouseDetailsCard from '../WarehouseDetails/WarehouseDetailsCard';
+import WarehouseDetailsCard from '../WarehouseDetailsCards/WarehouseDetailsCard';
 import "./AddNewWarehouse.scss";
 import backarrow from "../../assets/icons/arrow_back-24px.svg";
 import ContactDetails from '../ContactDetails/ContactDetails';

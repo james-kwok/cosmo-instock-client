@@ -3,19 +3,6 @@
 @use "../../styles/partials/colors" as *;
 
 .WarehouseDetails {
-  margin: 1rem 1rem 0 1rem;
-  border-radius: 3px;
-  box-shadow: 0 2px 5px rgb(19 24 44 / 0.1);
-
-  @include tablet {
-    padding: 0;
-    margin: 2rem;
-  }
-
-  @include desktop {
-    max-width: 1020px;
-    margin: 2rem auto;
-  }
 
   &__container {
     display: flex;
@@ -83,8 +70,10 @@
     padding: 1rem 1.5rem;
     display: flex;
     flex-wrap: wrap;
+    border-bottom: 1px solid $cloud;
     @include tablet {
       padding: 1.5rem 2rem;
+      border-bottom: none;
     }
     @include desktop {
       padding: 1.5rem 2.5rem;

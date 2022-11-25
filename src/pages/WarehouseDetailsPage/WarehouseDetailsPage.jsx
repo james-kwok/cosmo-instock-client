@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import "./WarehouseDetailsPage.scss"
 const WarehouseDetailsPage = () => {
   const { id } = useParams();
   console.log(id);
@@ -19,14 +20,16 @@ const WarehouseDetailsPage = () => {
       .catch((error) => {
         console.log(error);
       });
-  },[]);
+  }, []);
   if (warehouseInventory.length === 0) {
     return <h1>LOADING...</h1>;
   }
   return (
     <>
-      <WarehouseDetails warehouseDetails={warehouseInventory} />
-      <WarehouseInventory warehouseInventory={warehouseInventory} />
+      <div className="WarehouseDetailsPage">
+        <WarehouseDetails warehouseDetails={warehouseInventory} />
+        <WarehouseInventory warehouseInventory={warehouseInventory} />
+      </div>
     </>
   );
 };

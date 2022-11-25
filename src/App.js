@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/Header/Header.jsx";
-import WarehouseDetailsPage from "./pages/WarehouseDetailsPage.jsx";
+import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 import WarehouseListPage from "./components/WarehouseList/WarehouseList.jsx";
 import WarehousesEdit from "./components/WarehouseEdit/WarehouseEdit.jsx";
 import WarehousesAdd from "./components/WarehouseAdd/WarehouseAdd.jsx";

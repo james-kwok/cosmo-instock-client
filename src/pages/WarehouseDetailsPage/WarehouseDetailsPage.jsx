@@ -1,4 +1,4 @@
-import WarehouseDetails from "../components/WarehouseDetails/WarehouseDetails";
+import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails";
 
 const WarehouseDetailsPage = () => {
   return (

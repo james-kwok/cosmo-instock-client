@@ -1,13 +1,12 @@
-import './App.scss';
-import AddNewWarehouse from './components/AddNewWarehouse';
-import './components/WarehouseDetailsCard.scss';
-
+import Modal from "./components/Modal/Modal";
+import AddNewWarehouse from "./components/AddNewWarehouse/AddNewWarehouse";
+import "./App.scss";
 function App() {
   return (
-<>
-<AddNewWarehouse/>
-</>
-  );
+  <>
+  {/* <Modal warehouseName={"Washington"} />; */}
+  <AddNewWarehouse/>
+  </>)
 }
 
 export default App;

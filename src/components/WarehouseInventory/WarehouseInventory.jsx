@@ -1,7 +1,6 @@
 import "./WarehouseInventory.scss";
 import WarehouseInventoryItem from "../WarehouseInventoryItem/WarehouseInventoryItem";
 import sortIcon from "../../assets/icons/sort-24px.svg";
-
 const WarehouseInventory = ({ warehouseInventory }) => {
   return (
     <div className="WarehouseInventory">
@@ -42,7 +41,7 @@ const WarehouseInventory = ({ warehouseInventory }) => {
           <span className="WarehouseInventory__sort-action-text">ACTIONS</span>
         </div>
       </div>
-      {warehouseInventory.map((warehouse, index) => {
+      {warehouseInventory.inventory.map((warehouse, index) => {
         return (
           <WarehouseInventoryItem
             key={index}
@@ -56,5 +55,4 @@ const WarehouseInventory = ({ warehouseInventory }) => {
     </div>
   );
 };
-
 export default WarehouseInventory;

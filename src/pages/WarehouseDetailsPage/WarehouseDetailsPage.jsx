@@ -1,36 +1,40 @@
 import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails";
 import WarehouseInventory from "../../components/WarehouseInventory/WarehouseInventory";
+import EmptyState from "../../components/EmptyState/EmptyState";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import "./WarehouseDetailsPage.scss"
+import "./WarehouseDetailsPage.scss";
 const WarehouseDetailsPage = () => {
   const { id } = useParams();
-  console.log(id);
   const getURL = "http://localhost:8080/api/warehouses/" + id;
   const [warehouseInventory, setWarehouseInventory] = useState("");
+
   useEffect(() => {
     axios
       .get(getURL)
       .then((response) => {
-        console.log("Response", response.data);
         setWarehouseInventory(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
-  if (warehouseInventory.length === 0) {
-    return <h1>LOADING...</h1>;
-  }
+  console.log("After", warehouseInventory)
   return (
-    <>
-      <div className="WarehouseDetailsPage">
+    <div className="WarehouseDetailsPage">
+      {warehouseInventory ? (
         <WarehouseDetails warehouseDetails={warehouseInventory} />
+      ) : (
+        <h1>LOADING...</h1>
+      )}
+      {warehouseInventory.inventory ? (
         <WarehouseInventory warehouseInventory={warehouseInventory} />
-      </div>
-    </>
+      ) : (
+        <EmptyState message="inventory" />  
+      )}
+    </div>
   );
 };
 export default WarehouseDetailsPage;

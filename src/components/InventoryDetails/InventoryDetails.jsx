@@ -55,15 +55,20 @@ function InventoryDetails() {
   return (
     <div className="inventoryitem">
       <div className="inventoryitem__navigate">
-        <img
-          className="inventoryitem__back"
-          src={backIcon}
-          alt="back to inventory list"
-        />
+        <Link to="/inventory">
+          <img
+            className="inventoryitem__back"
+            src={backIcon}
+            alt="back to inventory list"
+          />
+        </Link>
         <span className="inventoryitem__link-title">{inventoryName}</span>
+
         <div className="inventoryitem__button-wrapper">
-          <img className="inventoryitem__edit" src={editImage} alt="edit" />
-          <p className="inventoryitem__edit-text">Edit</p>
+          <Link to="/inventory/edit/:id" className="inventoryitem__link">
+            <img className="inventoryitem__edit" src={editImage} alt="edit" />
+            <p className="inventoryitem__edit-text">Edit</p>
+          </Link>
         </div>
       </div>
       <div className="inventoryitem__align">

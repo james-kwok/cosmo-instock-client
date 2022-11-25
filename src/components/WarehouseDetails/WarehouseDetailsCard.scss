@@ -1,0 +1,69 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.Warehouse_detail_container{
+
+    &__titlebox{
+
+        &--title {
+            margin: $mobile-verticle 0 $mobile-verticle 1rem;
+            font-size: 1.25rem;
+
+            @include tablet {
+                margin: 0 0 $tablet-verticle 2rem;
+                font-size: 1.5rem;
+
+            }
+        }
+    }
+    
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+    &__box {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        &--label {
+            font-weight: 600;
+            margin: 0 0 0.25rem 1rem;
+            font-size: .8125rem;
+
+            @include tablet {
+                margin: 0 0 0.25rem 2rem;
+                font-size: .875rem;
+            }
+        }
+
+        &--input {
+            font-size: 0.8125rem;
+            height: $form-height-mobile;
+            border: 1px solid $cloud;
+            border-radius: $button-border-radius; 
+            padding: 0 0 0 1rem;
+            margin: 0 1rem $mobile-verticle 1rem;
+
+            @include tablet {
+            margin: 0 2rem $tablet-verticle 2rem;
+            font-size: .875rem;
+
+            }
+
+            :active {
+                border: 1px solid red;
+            }
+
+            
+        }
+
+    }
+
+    }
+}
+
+
+
+

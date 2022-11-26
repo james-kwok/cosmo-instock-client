@@ -5,11 +5,28 @@
 
 .header{
     background-color: $graphite;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top:1.5rem;
-    padding-bottom: 5.5rem;
+    position: relative;
+    z-index: 0;
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top:1.5rem;
+        padding-bottom: 5.5rem;
+
+        @include tablet{
+            padding:1.75rem $tablet-verticle 9.375rem $tablet-verticle;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+
+        @include desktop{
+            padding:1.75rem 0 7.5rem 0;
+            width: 63.75rem;
+        }
+    }
 
     &__link{
         display: block;
@@ -67,20 +84,16 @@
 
         &:hover{
             text-decoration: underline $cloud;
+            cursor: pointer;
 
         }
     }
 
     //for .header
-    @include tablet{
-        padding:1.75rem $tablet-verticle 9.375rem $tablet-verticle;
-        flex-direction: row;
-        justify-content: space-between;
-    }
     @include desktop{
-        padding:1.75rem $desktop-verticle 7.5rem $desktop-verticle;
+        display: flex;
+        justify-content: center;
     }
-
 }
 
 .active{

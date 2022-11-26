@@ -5,11 +5,15 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 import "./WarehouseCard.scss";
 
 const WarehouseCard = ({ warehouse, modalHandler }) => {
+  console.log(warehouse.id);
   return (
     <div className="WarehouseCard">
       <div className="WarehouseCard__warehouse">
         <h4 className="WarehouseCard__title">Warehouse</h4>
-        <Link to="/warehouses/:id" className="WarehouseCard__link">
+        <Link
+          to={"/warehouses/" + warehouse.id}
+          className="WarehouseCard__link"
+        >
           <h3 className="WarehouseCard__link-text">
             {warehouse.warehouse_name}
           </h3>

@@ -1,4 +1,4 @@
-import AddNewWarehouse from "../AddNewWarehouse/AddNewWarehouse";
+import AddNewWarehouse from "../AddNewWarehouse/AddNewWarehouse"
 
 function WarehouseAdd (){
     return (

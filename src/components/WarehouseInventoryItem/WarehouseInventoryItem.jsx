@@ -1,6 +1,6 @@
 import "./WarehouseInventoryItem.scss";
 import deleteImage from "../../assets/icons/delete_outline-24px.svg";
-import editImage from "../../assets/icons/edit.svg";
+import editImage from "../../assets/icons/edit-24px.svg";
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import { Link } from "react-router-dom";
 

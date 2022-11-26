@@ -1,5 +1,6 @@
+import axios from "axios";
 import {useState} from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import backarrow from "../../assets/icons/arrow_back-24px.svg";
 import EditWarehouseForm from "../EditWarehouseForm/EditWarehouseForm";
@@ -26,6 +27,9 @@ function WarehouseEdit (){
     const [submit, setSubmit] = useState (false);
     const [empty, setEmpty] = useState (false);
     const [edit, setEdit] = useState(false);
+
+    const params = useParams();
+    const getURL = `http://localhost:8080/api/warehouses/${params.id}`;
 
     //navigate to warehouse page
     const navigate = useNavigate();
@@ -100,7 +104,23 @@ function WarehouseEdit (){
         setSubmit(true);
         event.preventDefault();
         if (isFormValid()){
-            console.log("add axios request here, to edit warehouse to db")
+            axios
+            .patch(getURL, {
+                warehouse_name:warehouse,
+                address:streetAddress,
+                city:city,
+                country:country,
+                contact_name:contactName,
+                contact_position:position,
+                contact_email:email,
+                contact_phone:phoneNumber
+            })
+            .then((response)=>{
+                console.log(response.data);
+            })
+            .catch((error)=>{
+                console.log("error")
+            });
             setEdit(true)
             return setTimeout(()=>{
                 navigate("/warehouses")}, 2000) ;
@@ -111,7 +131,9 @@ function WarehouseEdit (){
         return navigate("/warehouses");
     }
 
-
+  
+    
+    
     return (
         <section className="edit-warehouse">
             <div className =" edit-warehouse__box">

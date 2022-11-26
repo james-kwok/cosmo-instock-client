@@ -2,8 +2,10 @@ import "./WarehouseDetails.scss";
 import backIcon from "../../assets/icons/arrow_back-24px.svg";
 import editIcon from "../../assets/icons/edit-24px-white.svg";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function WarehouseDetails({ warehouseDetails }) {
+  const {id} = useParams();
   return (
     <div className="WarehouseDetails">
       <div className="WarehouseDetails__container">
@@ -17,7 +19,7 @@ function WarehouseDetails({ warehouseDetails }) {
         <h1 className="WarehouseDetails__title">
           {warehouseDetails.warehouse_name}
         </h1>
-        <Link to="/warehouses/edit/:id" className="WarehouseDetails__button-wrapper">
+        <Link to={`/warehouses/edit/${id}`} className="WarehouseDetails__button-wrapper">
           <img
             className="WarehouseDetails__edit-icon"
             src={editIcon}

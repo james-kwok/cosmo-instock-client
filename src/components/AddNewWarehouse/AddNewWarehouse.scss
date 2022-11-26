@@ -104,10 +104,19 @@
                     padding: 0 1rem;
 
                 }
+
+                &:hover {
+                    background-color: $graphite;
+                  }
             }
 
             &--cancel {
                 background-color: $white;
+                &:hover {
+                    background-color: $white;
+                    color: $instock-indigo;    
+                    border: 1px solid $instock-indigo;            
+                }
             }
 
             &--add {

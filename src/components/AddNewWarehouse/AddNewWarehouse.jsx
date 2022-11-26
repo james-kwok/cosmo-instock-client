@@ -5,6 +5,7 @@ import backarrow from "../../assets/icons/arrow_back-24px.svg";
 import ContactDetails from '../ContactDetails/ContactDetails';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 /* eslint-disable no-useless-escape */
 
 const AddNewWarehouse = () => {
@@ -27,6 +28,8 @@ const AddNewWarehouse = () => {
     //use navigate to go to warehouse page
     const navigate = useNavigate();
 
+    //add warehouse put request 
+    const getURL = "http://localhost:8080/api/warehouses"
 
     //change handler for all form input to update state 
     const handleChangeWarehouse = (event) => {
@@ -117,7 +120,26 @@ const AddNewWarehouse = () => {
     event.preventDefault();
 
     if (isFormValid()) {
-        console.log("add axios request here, to add warehouse to db")
+        axios
+        .put(getURL, {
+            
+            "warehouse_name": warehouse ,
+            "address": streetAddress,
+            "city": city,
+            "country": country,
+            "contact_name": contactName,
+            "contact_position": position,
+            "contact_phone": phoneNumber,
+            "contact_email": email
+              
+        })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+          
         SetAdd(true)
         return setTimeout(() => {navigate("/warehouses")}, 2000) ;
     } 
@@ -137,10 +159,10 @@ const AddNewWarehouse = () => {
                 </div>
 
                 <div className='add_new_warehouse__notifications'>
-                    {phoneError && <p>Please enter a 7-15 digit phone number</p>}
-                    {emailError && <p>"Please enter a email in the following format: info@domain2.domain1"</p>}
+                    {phoneError && <p>Please enter a 7-15 digit phone number!</p>}
+                    {emailError && <p>"Please enter a email in the following format: info@domain2.com!"</p>}
                     {empty && <p>Please fill all fields</p> }
-                    {add && <p>Successfully added warehouse! Returning to warehouse page</p> }
+                    {add && <p>Successfully added warehouse! Returning to warehouse page!</p> }
                 </div>
             </div>
 

@@ -1,6 +1,6 @@
 import axios from "axios";
 import {useState} from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import backarrow from "../../assets/icons/arrow_back-24px.svg";
 import EditWarehouseForm from "../EditWarehouseForm/EditWarehouseForm";
@@ -106,6 +106,7 @@ function WarehouseEdit (){
         if (isFormValid()){
             axios
             .patch(getURL, {
+                warehouse_id:params.id,
                 warehouse_name:warehouse,
                 address:streetAddress,
                 city:city,
@@ -138,7 +139,9 @@ function WarehouseEdit (){
         <section className="edit-warehouse">
             <div className =" edit-warehouse__box">
                 <div className="edit-warehouse__title">
-                    <img className="edit-warehouse__arrow" src={backarrow} alt =" back arrow"/>
+                    <Link to="/warehouses">
+                        <img className="edit-warehouse__arrow" src={backarrow} alt =" back arrow"/>
+                    </Link>
                     <h1 className = "edit-warehouse__title-text">Edit Warehouse</h1>
                 </div>
             </div>

@@ -13,7 +13,7 @@ const InventoryEdit = () => {
   const [category, setCategory] = useState("Electronics");
   const [quant, setQuant] = useState("");
   const [status, setStatus] = useState("In Stock");
-  const [warehouse, setWarehouse] = useState("Manhattan");
+  const [warehouse, setWarehouse] = useState("Washington");
   const [submit, Setsubmit] = useState(false);
  
 
@@ -61,15 +61,16 @@ const InventoryEdit = () => {
   let warehouseid = warehouses.find(
     (item) => item.warehouse_name === warehouse
   ).id;
+  console.log(warehouseid)
 
-  console.log({
-    warehouse_id: warehouseid,
-    item_name: itemName,
-    description: description,
-    category: category,
-    status: status,
-    quantity: Number(quant)
-  })
+  // console.log({
+  //   warehouse_id: warehouseid,
+  //   item_name: itemName,
+  //   description: description,
+  //   category: category,
+  //   status: status,
+  //   quantity: Number(quant)
+  // })
 
   const isFormValid = () => {
     if (itemName === "" || description === "") {

@@ -27,8 +27,7 @@ const EditInventoryDetails = ({
             </label>
             <input
               name="inventoryName"
-              // className={submit === true && !itemName ? "edit-details__form__box--error" : "edit-details__form__box--input"}
-              className='edit-details__form__box--input'
+              className={submit === true && !itemName ? "edit-details__form__box--error" : "edit-details__form__box--input"}
               placeholder="Item Name"
               type="text"
               value={itemName}
@@ -46,8 +45,7 @@ const EditInventoryDetails = ({
             </label>
             <textarea
               name="description"
-              // className={submit === true && !description ? "edit-details__form__box--error" : "edit-details__form__box--textarea"}
-              className="edit-details__form__box--textarea"
+              className={submit === true && !description ? "edit-details__form__box--error" : "edit-details__form__box--textarea"}
               placeholder="Please enter a brief item description..."
               value={description}
               onChange={handleChangeDescriptions}
@@ -65,8 +63,7 @@ const EditInventoryDetails = ({
               required
               id="categories"
               name="categories"
-              // className={submit === true && !category ? "edit-details__form__box--error" : "edit-details__form__box--input"}
-              className='edit-details__form__box--input'
+              className={submit === true && !category ? "edit-details__form__box--error" : "edit-details__form__box--input"}
               value={category}
               onChange={handleChangeCategory}
             >

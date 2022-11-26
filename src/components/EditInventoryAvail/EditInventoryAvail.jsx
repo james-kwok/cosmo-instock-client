@@ -21,8 +21,8 @@ const EditInventoryAvail = ({
             >
               Status
             </label>
-            <div className="edit-availability__choices">
-
+            
+          <div className="edit-availability__choices">
             <div className="edit-availability__choice">
               <input
                 id="instock"
@@ -32,9 +32,9 @@ const EditInventoryAvail = ({
                 onChange={handleChangeStatus}
               ></input>
               <label className="edit-availability__value" htmlFor="instock">In stock</label>
-              </div>
+            </div>
 
-              <div className="edit-availability__choice">
+            <div className="edit-availability__choice">
               <input
                 id="outstock"
                 name="radio"
@@ -43,8 +43,9 @@ const EditInventoryAvail = ({
                 onChange={handleChangeStatus}
               ></input>
               <label className="edit-availability__value" htmlFor="outstock">Out of stock</label>
-              </div>
             </div>
+            {submit === true && !status === true && <ErrorState />}
+          </div>
           </div>
           <div className={`edit-availability__form__box  ${
             status === "Out Of Stock"
@@ -58,11 +59,11 @@ const EditInventoryAvail = ({
               Quantity
             </label>
             <input
-              className="edit-availability__form__box--input"
               id="quant"
               name="quant"
               type="text"
               value={quant}
+              className = {submit === true && !quant ? "edit-availability__form__box--error" : "edit-availability__form__box--input"}
               onChange={handleChangeQuant}
             ></input>
             {submit === true && !quant === true && <ErrorState />}
@@ -78,7 +79,7 @@ const EditInventoryAvail = ({
               required
               id="warehouse"
               name="warehouse"
-              className="edit-availability__form__box--input"
+              className = {submit === true && !warehouse ? "edit-availability__form__box--error" : "edit-availability__form__box--input"}
               value={warehouse}
               onChange={handleChangeWarehouse}
             >

@@ -4,12 +4,19 @@ import editImage from "../../assets/icons/edit-24px.svg";
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import { Link } from "react-router-dom";
 
-function WarehouseInventoryItem({ Inventory, Category, Status, Quantity }) {
+function WarehouseInventoryItem({
+  InventoryId,
+  Inventory,
+  Category,
+  Status,
+  Quantity,
+}) {
+  console.log(InventoryId);
   return (
     <div className="inventory-item">
       <div className="inventory-item__inventory">
-        <span className="inventory-item__title">INVENTORY ITEM</span>
-        <Link to="/inventory/:id" className="inventory-item__link">
+        <span className="inventory-item__title">Inventory Item</span>
+        <Link to={`/inventory/${InventoryId}`} className="inventory-item__link">
           <div className="inventory-item__link">
             <span className="inventory-item__link-text">{Inventory}</span>
             <img
@@ -21,11 +28,11 @@ function WarehouseInventoryItem({ Inventory, Category, Status, Quantity }) {
         </Link>
       </div>
       <div className="inventory-item__category">
-        <span className="inventory-item__title">CATEGORY</span>
+        <span className="inventory-item__title">Category</span>
         <span className="inventory-item__text">{Category}</span>
       </div>
       <div className="inventory-item__status">
-        <span className="inventory-item__title">STATUS</span>
+        <span className="inventory-item__title">Status</span>
         <h3
           className={`inventory-item__status-text  ${
             Status === "In Stock"
@@ -37,7 +44,7 @@ function WarehouseInventoryItem({ Inventory, Category, Status, Quantity }) {
         </h3>
       </div>
       <div className="inventory-item__quant">
-        <span className="inventory-item__title">QTY</span>
+        <span className="inventory-item__title">Qty</span>
         <span className="inventory-item__text">{Quantity}</span>
       </div>
       <div className="inventory-item__icons">

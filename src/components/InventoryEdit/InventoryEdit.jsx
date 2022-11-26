@@ -65,27 +65,26 @@ const InventoryEdit = () => {
     ).id;
   }
 
-  // console.log({
-  //   warehouse_id: warehouseid,
-  //   item_name: itemName,
-  //   description: description,
-  //   category: category,
-  //   status: status,
-  //   quantity: Number(quant)
-  // })
-
   const isFormValid = () => {
     if (itemName === "" || description === ""|| category==="" || status==="" || warehouse===""|| isNaN(quant) ) {
       return false;
     }
+    return true;
+  };
+
+  const handleSubmit = (event) => {
+    Setsubmit(true);
+    event.preventDefault();
+
+    if (isFormValid()) {
     axios
     .patch(getURL, {
-      warehouse_id: warehouseid,
-      item_name: itemName,
-      description: description,
-      category: category,
-      status: status,
-      quant: Number(quant)
+      "warehouse_id": warehouseid,
+      "item_name": itemName,
+      "description": description,
+      "category": category,
+      "status": status,
+      "quantity": Number(quant)
     })
     .then((response) => {
       console.log(response.data);
@@ -93,17 +92,9 @@ const InventoryEdit = () => {
     .catch((error) => {
       console.log(error);
     });
-    return true;
-  };
+    
+  return setTimeout(() => { navigate("/inventory")}, 2000);
 
-  const handleSubmit = (event) => {
-    Setsubmit(true);
-    event.preventDefault();
-    if (isFormValid()) {
-      console.log("submit form success");
-      return setTimeout(() => {
-        navigate("/inventory");
-      }, 2000);
     }
   };
 

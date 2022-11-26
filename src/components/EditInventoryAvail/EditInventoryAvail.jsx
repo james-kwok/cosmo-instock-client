@@ -28,7 +28,7 @@ const EditInventoryAvail = ({
                 id="instock"
                 name="radio"
                 type="radio"
-                value="In stock"
+                value="In Stock"
                 onChange={handleChangeStatus}
               ></input>
               <label className="edit-availability__value" htmlFor="instock">In stock</label>
@@ -39,7 +39,7 @@ const EditInventoryAvail = ({
                 id="outstock"
                 name="radio"
                 type="radio"
-                value="Out of stock"
+                value="Out Of Stock"
                 onChange={handleChangeStatus}
               ></input>
               <label className="edit-availability__value" htmlFor="outstock">Out of stock</label>
@@ -47,7 +47,7 @@ const EditInventoryAvail = ({
             </div>
           </div>
           <div className={`edit-availability__form__box  ${
-            status === "Out of stock"
+            status === "Out Of Stock"
               ? "edit-availability__noshow"
               : ""
           }`}>

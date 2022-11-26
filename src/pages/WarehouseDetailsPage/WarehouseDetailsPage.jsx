@@ -20,19 +20,21 @@ const WarehouseDetailsPage = () => {
       .catch((error) => {
         console.log(error);
       });
+    // eslint-disable-next-line    
   }, []);
-  console.log("After", warehouseInventory)
+  
+  console.log("After", warehouseInventory);
   return (
     <div className="WarehouseDetailsPage">
       {warehouseInventory ? (
         <WarehouseDetails warehouseDetails={warehouseInventory} />
       ) : (
-        <h1>LOADING...</h1>
+        <WarehouseDetails warehouseDetails={""} />
       )}
       {warehouseInventory.inventory ? (
         <WarehouseInventory warehouseInventory={warehouseInventory} />
       ) : (
-        <EmptyState message="inventory" />  
+        <EmptyState message="inventory" />
       )}
     </div>
   );

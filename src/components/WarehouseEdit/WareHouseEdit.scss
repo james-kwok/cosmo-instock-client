@@ -6,9 +6,12 @@
 
     &__box{
         padding: 2rem $mobile-verticle 1.5rem $mobile-verticle;
-
         border-bottom:1px solid $cloud;
         width:100%;
+
+        @include desktop{
+            padding: 2rem 2.5rem 1.5rem 2.5rem;
+        }
     }
     
     &__title{
@@ -17,6 +20,10 @@
         align-items: center;
         width:100%;
         color: $instock-black;
+
+        @include desktop{
+            font-size: 2rem;
+        }
     }
     &__arrow{
         width:2rem;
@@ -29,6 +36,16 @@
         padding-left:1rem;
         width:80%;
         font-size:1.75rem;
+        
+    }
+
+    @include desktop{
+        max-width: 1020px;
+        border-radius: 3px;
+        box-shadow: 0 2px 5px rgb(19, 24, 44 / 0.1);
+        position: relative;
+        bottom: $desktop-overflow;
+        z-index: 21;
         
     }
 }

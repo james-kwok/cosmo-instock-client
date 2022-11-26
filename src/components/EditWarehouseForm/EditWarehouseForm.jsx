@@ -47,8 +47,8 @@ function EditWarehouseForm ({handleSubmit, handleCancel, handleChangeWarehouse, 
                 </div>
             </div>
             <div className="edit-form__bottom">
-                <button onClick={handleCancel} type="button" className="edit-form__button">Cancel</button>
-                <button type="submit" className="edit-form__button--submit">Save</button>
+                <button onClick={handleCancel} type="button" className="edit-form__button edit-form__button--cancel">Cancel</button>
+                <button type="submit" className="edit-form__button--submit edit-form__button">Save</button>
             </div>
         </form>
     )

@@ -23,7 +23,6 @@ const WarehouseDetailsPage = () => {
     // eslint-disable-next-line    
   }, []);
   
-  console.log("After", warehouseInventory);
   return (
     <div className="WarehouseDetailsPage">
       {warehouseInventory ? (

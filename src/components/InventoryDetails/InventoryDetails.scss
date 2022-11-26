@@ -10,12 +10,13 @@
   position: relative;
   z-index: 1;
   background-color: #ffffff;
-  top: -6rem;
+  top: -5.275rem;
   margin-top: 0rem;
 
   @include tablet {
     padding: 0;
     margin: 2rem;
+    top: -7.875rem;
   }
   @include desktop {
     max-width: 1020px;

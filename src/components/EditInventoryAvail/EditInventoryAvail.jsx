@@ -18,30 +18,39 @@ const EditInventoryAvail = ({
           <div className="edit-availability__form__box">
             <label
               className="edit-availability__form__box--label"
-              htmlFor="instock"
             >
               Status
             </label>
+            <div className="edit-availability__choices">
+
             <div className="edit-availability__choice">
               <input
                 id="instock"
-                name="instock"
+                name="radio"
                 type="radio"
-                value={status}
+                value="In stock"
                 onChange={handleChangeStatus}
               ></input>
-              <label htmlFor="instock">In stock</label>
+              <label className="edit-availability__value" htmlFor="instock">In stock</label>
+              </div>
+
+              <div className="edit-availability__choice">
               <input
                 id="outstock"
-                name="outstock"
+                name="radio"
                 type="radio"
-                value={status}
+                value="Out of stock"
                 onChange={handleChangeStatus}
               ></input>
-              <label htmlFor="outstock">Out of stock</label>
+              <label className="edit-availability__value" htmlFor="outstock">Out of stock</label>
+              </div>
             </div>
           </div>
-          <div className="edit-availability__form__box">
+          <div className={`edit-availability__form__box  ${
+            status === "Out of stock"
+              ? "edit-availability__noshow"
+              : ""
+          }`}>
             <label
               className="edit-availability__form__box--label"
               htmlFor="quant"
@@ -66,12 +75,14 @@ const EditInventoryAvail = ({
               Warehouse
             </label>
             <select
+              required
               id="warehouse"
               name="warehouse"
               className="edit-availability__form__box--input"
               value={warehouse}
               onChange={handleChangeWarehouse}
             >
+              <option value="" disabled>Please select</option>
               <option value="Washington">Washington</option>
               <option value="Manhattan">Manhattan</option>
               <option value="Santa Monica">Santa Monica</option>

@@ -2,7 +2,7 @@ import "./InventoryEdit.scss";
 import React from "react";
 import backarrow from "../../assets/icons/arrow_back-24px.svg";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import EditInventoryDetails from "../EditInventoryDetails/EditInventoryDetails";
 import EditInventoryAvail from "../EditInventoryAvail/EditInventoryAvail";
 import axios from "axios";
@@ -10,10 +10,10 @@ import axios from "axios";
 const InventoryEdit = () => {
   const [itemName, setItemname] = useState("");
   const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("Electronics");
+  const [category, setCategory] = useState("");
   const [quant, setQuant] = useState("");
-  const [status, setStatus] = useState("In Stock");
-  const [warehouse, setWarehouse] = useState("Washington");
+  const [status, setStatus] = useState("");
+  const [warehouse, setWarehouse] = useState("");
   const [submit, Setsubmit] = useState(false);
  
 
@@ -57,11 +57,13 @@ const InventoryEdit = () => {
   if (warehouses.length === 0) {
     return <h1>LOADING...</h1>;
   }
-
-  let warehouseid = warehouses.find(
-    (item) => item.warehouse_name === warehouse
-  ).id;
-  console.log(warehouseid)
+ 
+  let warehouseid;
+  if(warehouse){
+    warehouseid = warehouses.find(
+      (item) => item.warehouse_name === warehouse
+    ).id;
+  }
 
   // console.log({
   //   warehouse_id: warehouseid,
@@ -73,7 +75,7 @@ const InventoryEdit = () => {
   // })
 
   const isFormValid = () => {
-    if (itemName === "" || description === "") {
+    if (itemName === "" || description === ""|| category==="" || status==="" || warehouse===""|| isNaN(quant) ) {
       return false;
     }
     axios
@@ -114,11 +116,13 @@ const InventoryEdit = () => {
       <section className="edit-inventory">
         <div className="edit-inventory__box">
           <div className="edit-inventory__box-titleblock">
+            <Link to="/inventory">
             <img
               className="edit-inventory__box-titleblock--icons"
               src={backarrow}
               alt="back arrow"
             />
+            </Link>
             <h1 className="edit-inventory__box-titleblock--title">
               Edit Inventory Item
             </h1>
@@ -128,7 +132,7 @@ const InventoryEdit = () => {
         {/* onSubmit on form to run front-end validation */}
         <form onSubmit={handleSubmit}>
           <div className="edit-inventory__content">
-            <EditInventoryDetails
+            <EditInventoryDetails className="edit-inventory__content-first"
               handleChangeItemname={handleChangeItemname}
               handleChangeDescriptions={handleChangeDescription}
               handleChangeCategory={handleChangeCategory}

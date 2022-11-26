@@ -46,6 +46,7 @@ const EditInventoryDetails = ({
             <textarea
               name="description"
               className="edit-details__form__box--textarea"
+              placeholder="Please enter a brief item description..."
               value={description}
               onChange={handleChangeDescriptions}
             />
@@ -58,19 +59,22 @@ const EditInventoryDetails = ({
             >
               Category
             </label>
-            <select
+            <select 
+              required
               id="categories"
               name="categories"
               className="edit-details__form__box--input"
               value={category}
               onChange={handleChangeCategory}
             >
+              <option value="" disabled>Please select</option>
               <option value="Electronics">Electronics</option>
               <option value="Gear">Gear</option>
               <option value="Accessories">Accessories</option>
               <option value="Health">Health</option>
               <option value="Apparel">Apparel</option>
             </select>
+            {submit === true && !category === true && <ErrorState />}
           </div>
         </div>
       </section>

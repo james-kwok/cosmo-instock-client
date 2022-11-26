@@ -22,14 +22,9 @@
     max-width: 1020px;
     margin: 2rem auto;
   }
-  // &__box {
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  // }
+
   &__content {
     margin: 1rem;
-    //padding: 1rem 0;
     @include tablet {
       padding: 0;
       margin: 2rem;
@@ -40,6 +35,7 @@
       margin: 2rem auto;
     }
   }
+
   &__box-titleblock {
     display: flex;
     justify-content: flex-start;

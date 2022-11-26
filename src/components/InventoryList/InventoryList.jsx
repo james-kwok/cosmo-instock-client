@@ -63,7 +63,7 @@ const InventoryList = () => {
       </div>
       <div className="inventory-list__sort-row">
         <div className="inventory-list__sort-inventory">
-          <span className="inventory-list__sort-text">INVENTORY ITEM</span>
+          <span className="inventory-list__sort-text">Inventory Item</span>
           <img
             className="inventory-list__sort-icon"
             src={sortIcon}
@@ -71,7 +71,7 @@ const InventoryList = () => {
           />
         </div>
         <div className="inventory-list__sort-category">
-          <span className="inventory-list__sort-text">CATEGORY</span>
+          <span className="inventory-list__sort-text">Category</span>
           <img
             className="inventory-list__sort-icon"
             src={sortIcon}
@@ -79,7 +79,7 @@ const InventoryList = () => {
           />
         </div>
         <div className="inventory-list__sort-status">
-          <span className="inventory-list__sort-text">STATUS</span>
+          <span className="inventory-list__sort-text">Status</span>
           <img
             className="inventory-list__sort-icon"
             src={sortIcon}
@@ -87,7 +87,7 @@ const InventoryList = () => {
           />
         </div>
         <div className="inventory-list__sort-quant">
-          <span className="inventory-list__sort-text">QTY</span>
+          <span className="inventory-list__sort-text">Qty</span>
           <img
             className="inventory-list__sort-icon"
             src={sortIcon}
@@ -95,7 +95,7 @@ const InventoryList = () => {
           />
         </div>
         <div className="inventory-list__sort-warehouse">
-          <span className="inventory-list__sort-text">WAREHOUSE</span>
+          <span className="inventory-list__sort-text">Warehouse</span>
           <img
             className="inventory-list__sort-icon"
             src={sortIcon}
@@ -103,7 +103,7 @@ const InventoryList = () => {
           />
         </div>
         <div className="inventory-list__sort-action">
-          <span className="inventory-list__sort-action-text">ACTIONS</span>
+          <span className="inventory-list__sort-action-text">Actions</span>
         </div>
       </div>
       {inventories.length !== 0 && warehouses.length !== 0 ? inventories.map((item) => {

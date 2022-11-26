@@ -1,0 +1,41 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+.error {
+    position: absolute;
+    bottom: -2px;
+    font-size: 13px;
+    @include tablet {
+        bottom: 10px;
+        font-size: .875rem;  
+    }
+
+
+    &__box {
+
+        display: flex;
+        margin: 0 0 0 1rem;
+        
+        @include tablet {
+            margin: 0 0 0 2rem;
+        }
+        
+        &__icon {
+            display: flex;
+            align-items: center; 
+            margin: 0 0.25rem 0 0;
+
+            &--img {
+                width: 13px;
+                height: 13px;
+
+                @include tablet {
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+        }
+    }
+}
+

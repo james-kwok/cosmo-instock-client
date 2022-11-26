@@ -1,5 +1,5 @@
 import "./ContactDetails.scss";
-import ErrorState from "../ErrorState.js/ErrorState";
+import ErrorState from "../ErrorState/ErrorState";
 
 const ContactDetails = ({handleChangeContactName, handleChangePosition, handleChangePhoneNumber, 
     handleChangeEmail, contactName, position, phoneNumber, email, submit}) => {
@@ -9,37 +9,37 @@ const ContactDetails = ({handleChangeContactName, handleChangePosition, handleCh
             <h2 className="Warehouse_detail_container__titlebox--title">Contact Details</h2>
         </div>
 
-        <form className="Warehouse_detail_container__form">
+        <div className="Warehouse_detail_container__form">
             <div className="Warehouse_detail_container__form__box">
                 <label for="ContactName" className="Warehouse_detail_container__form__box--label">Contact Name </label>
-                <input name="ContanctName"  className="Warehouse_detail_container__form__box--input" placeholder="Contact Name" 
+                <input name="ContanctName"  className={submit===true && !contactName ? "Warehouse_detail_container__form__box--error" : "Warehouse_detail_container__form__box--input"} placeholder="Contact Name" 
                 type="text" value={contactName} onChange={handleChangeContactName}/>
                 {submit===true && !contactName===true && <ErrorState/>}
             </div>
 
             <div className="Warehouse_detail_container__form__box">
                 <label for="position" className="Warehouse_detail_container__form__box--label">Position</label>
-                <input name="position" className="Warehouse_detail_container__form__box--input" placeholder="Position" 
+                <input name="position" className={submit===true && !position ? "Warehouse_detail_container__form__box--error" : "Warehouse_detail_container__form__box--input"} placeholder="Position" 
                 type="text" value={position} onChange={handleChangePosition}/> 
                 {submit===true && !position===true && <ErrorState/>}
             </div>  
 
             <div className="Warehouse_detail_container__form__box">
                 <label for="phoneNumber" className="Warehouse_detail_container__form__box--label">Phone Number</label>
-                <input name="phoneNumber" className="Warehouse_detail_container__form__box--input" placeholder="Phone Number" 
+                <input name="phoneNumber" className={submit===true && !phoneNumber ? "Warehouse_detail_container__form__box--error" : "Warehouse_detail_container__form__box--input"} placeholder="Phone Number" 
                 type="text" value={phoneNumber} onChange={handleChangePhoneNumber}/>
                 {submit===true && !phoneNumber===true && <ErrorState/>}
             </div>   
 
             <div className="Warehouse_detail_container__form__box">
                 <label for="email" className="Warehouse_detail_container__form__box--label">Email</label>
-                <input name="email" className="Warehouse_detail_container__form__box--input" placeholder="Email" 
+                <input name="email" className={submit===true && !email ? "Warehouse_detail_container__form__box--error" : "Warehouse_detail_container__form__box--input"} placeholder="Email" 
                 type="text" value={email} onChange={handleChangeEmail}/>  
                 {submit===true && !email===true && <ErrorState/>}
             </div>   
 
 
-        </form> 
+        </div> 
     </div>
 
 

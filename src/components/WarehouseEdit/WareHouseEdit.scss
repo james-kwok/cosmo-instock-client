@@ -3,14 +3,37 @@
 @use "../../styles/partials/variables" as *;
 
 .edit-warehouse{
+    display: flex;
+    justify-content: center;
+
+    &__container{
+        background-color: $white;
+        border-radius: 3px;
+        box-shadow: 0 2px 5px rgb(19 24 44 / 0.1);
+        position: relative;
+        bottom: $mobile-overflow;
+        z-index: 21;
+        margin:0 $mobile-verticle;
+        width:100%;
+
+        @include tablet{
+            margin: 0 $tablet-verticle;
+            bottom:$tablet-overflow;
+        }
+        @include desktop{
+            width: 1020px;
+            bottom: $desktop-overflow; 
+        }
+    }
 
     &__box{
-        padding: 2rem $mobile-verticle 1.5rem $mobile-verticle;
+        padding: 2rem 0 1rem 0;
         border-bottom:1px solid $cloud;
         width:100%;
 
+
         @include desktop{
-            padding: 2rem 2.5rem 1.5rem 2.5rem;
+            padding: 2rem 2.5rem 0.75rem 2.5rem;
         }
     }
     
@@ -26,26 +49,18 @@
         }
     }
     &__arrow{
-        width:2rem;
-        height:2rem;
+        width:1.5rem;
+        height:1.5rem;
+        margin-left:$mobile-verticle;
         
     }
 
     &__title-text{
         display: inline-block;
         padding-left:1rem;
-        width:80%;
         font-size:1.75rem;
         
     }
 
-    @include desktop{
-        max-width: 1020px;
-        border-radius: 3px;
-        box-shadow: 0 2px 5px rgb(19, 24, 44 / 0.1);
-        position: relative;
-        bottom: $desktop-overflow;
-        z-index: 21;
-        
-    }
+
 }

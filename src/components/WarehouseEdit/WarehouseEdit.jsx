@@ -136,48 +136,50 @@ function WarehouseEdit (){
     
     
     return (
-        <section className="edit-warehouse">
-            <div className =" edit-warehouse__box">
-                <div className="edit-warehouse__title">
-                    <Link to="/warehouses">
-                        <img className="edit-warehouse__arrow" src={backarrow} alt =" back arrow"/>
-                    </Link>
-                    <h1 className = "edit-warehouse__title-text">Edit Warehouse</h1>
+        <div className="edit-warehouse">
+            <section className="edit-warehouse__container">
+                <div className =" edit-warehouse__box">
+                    <div className="edit-warehouse__title">
+                        <Link to="/warehouses">
+                            <img className="edit-warehouse__arrow" src={backarrow} alt =" back arrow"/>
+                        </Link>
+                        <h1 className = "edit-warehouse__title-text">Edit Warehouse</h1>
+                    </div>
                 </div>
-            </div>
 
-            <div className="edit-warehouse__notification">
-                {phoneError && <p>Please enter a 7-15 digit phone number</p>}
-                {emailError && <p>Please enter an email in the following format: info@domain2.domain1</p>}
-                {empty && <p>Please fill all fields</p>}
-                {edit && <p>Successfully edit warehouse {warehouse}! Returning to warehouse page</p>}
-            </div>
-            <EditWarehouseForm 
-            handleSubmit={handleSubmit} 
-            handleCancel = {handleCancel}
-            handleChangeWarehouse = {handleChangeWarehouse}
-            handleChangeStreetAddress = {handleChangeStreetAddress}
-            handleChangeCity = {handleChangeCity}
-            handleChangeCountry = {handleChangeCountry}
-            handleChangeContactName = {handleChangeContactName}
-            handleChangePosition = {handleChangePosition}
-            handleChangePhoneNumber = {handleChangePhoneNumber}
-            handleChangeEmail={handleChangeEmail}
+                <div className="edit-warehouse__notification">
+                    {phoneError && <p>Please enter a 7-15 digit phone number</p>}
+                    {emailError && <p>Please enter an email in the following format: info@domain2.domain1</p>}
+                    {empty && <p>Please fill all fields</p>}
+                    {edit && <p>Successfully edit warehouse {warehouse}! Returning to warehouse page</p>}
+                </div>
+                <EditWarehouseForm 
+                handleSubmit={handleSubmit} 
+                handleCancel = {handleCancel}
+                handleChangeWarehouse = {handleChangeWarehouse}
+                handleChangeStreetAddress = {handleChangeStreetAddress}
+                handleChangeCity = {handleChangeCity}
+                handleChangeCountry = {handleChangeCountry}
+                handleChangeContactName = {handleChangeContactName}
+                handleChangePosition = {handleChangePosition}
+                handleChangePhoneNumber = {handleChangePhoneNumber}
+                handleChangeEmail={handleChangeEmail}
 
-            submit = {submit}
+                submit = {submit}
 
-            warehouse= {warehouse}
-            streetAddress = {streetAddress}
-            city = {city}
-            country = {country}
+                warehouse= {warehouse}
+                streetAddress = {streetAddress}
+                city = {city}
+                country = {country}
 
-            contactName = {contactName}
-            position = {position}
-            phoneNumber = {phoneNumber}
-            email = {email}
+                contactName = {contactName}
+                position = {position}
+                phoneNumber = {phoneNumber}
+                email = {email}
 
-            />
-        </section>
+                />
+            </section>
+        </div>
     )
 }
 

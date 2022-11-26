@@ -1,0 +1,35 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+
+.edit-form{
+    &__warehouse{
+        padding:1rem $mobile-verticle;
+        border-bottom:1px solid $cloud;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__field{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title{
+        font-size: 1.25rem;
+        padding-bottom: 1rem;
+    }
+
+    &__label{
+        font-size:0.8125rem;
+        padding-bottom: $form-horizontal-padding;
+    }
+
+    &__input{
+        height:$form-height-mobile;
+        border-radius: $form-border-radius;
+        border-color: 1px solid $cloud;
+        
+    }
+}

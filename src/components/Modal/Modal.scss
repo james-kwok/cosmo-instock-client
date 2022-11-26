@@ -3,14 +3,28 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/colors" as *;
 
+.mobile-hider {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}
+
 .modal {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
   font-family: "Titillium Web";
-  padding: 0rem 1rem;
-
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
+  // bottom: 0;
+  // height: 100vh;
+  overflow: hidden;
 
   @include tablet {
     display: flex;
@@ -19,10 +33,11 @@
     background-color: rgba(0, 0, 0, 0.5);
     height: 100vh;
     padding-top: 10rem;
+    // padding: 0rem 1rem;
     position: absolute;
     z-index: 2;
-    top:0;
     width: 100%;
+    overflow: hidden;
   }
 
   &__container {
@@ -33,6 +48,7 @@
     // padding: 0 1rem;
     background-color: white;
     height: 97vh;
+    padding: 1rem;
 
     @include tablet {
       display: flex;
@@ -68,7 +84,7 @@
       width: auto;
     }
     &-img {
-      cursor: pointer;;
+      cursor: pointer;
     }
   }
 

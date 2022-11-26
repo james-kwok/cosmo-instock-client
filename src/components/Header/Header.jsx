@@ -6,22 +6,24 @@ import "./Header.scss";
 function Header (){
     return(
         <header className="header">
-            <div className="header__logo">
-                <Link to="/warehouses" className="header__link">
-                    <img className="header__img" src={logo} alt="our logo"/>
-                </Link>
+            <div className = "header__container">
+                <div className="header__logo">
+                    <Link to="/warehouses" className="header__link">
+                        <img className="header__img" src={logo} alt="our logo"/>
+                    </Link>
+                </div>
+                
+                <nav className="header__nav">
+                    <ul className="header__list">
+                        <li className="header__item">
+                            <NavLink to="/warehouses" className="header__navlink">Warehouses</NavLink>
+                        </li>
+                        <li className="header__item">
+                            <NavLink to="/inventory" className="header__navlink">Inventory</NavLink>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            
-            <nav className="header__nav">
-                <ul className="header__list">
-                    <li className="header__item">
-                        <NavLink to="/warehouses" className="header__navlink">Warehouses</NavLink>
-                    </li>
-                    <li className="header__item">
-                        <NavLink to="/inventory" className="header__navlink">Inventory</NavLink>
-                    </li>
-                </ul>
-            </nav>
         </header>
     )
 }

@@ -2,9 +2,9 @@ import WarehouseCard from "../WarehouseCard/WarehouseCard";
 import searchIcon from "../../assets/icons/search-24px.svg";
 import sortIcon from "../../assets/icons/sort-24px.svg";
 import { Link } from "react-router-dom";
-import "./WarehouseList.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./WarehouseList.scss";
 import Modal from "../Modal/Modal";
 
 const WarehouseList = () => {
@@ -105,7 +105,7 @@ const WarehouseList = () => {
       {showModal ? (
         <>
           <Modal modalHandler={modalHandler} warehouse={toDelete} />
-          <div className="WarehouseList">
+          <div className="WarehouseList mobile-hider">
             <div className="WarehouseList__container">
               <h1 className="WarehouseList__title">Warehouses</h1>
               <div className="WarehouseList__search">

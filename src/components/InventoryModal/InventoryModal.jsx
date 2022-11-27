@@ -4,7 +4,7 @@ import axios from "axios";
 
 const Modal = ({ item, inventory, modalHandler }) => {
   const URL = "http://localhost:8080/api/inventories";
-  const id = inventory;
+  const id = item.id;
   console.log(id);
 
   const handleDelete = () => {

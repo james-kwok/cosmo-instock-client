@@ -5,7 +5,7 @@ import sortIcon from "../../assets/icons/sort-24px.svg";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import InventoryModal from "../../components/InventoryModal/InventoryModal"
+import InventoryModal from "../../components/InventoryModal/InventoryModal";
 
 const InventoryList = () => {
   const getURL = "http://localhost:8080/api/inventories";
@@ -125,7 +125,7 @@ const InventoryList = () => {
     <>
       {showModal ? (
         <>
-          <InventoryModal modalHandler={modalHandler} inventory={toDelete} />
+          <InventoryModal modalHandler={modalHandler} inventory={toDelete} item={inventories} />
           <div className="inventory-list mobile-hider">
             <div className="inventory-list">
               <div className="inventory-list__nav">
@@ -214,6 +214,7 @@ const InventoryList = () => {
                           (warehouse) => warehouse.id === item.warehouse_id
                         ).warehouse_name
                       }
+                      item={item}
                       modalHandler={modalHandler}
                       clickedInfo={clickedInfo}
                     />
@@ -309,6 +310,7 @@ const InventoryList = () => {
                       (warehouse) => warehouse.id === item.warehouse_id
                     ).warehouse_name
                   }
+                  item={item}
                   modalHandler={modalHandler}
                   clickedInfo={clickedInfo}
                 />

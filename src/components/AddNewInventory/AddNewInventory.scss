@@ -1,0 +1,238 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.AddNewInventory {
+  margin: 1rem;
+  padding: 1rem 0;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgb(19 24 44 / 0.1);
+  position: relative;
+  z-index: 1;
+  background-color: $white;
+  top: -$mobile-overflow;
+  margin-top: 0rem;
+
+  @include tablet {
+    padding: 0;
+    margin: 2rem;
+    top: -$tablet-overflow;
+
+    margin-top: 0rem;
+  }
+
+  @include desktop {
+    max-width: 1020px;
+    margin: 2rem auto;
+    top: -$desktop-overflow;
+
+    margin-top: 0rem;
+  }
+  &__title-container {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $cloud;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    @include tablet {
+      padding: 2rem 2rem 1.5rem 2rem;
+    }
+    @include desktop {
+      padding: 2rem 2.5rem 1.5rem 2.5rem;
+    }
+  }
+  &__back-link {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+  }
+
+  &__back-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+  }
+
+  &__title {
+    color: $instock-black;
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+  }
+
+  &__item-details {
+    border-bottom: 1px solid $cloud;
+    padding: 1rem 1.5rem 0 1.5rem;
+  }
+
+  &__form-title {
+    color: $instock-black;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__input-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  &__label {
+    font-family: "Titillium Web", sans-serif;
+    color: $instock-black;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    width: 100%;
+  }
+
+  &__item-input {
+    height: 2.25rem;
+    width: 100%;
+    background-color: $white;
+    border-radius: 1.25rem;
+    border: 1px solid $cloud;
+    padding: 0.5rem 1rem;
+    margin-top: 0.25rem;
+  }
+
+  &__description-input {
+    height: 7.5rem;
+    width: 100%;
+    background-color: $white;
+    border-radius: 1.25rem;
+    border: 1px solid $cloud;
+    padding: 0.5rem 1rem;
+    margin-top: 0.25rem;
+  }
+
+  &__dropdown {
+    height: 2.25rem;
+    width: 100%;
+    background-color: $white;
+    border-radius: 1.25rem;
+    border: 1px solid $cloud;
+    // padding: 0.5rem 1rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__category-dropdown {
+    height: 2.15rem;
+    width: 100%;
+    background-color: $white;
+    border-radius: 1.25rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__dropdown-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 1rem;
+  }
+
+  &__item-availability {
+    padding: 1rem 1.5rem 0 1.5rem;
+  }
+
+  &__status {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+  }
+
+  &__instock {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 0.25rem;
+  }
+
+  &__outofstock {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 0.25rem;
+  }
+
+  &__value {
+    color: $instock-black;
+  }
+
+  &__option {
+    margin-bottom: 1rem;
+  }
+
+  &__no-show {
+    display: none;
+  }
+
+  &__buttons {
+    height: 4.25rem;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(247 248 249 / 0.7);
+  }
+
+  &__cancel-button {
+    height: 2.25rem;
+    width: 100%;
+    border-radius: 1.25rem;
+    border: 1px solid $cloud;
+    color: $slate;
+    background-color: $white;
+    margin-right: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid $instock-indigo;
+      color: $instock-indigo;
+    }
+  }
+
+  &__submit-button {
+    height: 2.25rem;
+    width: 100%;
+    border-radius: 1.25rem;
+    border: 1px solid $instock-indigo;
+    color: $white;
+    background-color: $instock-indigo;
+    margin-left: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid $instock-black;
+        background-color: $instock-black;
+    }
+  }
+}
+
+input,
+textarea,
+select,
+form {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 0.8125rem;
+}
+
+textarea {
+  resize: none;
+}
+
+select {
+  color: $slate;
+  padding: 0.5rem 1rem;
+  outline: none;
+  appearance: none;
+}
+
+button {
+  border: none;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}

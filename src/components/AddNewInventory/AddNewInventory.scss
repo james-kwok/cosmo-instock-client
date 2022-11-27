@@ -128,6 +128,25 @@
     border: 1px solid $cloud;
     padding: 0.5rem 1rem;
     margin-top: 0.25rem;
+
+
+    @include tablet {
+      height: 2.375rem;
+    }
+
+    &--error{
+      height: 2.25rem;
+      width: 100%;
+      background-color: $white;
+      border-radius: 1.25rem;
+      border: 1px solid red;
+      padding: 0.5rem 1rem;
+      margin-top: 0.25rem;
+
+      @include tablet {
+        height: 2.375rem;
+      }
+    }
   }
 
   &__description-input {
@@ -138,6 +157,16 @@
     border: 1px solid $cloud;
     padding: 0.5rem 1rem;
     margin-top: 0.25rem;
+
+    &--error {
+      height: 7.5rem;
+      width: 100%;
+      background-color: $white;
+      border-radius: 1.25rem;
+      border: 1px solid red;
+      padding: 0.5rem 1rem;
+      margin-top: 0.25rem;
+    }
   }
 
   &__dropdown {
@@ -146,10 +175,28 @@
     background-color: $white;
     border-radius: 1.25rem;
     border: 1px solid $cloud;
-    // padding: 0.5rem 1rem;
     margin-top: 0.25rem;
     display: flex;
     align-items: center;
+
+    @include tablet {
+      height: 2.375rem;
+    }
+
+    &--error {
+      height: 2.25rem;
+      width: 100%;
+      background-color: $white;
+      border-radius: 1.25rem;
+      border: 1px solid red;
+      margin-top: 0.25rem;
+      display: flex;
+      align-items: center;
+  
+      @include tablet {
+        height: 2.375rem;
+      }
+    }
   }
 
   &__category-dropdown {
@@ -159,6 +206,9 @@
     border-radius: 1.25rem;
     border: none;
     cursor: pointer;
+    @include tablet {
+      height: 2.275rem;
+    }
   }
 
   &__dropdown-icon {

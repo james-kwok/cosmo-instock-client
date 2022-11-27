@@ -68,7 +68,7 @@ const InventoryAdd = () => {
       description === "" ||
       category === "" ||
       status === "" ||
-      isNan(quantity) ||
+      isNaN(quantity) ||
       warehouse === ""
     ) {
       return false;
@@ -87,7 +87,7 @@ const InventoryAdd = () => {
           "description": description,
           "category": category,
           "status": status,
-          "quantity": Number(quant),
+          "quantity": Number(quantity),
         })
         .then((response) => {
           console.log(response.data);

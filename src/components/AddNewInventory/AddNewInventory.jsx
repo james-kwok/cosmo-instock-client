@@ -41,12 +41,15 @@ const AddNewInventory = ({
             </label>
             <input
               name="itemName"
-              className="AddNewInventory__item-input"
+              className={
+                submit === true && !itemName
+                  ? "AddNewInventory__item-input--error"
+                  : "AddNewInventory__item-input"
+              }
               placeholder="Item Name"
               type="text"
               onChange={handleChangeItemName}
             />
-            {submit === true && !itemName === true && <ErrorState />}
           </div>
           <div className="AddNewInventory__input-container">
             <label htmlFor="itemDescription" className="AddNewInventory__label">
@@ -54,17 +57,24 @@ const AddNewInventory = ({
             </label>
             <textarea
               name="itemDescription"
-              className="AddNewInventory__description-input"
+              className={
+                submit === true && !description
+                  ? "AddNewInventory__description-input--error"
+                  : "AddNewInventory__description-input"
+              }
               placeholder="Please enter a brief item description..."
               onChange={handleChangeDescription}
             />
-            {submit === true && !description === true && <ErrorState />}
           </div>
           <div className="AddNewInventory__input-container">
             <label htmlFor="itemCategory" className="AddNewInventory__label">
               Category
             </label>
-            <div className="AddNewInventory__dropdown">
+            <div className={
+                  submit === true && !category
+                    ? "AddNewInventory__dropdown--error"
+                    : "AddNewInventory__dropdown"
+                }>
               <select
                 id="itemCategory"
                 name="itemCategory"
@@ -122,7 +132,6 @@ const AddNewInventory = ({
                   Out of stock
                 </label>
               </div>
-              {submit === true && !status === true && <ErrorState />}
             </div>
           </div>
           <div
@@ -141,18 +150,21 @@ const AddNewInventory = ({
               value={quantity}
               className={
                 submit === true && !quantity
-                  ? "AddNewInventory__error"
+                  ? "AddNewInventory__item-input--error"
                   : "AddNewInventory__item-input"
               }
               onChange={handleChangeQuantity}
             ></input>
-            {submit === true && !quantity === true && <ErrorState />}
           </div>
           <div className="AddNewInventory__input-container">
             <label htmlFor="warehouse" className="AddNewInventory__label">
               Warehouse
             </label>
-            <div className="AddNewInventory__dropdown">
+            <div className={
+                  submit === true && !warehouse
+                    ? "AddNewInventory__dropdown--error"
+                    : "AddNewInventory__dropdown"
+                }>
               <select
                 id="warehouse"
                 name="warehouse"

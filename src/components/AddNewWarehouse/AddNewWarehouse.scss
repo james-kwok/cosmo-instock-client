@@ -7,22 +7,46 @@
     margin: 0;
 }
 
-.add_new_warehouse{
+.main{
+
+    display: flex;
+    justify-content: center;
+    &__add_new_warehouse{
 
     font-family: "Titillium Web";
     position: relative;
+
+    background-color: $white;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgb(19 24 44 / 0.1);
+    position: relative;
+    bottom: $mobile-overflow;
+    z-index: 21;
+    margin:0 $mobile-verticle;
+    width:100%;
+
+    @include tablet{
+        margin: 0 $tablet-verticle;
+        bottom:$tablet-overflow;
+    }
+    @include desktop{
+        width: 1020px;
+        bottom: $desktop-overflow; 
+    }
+
+
 
     &__notifications {
         color: red;
         font-weight: 700;
         position: absolute;
-            top: 2rem;
-            left: 1rem;
+            top: 3rem;
+            left: 2.5rem;
 
         @include tablet {
-            left: 2rem;
+            left: 3.5rem;
             bottom: 0;
-            top: 2rem;
+            top: 3.5rem;
             
         }
 
@@ -49,20 +73,21 @@
         &__titleblock {
 
             display: flex;
-            justify-content: center;
             width: 100%;
             border-bottom: 1px solid $cloud;
             padding: $mobile-verticle 0;
 
             @include tablet {
                 margin: 0 0 $tablet-verticle 0;
+                padding-left: 1rem;
             }
 
             &__link {
                 display: flex;
                 align-items: center;
+
                 &--icons {
-                    margin: 0 1rem 0 0;
+                    margin-left: $mobile-verticle;
                     width: 1.5rem;
                     height: 1.5rem;
 
@@ -132,5 +157,6 @@
             }
 
         }
+    }
     }
 }

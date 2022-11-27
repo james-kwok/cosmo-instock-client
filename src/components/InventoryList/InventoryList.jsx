@@ -5,7 +5,7 @@ import sortIcon from "../../assets/icons/sort-24px.svg";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import InventoryModal from "../InventoryModal/InventoryModal";
+import InventoryModal from "../../components/InventoryModal/InventoryModal"
 
 const InventoryList = () => {
   const getURL = "http://localhost:8080/api/inventories";

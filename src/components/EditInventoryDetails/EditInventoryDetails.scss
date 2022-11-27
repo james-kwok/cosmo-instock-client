@@ -1,0 +1,104 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.edit-details {
+  border-bottom: 1px solid $cloud;
+  @include tablet {
+    border-bottom: none;
+    border-right: 1px solid $cloud;
+    width: 50%;
+  }
+  &__title {
+    margin: $mobile-verticle 0 $mobile-verticle 1rem;
+    font-size: 1.25rem;
+    @include tablet {
+      margin: 0 0 $tablet-verticle 2rem;
+      font-size: 1.5rem;
+    }
+  }
+  &__form__box {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    &--label {
+      font-weight: 600;
+      margin: 0 0 0.25rem 1rem;
+      font-size: 0.8125rem;
+
+      @include tablet {
+        margin: 0 0 0.25rem 2rem;
+        font-size: 0.875rem;
+      }
+    }
+
+    &--input {
+      font-size: 0.8125rem;
+      height: $form-height-mobile;
+      border: 1px solid $cloud;
+      border-radius: $button-border-radius;
+      padding: 0 0 0 1rem;
+      margin: 0 1rem $mobile-verticle 1rem;
+
+      @include tablet {
+        margin: 0 2rem $tablet-verticle 2rem;
+        font-size: 0.875rem;
+      }
+
+      :active {
+        border: 1px solid red;
+      }
+    }
+    &--error{
+      font-size: 0.8125rem;
+      height: $form-height-mobile;
+      border: 1px solid red;
+      border-radius: $button-border-radius; 
+      padding: 0 0 0 1rem;
+      margin: 0 1rem $mobile-verticle 1rem;
+      
+
+      @include tablet {
+      margin: 0 2rem $tablet-verticle 2rem;
+      font-size: .875rem;
+
+      }
+    }
+    &--textarea {
+      font-size: 0.8125rem;
+      height: 7.5rem;
+      border: 1px solid $cloud;
+      border-radius: $button-border-radius;
+      padding: 0 0 0 1rem;
+      margin: 0 1rem $mobile-verticle 1rem;
+
+      @include tablet {
+        margin: 0 2rem $tablet-verticle 2rem;
+        font-size: 0.875rem;
+      }
+
+      :active {
+        border: 1px solid $red;
+      }
+    }
+  }
+  select:invalid {
+    color: $slate;
+    font-family: 'Titillium Web';
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+  input::placeholder{
+    font-family: 'Titillium Web';
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+  textarea::placeholder{
+    font-family: 'Titillium Web';
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}

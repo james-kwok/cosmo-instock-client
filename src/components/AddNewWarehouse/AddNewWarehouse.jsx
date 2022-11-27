@@ -4,7 +4,7 @@ import "./AddNewWarehouse.scss";
 import backarrow from "../../assets/icons/arrow_back-24px.svg";
 import ContactDetails from '../ContactDetails/ContactDetails';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 /* eslint-disable no-useless-escape */
 
@@ -154,7 +154,9 @@ const AddNewWarehouse = () => {
         <section className="add_new_warehouse">
             <div className="add_new_warehouse__box">
                 <div className='add_new_warehouse__box__titleblock'>
-                    <img className='add_new_warehouse__box__titleblock--icons' src={backarrow} alt="back arrow"/>
+                    <Link className='add_new_warehouse__box__titleblock__link' to="/warehouses">
+                        <img className='add_new_warehouse__box__titleblock__link--icons' src={backarrow} alt="back arrow"/>
+                    </Link>
                     <h1 className="add_new_warehouse__box__titleblock--title">Add New Warehouse</h1>
                 </div>
 

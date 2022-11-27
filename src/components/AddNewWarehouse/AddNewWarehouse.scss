@@ -58,8 +58,15 @@
                 margin: 0 0 $tablet-verticle 0;
             }
 
-            &--icons {
-                margin: 0 1rem 0 0;
+            &__link {
+                display: flex;
+                align-items: center;
+                &--icons {
+                    margin: 0 1rem 0 0;
+                    width: 1.5rem;
+                    height: 1.5rem;
+
+                }
             }
 
             &--title {

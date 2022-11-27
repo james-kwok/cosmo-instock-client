@@ -1,5 +1,5 @@
 import "./ContactDetails.scss";
-import ErrorState from "../ErrorState/ErrorState";
+import ErrorState from "../ErrorState.js/ErrorState";
 
 const ContactDetails = ({handleChangeContactName, handleChangePosition, handleChangePhoneNumber, 
     handleChangeEmail, contactName, position, phoneNumber, email, submit}) => {

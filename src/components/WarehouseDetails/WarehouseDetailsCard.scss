@@ -45,14 +45,7 @@
             border-radius: $button-border-radius; 
             padding: 0 0 0 1rem;
             margin: 0 1rem $mobile-verticle 1rem;
-
-            &:focus {
-                border: 1px solid $instock-indigo;  
-                outline: none;  
-                &::placeholder {
-                    color: $instock-black;    
-                }        
-            }
+            
 
             @include tablet {
             margin: 0 2rem $tablet-verticle 2rem;

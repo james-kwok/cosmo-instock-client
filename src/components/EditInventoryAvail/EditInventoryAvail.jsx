@@ -1,5 +1,8 @@
 import "./EditInventoryAvail.scss";
 import ErrorState from "../ErrorState.js/ErrorState";
+import arrowDropdown from "../../assets/icons/arrow_drop_down-24px.svg";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const EditInventoryAvail = ({
   handleChangeStatus,
@@ -10,6 +13,23 @@ const EditInventoryAvail = ({
   warehouse,
   quant,
 }) => {
+  const getURL2 = "http://localhost:8080/api/warehouses";
+  const [warehouses, setWarehouses] = useState([]);
+  useEffect(() => {
+    axios
+      .get(getURL2)
+      .then((response) => {
+        setWarehouses(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  if (warehouses.length === 0) {
+    return <h1>LOADING...</h1>;
+  }
+  // console.log(warehouses[0].warehouse_name)
   return (
     <>
       <section className="edit-availability">
@@ -22,7 +42,7 @@ const EditInventoryAvail = ({
               Status
             </label>
             
-          <div className="edit-availability__choices">
+          <div className = {submit === true && !status ? "edit-availability__choices--error" : "edit-availability__choices"}>
             <div className="edit-availability__choice">
               <input
                 id="instock"
@@ -33,7 +53,6 @@ const EditInventoryAvail = ({
               ></input>
               <label className="edit-availability__value" htmlFor="instock">In stock</label>
             </div>
-
             <div className="edit-availability__choice">
               <input
                 id="outstock"
@@ -44,9 +63,10 @@ const EditInventoryAvail = ({
               ></input>
               <label className="edit-availability__value" htmlFor="outstock">Out of stock</label>
             </div>
-            {submit === true && !status === true && <ErrorState />}
           </div>
+          {submit === true && !status === true && <ErrorState />}
           </div>
+
           <div className={`edit-availability__form__box  ${
             status === "Out Of Stock"
               ? "edit-availability__noshow"
@@ -68,6 +88,7 @@ const EditInventoryAvail = ({
             ></input>
             {submit === true && !quant === true && <ErrorState />}
           </div>
+
           <div className="edit-availability__form__box">
             <label
               className="edit-availability__form__box--label"
@@ -75,23 +96,29 @@ const EditInventoryAvail = ({
             >
               Warehouse
             </label>
+            <div className={
+                  submit === true && !warehouse
+                    ? "edit-availability__dropdown--error"
+                    : "edit-availability__dropdown"
+                }>
             <select
-              required
               id="warehouse"
               name="warehouse"
-              className = {submit === true && !warehouse ? "edit-availability__form__box--error" : "edit-availability__form__box--input"}
+              className="edit-details__category-dropdown"
               value={warehouse}
               onChange={handleChangeWarehouse}
             >
-              <option value="" disabled>Please select</option>
-              <option value="Washington">Washington</option>
-              <option value="Manhattan">Manhattan</option>
-              <option value="Santa Monica">Santa Monica</option>
-              <option value="Jersey">Jersey</option>
-              <option value="Seattle">Seattle</option>
-              <option value="Miami">Miami</option>
-              <option value="SF">SF</option>
+            <option value="" disabled>Please select</option>
+            { warehouses.length !== 0 ? warehouses.map((item,index) => {
+           return (<option key={index} value={item.warehouse_name}>{item.warehouse_name}</option>)}) : <></>}
             </select>
+            <img
+                className="edit-details__dropdown-icon"
+                src={arrowDropdown}
+                alt="dropdown menu"
+              />
+            </div>
+            {submit === true && !warehouse === true && <ErrorState />}
           </div>
         </div>
       </section>

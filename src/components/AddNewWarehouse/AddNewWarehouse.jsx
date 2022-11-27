@@ -4,7 +4,7 @@ import "./AddNewWarehouse.scss";
 import backarrow from "../../assets/icons/arrow_back-24px.svg";
 import ContactDetails from '../ContactDetails/ContactDetails';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 /* eslint-disable no-useless-escape */
 
@@ -151,14 +151,17 @@ const AddNewWarehouse = () => {
     }
 
     return (
-        <section className="add_new_warehouse">
-            <div className="add_new_warehouse__box">
-                <div className='add_new_warehouse__box__titleblock'>
-                    <img className='add_new_warehouse__box__titleblock--icons' src={backarrow} alt="back arrow"/>
-                    <h1 className="add_new_warehouse__box__titleblock--title">Add New Warehouse</h1>
+    <div className="main"> 
+        <section className="main__add_new_warehouse">
+            <div className="main__add_new_warehouse__box">
+                <div className='main__add_new_warehouse__box__titleblock'>
+                    <Link className='main__add_new_warehouse__box__titleblock__link' to="/warehouses">
+                        <img className='main__add_new_warehouse__box__titleblock__link--icons' src={backarrow} alt="back arrow"/>
+                    </Link>
+                    <h1 className="main__add_new_warehouse__box__titleblock--title">Add New Warehouse</h1>
                 </div>
 
-                <div className='add_new_warehouse__notifications'>
+                <div className='main__add_new_warehouse__notifications'>
                     {phoneError && <p>Please enter a 7-15 digit phone number!</p>}
                     {emailError && <p>"Please enter a email in the following format: info@domain2.com!"</p>}
                     {empty && <p>Please fill all fields</p> }
@@ -169,7 +172,7 @@ const AddNewWarehouse = () => {
 
         {/* onSubmit on form to run front-end validation */}
             <form onSubmit={handleSubmit} > 
-                <div className='add_new_warehouse__details'>
+                <div className='main__add_new_warehouse__details'>
                     {/* passing down function props to handle input changes */}
                     <WarehouseDetailsCard 
                     handleChangeWarehouse={handleChangeWarehouse} handleChangeStreetAddress={handleChangeStreetAddress}
@@ -182,14 +185,15 @@ const AddNewWarehouse = () => {
                     contactName={contactName} position={position} phoneNumber={phoneNumber} email ={email} submit={submit}/>
                 </div>
 
-                <div className='add_new_warehouse__container'>
-                    <div className='add_new_warehouse__container__buttons'>
-                        <button onClick={handleCancel} type='button' className="add_new_warehouse__container__buttons--button add_new_warehouse__container__buttons--cancel">cancel</button>
-                        <button type='submit' className="add_new_warehouse__container__buttons--button add_new_warehouse__container__buttons--add">+ Add Warehouse</button>
+                <div className='main__add_new_warehouse__container'>
+                    <div className='main__add_new_warehouse__container__buttons'>
+                        <button onClick={handleCancel} type='button' className="main__add_new_warehouse__container__buttons--button main__add_new_warehouse__container__buttons--cancel">cancel</button>
+                        <button type='submit' className="main__add_new_warehouse__container__buttons--button main__add_new_warehouse__container__buttons--add">+ Add Warehouse</button>
                     </div>
                 </div>
             </form>
         </section>
+    </div>
     );
 };
 

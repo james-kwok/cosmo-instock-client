@@ -4,10 +4,10 @@
 @use "../../styles/partials/colors" as *;
 .error {
     position: absolute;
-    bottom: -16px;
+    bottom: -2px;
     font-size: 13px;
     @include tablet {
-        bottom: -10px;
+        bottom: 10px;
         font-size: .875rem;  
     }
 

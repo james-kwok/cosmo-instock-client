@@ -9,7 +9,7 @@
   &__form {
     display: flex;
     flex-direction: column;
-    //margin: 0 36px;
+    
   }
   &__title {
     margin: $mobile-verticle 0 $mobile-verticle 1rem;
@@ -32,6 +32,21 @@
     gap:2rem;
     @include tablet {
       margin: 0 0 0.25rem 2rem;
+    }
+    &--error{
+      font-size: 0.8125rem;
+      height: $form-height-mobile;
+      border: 1px solid red;
+      border-radius: $button-border-radius; 
+      padding: 0 0 0 1rem;
+      margin: 0 1rem $mobile-verticle 1rem;
+      display: flex;
+      gap:2rem;
+
+      @include tablet {
+      margin: 0 2rem $tablet-verticle 2rem;
+      font-size: .875rem;
+      }
     }
   }
   &__form__box {
@@ -84,13 +99,59 @@
   &__noshow{
     display: none;
   }
+  &__dropdown {
+    height: 2.25rem;
+    background-color: $white;
+    border-radius: 1.25rem;
+    border: 1px solid $cloud;
+    margin: 0 1rem $mobile-verticle 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.8125rem;
+
+    @include tablet {
+      height: 2.375rem;
+      margin: 0 2rem $tablet-verticle 2rem;
+      font-size: 0.875rem;
+    }
+
+    &--error {
+      height: 2.25rem;
+      background-color: $white;
+      border-radius: 1.25rem;
+      border: 1px solid red;
+      margin: 0 1rem $mobile-verticle 1rem;
+      display: flex;
+      align-items: center;
+  
+      @include tablet {
+        height: 2.375rem;
+        margin: 0 2rem $tablet-verticle 2rem;
+      }
+    }
+  }
+  &__category-dropdown {
+    height: 2.15rem;
+    width: 100%;
+    background-color: $white;
+    border-radius: 1.25rem;
+    border: none;
+    cursor: pointer;
+    @include tablet {
+      height: 2.275rem;
+    }
+  }
+
+  &__dropdown-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 1rem;
+  }
 }
-select:invalid {
+select {
   color: $slate;
-  font-family: 'Titillium Web';
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
+  outline: none;
+  appearance: none;
 }
 .edit-availability__choice {
   display: flex;

@@ -2,11 +2,13 @@ import "./InventoryModal.scss";
 import xIcon from "../../assets/icons/close-24px.svg";
 import axios from "axios";
 
-const Modal = ({ item, modalHandler }) => {
-  console.log("Item object", item);
+const Modal = ({ item, inventory, modalHandler }) => {
   const URL = "http://localhost:8080/api/inventories";
-  const id = item.id;
+  const id = inventory;
+  console.log(id);
+
   const handleDelete = () => {
+    // console.log("Inventory", inventory);
     axios
       .delete(`${URL}/${id}`)
       .then((response) => {
@@ -35,13 +37,14 @@ const Modal = ({ item, modalHandler }) => {
             </div>
             <div className="modal__header">
               <h4 className="modal__title">
-                Delete {item.item_name} inventory item?
+                Delete {inventory.item_name} inventory item?
               </h4>
             </div>
             <div className="modal__description">
               <p className="modal__description-text">
-                Please confirm that you'd like to delete the {item.item_name}{" "}
-                from the inventory list. You won't be able to undo this action.
+                Please confirm that you'd like to delete the{" "}
+                {inventory.item_name} from the inventory list. You won't be able
+                to undo this action.
               </p>
             </div>
           </div>

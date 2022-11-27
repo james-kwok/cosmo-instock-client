@@ -1,6 +1,5 @@
 import backIcon from "../../assets/icons/arrow_back-24px.svg";
 import arrowDropdown from "../../assets/icons/arrow_drop_down-24px.svg";
-import ErrorState from "../ErrorState.js/ErrorState";
 import "./AddNewInventory.scss";
 import { Link } from "react-router-dom";
 const AddNewInventory = ({

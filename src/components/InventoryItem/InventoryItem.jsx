@@ -11,6 +11,8 @@ function InventoryItem({
   Quantity,
   Warehouse,
   id,
+  modalHandler,
+  item
 }) {
   return (
     <div className="inventory-item">
@@ -55,7 +57,10 @@ function InventoryItem({
         <img
           className="inventory-item__delete-icon"
           src={deleteImage}
-          alt="delete"
+          alt="delete inventory"
+          onClick={() => {
+            modalHandler(item, true);
+          }}
         />
         <Link to={`/inventory/edit/${id}`} className="inventory-item__edit">
           <img

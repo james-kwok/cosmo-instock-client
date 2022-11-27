@@ -23,7 +23,7 @@ const InventoryList = () => {
       .then((response) => {
         setTimeout(() => {
           setInventories(response.data);
-        }, 1200)
+        }, 500)
       })
       .catch((error) => {
         console.log(error);

@@ -10,29 +10,28 @@
   position: relative;
   z-index: 1;
   background-color: #ffffff;
-  top: -4rem;
+  top: -$mobile-overflow;
   margin-top: 0rem;
 
   @include tablet {
     padding: 0;
     margin: 2rem;
-    top: -8rem;
+    top: -$tablet-overflow;
   }
 
   @include desktop {
     max-width: 1020px;
     margin: 2rem auto;
+    top: -$desktop-overflow;
+    margin-top: 0rem;
   }
 
   &__nav {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding-bottom: 2rem;
     border-bottom: 1px solid $cloud;
     @include tablet {
-      flex-direction: row;
+      display: flex;
       padding: 2rem 0 1.5rem 0;
+      
     }
   }
   &__title {

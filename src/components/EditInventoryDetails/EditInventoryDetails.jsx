@@ -1,5 +1,6 @@
 import "./EditInventoryDetails.scss";
 import ErrorState from "../ErrorState.js/ErrorState";
+import arrowDropdown from "../../assets/icons/arrow_drop_down-24px.svg";
 
 const EditInventoryDetails = ({
   handleChangeItemname,
@@ -59,11 +60,15 @@ const EditInventoryDetails = ({
             >
               Category
             </label>
+            <div className={
+                  submit === true && !category
+                    ? "edit-details__dropdown--error"
+                    : "edit-details__dropdown"
+                }>
             <select 
-              required
               id="categories"
               name="categories"
-              className={submit === true && !category ? "edit-details__form__box--error" : "edit-details__form__box--input"}
+              className="edit-details__category-dropdown"
               value={category}
               onChange={handleChangeCategory}
             >
@@ -74,6 +79,12 @@ const EditInventoryDetails = ({
               <option value="Health">Health</option>
               <option value="Apparel">Apparel</option>
             </select>
+            <img
+                className="edit-details__dropdown-icon"
+                src={arrowDropdown}
+                alt="dropdown menu"
+              />
+            </div>
             {submit === true && !category === true && <ErrorState />}
           </div>
         </div>

@@ -63,7 +63,7 @@ const InventoryEdit = () => {
     warehouseid = warehouses.find(
       (item) => item.warehouse_name === warehouse
     ).id;
-  }
+    }
 
   const isFormValid = () => {
     if (itemName === "" || description === ""|| category==="" || status==="" || warehouse===""|| isNaN(quant) ) {

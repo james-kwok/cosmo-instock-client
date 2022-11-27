@@ -48,11 +48,14 @@ const WarehouseCard = ({ warehouse, modalHandler }) => {
             modalHandler(warehouse, true);
           }}
         />
-        <img
-          className="WarehouseCard__edit-icon"
-          src={editIcon}
-          alt="edit warehouse"
-        />
+        <Link to={`/warehouses/edit/${warehouse.id}`} key={warehouse.id}>
+          <img
+            className="WarehouseCard__edit-icon"
+            src={editIcon}
+            alt="edit warehouse"
+          />
+        </Link>
+
       </div>
     </div>
   );

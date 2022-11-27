@@ -1,0 +1,125 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+
+.edit-form{
+    &__warehouse, &__contact{
+        padding:1rem $mobile-verticle;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet{
+            width: 50%;
+            padding:0 $tablet-verticle;
+            margin: 1.5rem 0;
+        }
+        @include desktop{
+            padding:0 2.5rem;
+        }
+
+    }
+
+    &__warehouse{
+        border-bottom:1px solid $cloud;
+
+        @include tablet{
+            border-bottom: none;
+            border-right:1px solid $cloud;
+        }
+    }
+
+    &__field{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title{
+        font-size: 1.25rem;
+
+        @include tablet{
+            font-size:1.5rem;
+        }
+
+        @include desktop{
+            font-size:1.5rem;
+        }
+    }
+
+    &__label{
+        font-size:0.8125rem;
+        font-weight:500;
+        margin-top: 1rem;
+        padding-bottom: $form-horizontal-padding;
+
+        @include tablet{
+            margin-top:1.5rem;
+        }
+    }
+
+    &__input{
+        height:$form-height-mobile;
+        border-radius: $form-border-radius;
+        border:1px solid $cloud;
+        padding: 0 1rem 0 1rem;
+        font-size:0.8125rem;
+    }
+
+    &__bottom{
+        background-color: $light-grey;
+        padding:1rem $mobile-verticle;
+        display: flex;
+        gap:1rem;
+
+        @include tablet{
+            width: 100%;
+            justify-content: end;
+            padding:1rem $tablet-verticle;
+            
+        }
+    }
+
+    &__button{
+        font-size:0.8125rem;
+        width: 100%;
+        height: $button-height-mobile;
+        border-radius: $button-border-radius;
+
+
+        &--submit{
+            color:$white;
+            background-color: $instock-indigo;
+            border:1px solid;
+            &:hover{
+                background-color: $graphite;
+            }
+        }
+
+        &--cancel{
+            color:$slate;
+            border:1px solid $cloud;
+            background-color: $white;
+            &:hover{
+                color:$instock-indigo;
+                border:1px solid $instock-indigo;
+            }
+        }
+
+        //for .button
+        @include tablet{
+            height:$button-height-tablet;
+            width: 3.75rem;
+        }
+        @include desktop{
+            width:4.5rem;
+        }
+    }
+
+    //for .edit-form
+    @include tablet{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+
+}

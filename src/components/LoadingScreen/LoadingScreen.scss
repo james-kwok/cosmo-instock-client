@@ -1,0 +1,27 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.LoadingScreen {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  height: 100vh;
+  background-color: $graphite;
+  &__logo {
+    margin: auto;
+    height: 2.5rem;
+    width: auto;
+    animation: pulse 1s infinite ease-in-out alternate;
+
+    @keyframes pulse {
+      from {
+        transform: scale(0.75);
+      }
+      to {
+        transform: scale(1.25);
+      }
+    }
+  }
+}

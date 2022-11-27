@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import InventoryModal from "../../components/InventoryModal/InventoryModal";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 const InventoryList = () => {
   const getURL = "http://localhost:8080/api/inventories";
@@ -20,7 +21,9 @@ const InventoryList = () => {
     axios
       .get(getURL)
       .then((response) => {
-        setInventories(response.data);
+        setTimeout(() => {
+          setInventories(response.data);
+        }, 1200)
       })
       .catch((error) => {
         console.log(error);
@@ -47,6 +50,10 @@ const InventoryList = () => {
   const clickedInfo = () => {
     console.log("Clicked");
   };
+
+  if (inventories.length === 0) {
+    return <LoadingScreen />
+  }
 
   if (warehouses.length === 0) {
     return (

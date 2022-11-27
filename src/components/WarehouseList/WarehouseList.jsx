@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./WarehouseList.scss";
 import Modal from "../Modal/Modal";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 const WarehouseList = () => {
   const getURL = "http://localhost:8080/api/warehouses";
@@ -18,7 +19,9 @@ const WarehouseList = () => {
       .get(getURL)
       .then((response) => {
         console.log(response.data);
-        setWarehouses(response.data);
+        setTimeout(() => {
+          setWarehouses(response.data);
+        }, 1200)
       })
       .catch((error) => {
         console.log(error);
@@ -34,6 +37,10 @@ const WarehouseList = () => {
   const clickedInfo = () => {
     console.log("Clicked");
   };
+
+  if (warehouses.length === 0) {
+    return <LoadingScreen />
+  }
 
   if (warehouses.length === 0) {
     return (

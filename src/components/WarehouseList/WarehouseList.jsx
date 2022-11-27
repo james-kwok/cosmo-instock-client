@@ -21,7 +21,7 @@ const WarehouseList = () => {
         console.log(response.data);
         setTimeout(() => {
           setWarehouses(response.data);
-        }, 1200)
+        }, 500)
       })
       .catch((error) => {
         console.log(error);

@@ -36,12 +36,12 @@ const InventoryList = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, [showModal]);
+  }, []);
 
-  const modalHandler = (inventories, modal) => {
-    console.log(inventories);
+  const modalHandler = (inventory, modal) => {
+    console.log(inventory);
     setShowModal(modal);
-    setToDelete(inventories);
+    setToDelete(inventory);
   };
 
   const clickedInfo = () => {
@@ -125,7 +125,7 @@ const InventoryList = () => {
     <>
       {showModal ? (
         <>
-          <InventoryModal modalHandler={modalHandler} inventories={toDelete} />
+          <InventoryModal modalHandler={modalHandler} inventory={toDelete} />
           <div className="inventory-list mobile-hider">
             <div className="inventory-list">
               <div className="inventory-list__nav">

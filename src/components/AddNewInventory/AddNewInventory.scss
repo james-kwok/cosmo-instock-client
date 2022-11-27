@@ -4,7 +4,7 @@
 
 .AddNewInventory {
   margin: 1rem;
-  padding: 1rem 0;
+  padding: 1rem 0 0 0;
   border-radius: 3px;
   box-shadow: 0 2px 5px rgb(19 24 44 / 0.1);
   position: relative;
@@ -57,11 +57,30 @@
     font-size: 1.75rem;
     font-weight: 600;
     line-height: 2.25rem;
+
+    @include tablet {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  &__form {
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 
   &__item-details {
     border-bottom: 1px solid $cloud;
     padding: 1rem 1.5rem 0 1.5rem;
+    @include tablet {
+      border-bottom: none;
+      border-right: 1px solid $cloud;
+      padding: 0 2rem;
+      margin: 1.5rem 0;
+      width: 50%;
+    }
   }
 
   &__form-title {
@@ -69,12 +88,22 @@
     font-size: 1.25rem;
     line-height: 1.75rem;
     margin-bottom: 1.5rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin-bottom: 2rem;
+    }
   }
 
   &__input-container {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 1rem;
+
+    @include tablet {
+      margin-bottom: 1.5rem;
+    }
   }
 
   &__label {
@@ -84,6 +113,11 @@
     font-weight: 600;
     line-height: 1.25rem;
     width: 100%;
+
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
   }
 
   &__item-input {
@@ -135,6 +169,11 @@
 
   &__item-availability {
     padding: 1rem 1.5rem 0 1.5rem;
+    @include tablet {
+      padding: 0 2rem;
+      margin: 1.5rem 0;
+      width: 50%;
+    }
   }
 
   &__status {
@@ -175,6 +214,11 @@
     display: flex;
     justify-content: space-between;
     background-color: rgb(247 248 249 / 0.7);
+
+    @include tablet {
+      width: 100%;
+      justify-content: flex-end;
+    }
   }
 
   &__cancel-button {
@@ -190,6 +234,11 @@
     &:hover {
       border: 1px solid $instock-indigo;
       color: $instock-indigo;
+    }
+
+    @include tablet {
+      height: 2.375rem;
+      width: 4.5rem;
     }
   }
 
@@ -207,6 +256,11 @@
         border: 1px solid $instock-black;
         background-color: $instock-black;
     }
+
+    @include tablet {
+      height: 2.375rem;
+      width: 6.375rem;
+    }
   }
 }
 
@@ -216,6 +270,11 @@ select,
 form {
   font-family: "Titillium Web", sans-serif;
   font-size: 0.8125rem;
+
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
 }
 
 textarea {
@@ -235,4 +294,9 @@ button {
   font-size: 0.8125rem;
   line-height: 1.25rem;
   font-weight: 600;
+
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
 }

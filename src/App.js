@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/Header/Header.jsx";
@@ -10,6 +9,7 @@ import InventoryListPage from "./pages/InventoryListPage/InventoryListPage";
 import InventoryEdit from "./components/InventoryEdit/InventoryEdit.jsx";
 import InventoryAdd from "./components/InventoryAdd/InventoryAdd.jsx";
 import WarehousesEdit from "./components/WarehouseEdit/WarehouseEdit.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
+
         <Routes>
           <Route path="/" element={<Navigate to="/warehouses" />} />
           <Route path="/warehouses" element={<WarehouseListPage />} />
@@ -32,6 +33,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </>
   );
 }

@@ -76,6 +76,7 @@
         &--error{
             font-size: 0.8125rem;
             height: $form-height-mobile;
+            padding: 0 1rem 0 1rem;
             border: 1px solid red;
             border-radius: $button-border-radius; 
             @include tablet {

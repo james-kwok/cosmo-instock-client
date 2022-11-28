@@ -1,0 +1,78 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.edit-warehouse{
+    display: flex;
+    justify-content: center;
+
+    &__container{
+        background-color: $white;
+        border-radius: 3px;
+        box-shadow: 0 2px 5px rgb(19 24 44 / 0.1);
+        position: relative;
+        bottom: $mobile-overflow;
+        z-index: 21;
+        margin:0 $mobile-verticle 2rem $mobile-verticle;
+        width:100%;
+
+        @include tablet{
+            margin: 0 $tablet-verticle;
+            bottom:$tablet-overflow;
+        }
+        @include desktop{
+            width: 1020px;
+            bottom: $desktop-overflow; 
+        }
+    }
+
+    &__box{
+        padding: 2rem 0 1rem 0;
+        border-bottom:1px solid $cloud;
+        width:100%;
+
+
+        @include desktop{
+            padding: 2rem 2.5rem 0.75rem 2.5rem;
+        }
+    }
+    
+    &__title{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width:100%;
+        color: $instock-black;
+
+        @include desktop{
+            font-size: 2rem;
+        }
+    }
+    &__arrow{
+        width:1.5rem;
+        height:1.5rem;
+        margin-left:$mobile-verticle;
+        
+    }
+
+    &__title-text{
+        display: inline-block;
+        padding-left:1rem;
+        font-size:1.75rem;
+        
+    }
+
+    &__notification{
+        color: red;
+        font-weight: 700;
+        padding:1rem;
+
+        @include tablet {
+            padding:1rem 2rem;
+        }
+
+        @include desktop{
+            padding: 1rem 2.5rem;
+        }
+    }
+}

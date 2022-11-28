@@ -1,0 +1,162 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.body {
+    margin: 0;
+}
+
+.main{
+
+    display: flex;
+    justify-content: center;
+    &__add_new_warehouse{
+
+    font-family: "Titillium Web";
+    position: relative;
+
+    background-color: $white;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgb(19 24 44 / 0.1);
+    position: relative;
+    bottom: $mobile-overflow;
+    z-index: 21;
+    margin:0 $mobile-verticle;
+    width:100%;
+
+    @include tablet{
+        margin: 0 $tablet-verticle;
+        bottom:$tablet-overflow;
+    }
+    @include desktop{
+        width: 1020px;
+        bottom: $desktop-overflow; 
+    }
+
+
+
+    &__notifications {
+        color: red;
+        font-weight: 700;
+        position: absolute;
+            top: 3rem;
+            left: 2.5rem;
+
+        @include tablet {
+            left: 3.5rem;
+            bottom: 0;
+            top: 3.5rem;
+            
+        }
+
+    }
+
+    &__details {
+
+        @include tablet {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        &__detail {
+            width: 50%;
+        }
+    }
+
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &__titleblock {
+
+            display: flex;
+            width: 100%;
+            border-bottom: 1px solid $cloud;
+            padding: $mobile-verticle 0;
+
+            @include tablet {
+                margin: 0 0 $tablet-verticle 0;
+                padding-left: 1rem;
+            }
+
+            &__link {
+                display: flex;
+                align-items: center;
+
+                &--icons {
+                    margin-left: $mobile-verticle;
+                    width: 1.5rem;
+                    height: 1.5rem;
+
+                }
+            }
+
+            &--title {
+                font-size: 1.75rem; 
+                
+                @include tablet {
+                    font-size: 2rem;
+                }
+            }
+
+        }
+    }
+
+    &__container {
+        background-color: $light-grey ;
+        padding: 1rem 0;
+
+        @include tablet {
+            margin: $tablet-verticle  0 0 0;
+        }
+
+        &__buttons {
+            display: flex;
+            justify-content: center;
+            margin: 0 1rem 0 1rem;
+            gap: 1rem;
+
+            @include tablet {
+                justify-content: flex-end;
+                margin: 0 2rem 0 0rem;
+            }
+
+            &--button {
+                font-size: .8125rem;
+                width: 100%;
+                height: $form-height-mobile;
+                border: 1px solid $cloud;
+                border-radius: $button-border-radius;
+
+                @include tablet {
+                    width: fit-content;
+                    padding: 0 1rem;
+
+                }
+
+                &:hover {
+                    background-color: $graphite;
+                  }
+            }
+
+            &--cancel {
+                background-color: $white;
+                &:hover {
+                    background-color: $white;
+                    color: $instock-indigo;    
+                    border: 1px solid $instock-indigo;            
+                }
+            }
+
+            &--add {
+                color: $white;
+                background-color: $instock-indigo;
+            }
+
+        }
+    }
+    }
+}

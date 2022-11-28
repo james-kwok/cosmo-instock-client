@@ -1,0 +1,103 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+
+.header{
+    background-color: $graphite;
+    position: relative;
+    z-index: 0;
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top:1.5rem;
+        padding-bottom: 5.5rem;
+
+        @include tablet{
+            padding:1.75rem $tablet-verticle 9.375rem $tablet-verticle;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+
+        @include desktop{
+            padding:1.75rem 0 7.5rem 0;
+            width: 63.75rem;
+            z-index: -7;
+        }
+    }
+
+    &__link{
+        display: block;
+        width:8rem;
+        height:1.75rem;
+    }
+
+    &__img{
+        object-fit: cover;
+        width:100%;
+        height:100%;
+    }
+
+    &__nav{
+        padding:1.5rem $mobile-verticle;
+        display: flex;
+        width: 100%;
+
+        @include tablet{
+            padding:0;
+            width:30%;
+        }
+    }
+    &__list{
+        list-style-type: none;
+        width: 100%;
+        margin:0;
+        padding:0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item{
+        width:48%;
+        display: flex;
+        
+        @include tablet{
+            width:50%;
+        }
+    }
+
+    &__navlink{
+        width:100%;
+        padding: 0.5rem 0;
+        border-radius:$button-border-radius;
+        color:$cloud;
+        font-size: 0.80rem;
+        line-height:1.25rem;
+        text-align: center;
+
+        @include tablet{
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+        }
+
+        &:hover{
+            text-decoration: underline $cloud;
+            cursor: pointer;
+
+        }
+    }
+
+    //for .header
+    @include desktop{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.active{
+    background-color:$instock-black;
+    color:$white;
+}

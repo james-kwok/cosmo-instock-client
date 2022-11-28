@@ -1,0 +1,166 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.edit-availability {
+  @include tablet {
+    width: 50%;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  &__title {
+    margin: $mobile-verticle 0 $mobile-verticle 1rem;
+    font-size: 1.25rem;
+    @include tablet {
+      margin: 0 0 $tablet-verticle 2rem;
+      font-size: 1.5rem;
+    }
+  }
+  &__value{
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  &__choices {
+    margin: 0 0 0.25rem 1rem;
+    display: flex;
+    gap:2rem;
+    @include tablet {
+      margin: 0 0 0.25rem 2rem;
+    }
+    &--error{
+      font-size: 0.8125rem;
+      height: $form-height-mobile;
+      border: 1px solid red;
+      border-radius: $button-border-radius; 
+      padding: 0 0 0 1rem;
+      margin: 0 1rem $mobile-verticle 1rem;
+      display: flex;
+      gap:2rem;
+
+      @include tablet {
+      margin: 0 2rem $tablet-verticle 2rem;
+      font-size: .875rem;
+      }
+    }
+  }
+  &__form__box {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    &--label {
+      font-weight: 600;
+      margin: 0 0 0.25rem 1rem;
+      font-size: 0.8125rem;
+
+      @include tablet {
+        margin: 0 0 0.25rem 2rem;
+        font-size: 0.875rem;
+      }
+    }
+    &--input {
+      font-size: 0.8125rem;
+      height: $form-height-mobile;
+      border: 1px solid $cloud;
+      border-radius: $button-border-radius;
+      padding: 0 0 0 1rem;
+      margin: 0 1rem $mobile-verticle 1rem;
+
+      @include tablet {
+        margin: 0 2rem $tablet-verticle 2rem;
+        font-size: 0.875rem;
+      }
+
+      :active {
+        border: 1px solid red;
+      }
+    }
+    &--error{
+      font-size: 0.8125rem;
+      height: $form-height-mobile;
+      border: 1px solid red;
+      border-radius: $button-border-radius; 
+      padding: 0 0 0 1rem;
+      margin: 0 1rem $mobile-verticle 1rem;
+      
+
+      @include tablet {
+      margin: 0 2rem $tablet-verticle 2rem;
+      font-size: .875rem;
+
+      }
+    }
+  }
+  &__noshow{
+    display: none;
+  }
+  &__dropdown {
+    height: 2.25rem;
+    background-color: $white;
+    border-radius: 1.25rem;
+    border: 1px solid $cloud;
+    margin: 0 1rem $mobile-verticle 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.8125rem;
+
+    @include tablet {
+      height: 2.375rem;
+      margin: 0 2rem $tablet-verticle 2rem;
+      font-size: 0.875rem;
+    }
+
+    &--error {
+      height: 2.25rem;
+      background-color: $white;
+      border-radius: 1.25rem;
+      border: 1px solid red;
+      margin: 0 1rem $mobile-verticle 1rem;
+      display: flex;
+      align-items: center;
+  
+      @include tablet {
+        height: 2.375rem;
+        margin: 0 2rem $tablet-verticle 2rem;
+      }
+    }
+  }
+  &__category-dropdown {
+    height: 2.15rem;
+    width: 100%;
+    background-color: $white;
+    border-radius: 1.25rem;
+    border: none;
+    cursor: pointer;
+    @include tablet {
+      height: 2.275rem;
+    }
+  }
+
+  &__dropdown-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 1rem;
+  }
+}
+select {
+  color: $slate;
+  outline: none;
+  appearance: none;
+}
+.edit-availability__choice {
+  display: flex;
+}
+.edit-availability__quant {
+  display: flex;
+  flex-direction: column;
+}
+.edit-availability__warehouse {
+  display: flex;
+  flex-direction: column;
+}

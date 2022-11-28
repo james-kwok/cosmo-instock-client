@@ -1,0 +1,31 @@
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/colors" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin:0%;
+}
+
+body {
+  font-family: "Titillium Web", sans-serif;
+  background-color: $light-grey;
+  margin: 0;
+  a {
+    text-decoration: none;
+  }
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  min-height:100vh;
+  z-index: -1;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}

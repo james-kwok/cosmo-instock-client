@@ -1,0 +1,30 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.footer{
+    width: 100%;
+    padding:2.5rem 0;
+    position:absolute;
+    bottom:0;
+    display: flex;
+    align-items: flex-end;
+    height:2.5rem;
+
+    &__container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    
+    &__text{
+        font-size:0.6875rem;
+        color: $slate;
+    }
+
+    //for .footer
+    @include desktop{
+        height:3.125rem;
+    }
+}

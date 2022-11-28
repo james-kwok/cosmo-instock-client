@@ -1,0 +1,185 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.mobile-hider {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  font-family: "Titillium Web";
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
+  // bottom: 0;
+  // height: 100vh;
+  overflow: hidden;
+
+  @include tablet {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    padding-top: 10rem;
+    // padding: 0rem 1rem;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    // padding: 0 1rem;
+    background-color: white;
+    height: 97vh;
+    padding: 1rem;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: auto;
+      padding: 0 1rem;
+    }
+
+    &-text {
+      width: 100%;
+    }
+
+    &-cta {
+      width: 100%;
+    }
+  }
+
+  &__close {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1.25rem;
+
+    @include tablet {
+      padding: 1rem 0rem;
+    }
+
+    &-img {
+      width: auto;
+    }
+    &-img {
+      cursor: pointer;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+
+    @include tablet {
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0rem 3rem;
+      width: auto;
+    }
+  }
+
+  &__title {
+    margin: 0%;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+
+  &__description {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    // padding: 0rem 4rem;
+
+    @include tablet {
+      align-items: flex-start;
+      padding: 0rem 3rem;
+      width: 80%;
+    }
+
+    &-text {
+      font-size: 0.9375rem;
+      line-height: 1.625rem;
+      margin: 0%;
+      margin: 1rem 0;
+    }
+  }
+
+  &__cta {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // padding-top: calc(100vh - 21.625rem);
+    gap: 1.0625rem;
+
+    @include tablet {
+      padding: 0;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    &-cancel {
+      width: 100%;
+      height: $button-height-mobile;
+      border-radius: $button-border-radius;
+      border: 1px solid $cloud;
+      background-color: $white;
+      color: $slate;
+
+      @include tablet {
+        width: 10%;
+        margin-top: 2rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+
+    &-cancel:hover {
+      cursor: pointer;
+    }
+
+    &-delete {
+      width: 100%;
+      height: $button-height-mobile;
+      border-radius: $button-border-radius;
+      border: none;
+      background-color: $red;
+      border: none;
+      color: $white;
+
+      @include tablet {
+        width: 10%;
+        margin-top: 2rem;
+        margin-bottom: 2.5rem;
+        margin-right: 4rem;
+      }
+    }
+
+    &-delete:hover {
+      cursor: pointer;
+    }
+  }
+}

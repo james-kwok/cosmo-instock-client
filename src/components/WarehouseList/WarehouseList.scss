@@ -1,0 +1,225 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.WarehouseList {
+  margin: 1rem;
+  padding: 1rem 0 0 0;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgb(19 24 44 / 0.1);
+  position: relative;
+  z-index: 1;
+  background-color: $white;
+  top: -$mobile-overflow;
+  margin-top: 0rem;
+
+  @include tablet {
+    padding: 0;
+    margin: 2rem 2rem 0 2rem;
+    top: -$tablet-overflow;
+    
+    margin-top: 0rem;
+  }
+
+  @include desktop {
+    max-width: 1020px;
+    margin: 2rem auto 0 auto;
+    top: -$desktop-overflow;
+
+    margin-top: 0rem;
+
+  }
+
+  &__container {
+    @include tablet {
+      display: flex;
+      padding: 2rem 0 1.5rem 0;
+    }
+  }
+
+  &__title {
+    color: $instock-black;
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    padding: 1rem 1.5rem;
+
+    @include tablet {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      flex-grow: 1;
+      padding: 0 2rem;
+    }
+
+    @include desktop {
+      padding: 0 2.5rem;
+    }
+  }
+
+  &__search {
+    height: 2.25rem;
+    margin: 0 1.5rem;
+    border-radius: 1.25rem;
+    border: 1px solid $cloud;
+    display: flex;
+
+    @include tablet {
+      height: 2.375rem;
+      width: 11.5625rem;
+      margin: 0;
+    }
+    @include desktop {
+      width: 17.125rem;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    margin-left: 1rem;
+    border: none;
+    padding: 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      font-family: "Titillium Web", sans-serif, Verdana;
+      font-size: 0.8125rem;
+      line-height: 1.25rem;
+      color: $slate;
+    }
+  }
+
+  &__search-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: auto 1rem auto auto;
+  }
+
+  &__button-wrapper {
+    background-color: $instock-indigo;
+    height: 2.25rem;
+    display: flex;
+    border-radius: 1.25rem;
+    margin: 1rem 1.5rem 1.5rem 1.5rem;
+
+    &:hover {
+      background-color: $graphite;
+    }
+
+    @include tablet {
+      height: 2.375rem;
+      width: 10.5rem;
+      margin: 0 2rem 0 1rem;
+    }
+
+    @include desktop {
+      margin-right: 2.5rem;
+    }
+  }
+
+  &__button-text {
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    color: $white;
+    margin: auto;
+  }
+
+  &__sort-row {
+    display: none;
+
+    @include tablet {
+      background-color: rgb(247 248 249 / 0.7);
+      height: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    @include desktop {
+      padding: 0 2.5rem;
+    }
+  }
+
+  &__sort-warehouse {
+    @include tablet {
+      display: flex;
+      width: 19.5%;
+    }
+    @include desktop {
+      width: 17.2%;
+    }
+  }
+
+  &__sort-address {
+    @include tablet {
+      display: flex;
+      width: 15.75%;
+    }
+    @include desktop {
+      width: 20.4%;
+    }
+  }
+
+  &__sort-contact {
+    @include tablet {
+      display: flex;
+      width: 16%;
+    }
+    @include desktop {
+      width: 13.6%;
+    }
+  }
+
+  &__sort-contact-info {
+    @include tablet {
+      display: flex;
+      width: 23%;
+    }
+    @include desktop {
+      width: 17.2%;
+    }
+  }
+
+  &__sort-action {
+    @include tablet {
+      display: flex;
+      width: 13.8%;
+      justify-content: flex-end;
+    }
+    @include desktop {
+      width: 5%;
+    }
+  }
+
+  &__sort-text {
+    color: $slate;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    margin-right: 0.25rem;
+  }
+
+  &__sort-action-text {
+    color: $slate;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+
+  &__sort-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &__cards {
+    border-top: 1px solid $cloud;
+
+    @include tablet {
+      border-top: none;
+    }
+  }
+}

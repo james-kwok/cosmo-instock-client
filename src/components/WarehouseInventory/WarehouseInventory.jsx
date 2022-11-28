@@ -1,7 +1,6 @@
 import "./WarehouseInventory.scss";
 import WarehouseInventoryItem from "../WarehouseInventoryItem/WarehouseInventoryItem";
 import sortIcon from "../../assets/icons/sort-24px.svg";
-import InventoryModal from "../InventoryModal/InventoryModal";
 
 const WarehouseInventory = ({
   warehouseInventory,

@@ -21,7 +21,7 @@ const WarehouseList = () => {
         console.log(response.data);
         setTimeout(() => {
           setWarehouses(response.data);
-        }, 500)
+        }, 500);
       })
       .catch((error) => {
         console.log(error);
@@ -37,10 +37,6 @@ const WarehouseList = () => {
   const clickedInfo = () => {
     console.log("Clicked");
   };
-
-  if (warehouses.length === 0) {
-    return <LoadingScreen />
-  }
 
   if (warehouses.length === 0) {
     return (

@@ -98,7 +98,7 @@ const InventoryAdd = () => {
         });
       return setTimeout(() => {
         navigate("/inventory");
-      }, 2000);
+      }, 500);
     }
   };
 

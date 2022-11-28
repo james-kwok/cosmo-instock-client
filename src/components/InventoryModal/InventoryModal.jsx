@@ -8,7 +8,6 @@ const Modal = ({ inventory, modalHandler }) => {
   console.log(id);
 
   const handleDelete = () => {
-    // console.log("Inventory", inventory);
     axios
       .delete(`${URL}/${id}`)
       .then((response) => {

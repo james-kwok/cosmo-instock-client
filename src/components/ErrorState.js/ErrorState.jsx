@@ -7,7 +7,7 @@ const ErrorState = () => {
         <div className="error"> 
             <div className="error__box">
                 <div className="error__box__icon">
-                    <img className="error__box__icon--img" src={error} alt="red exclamation mark stating error" srcset="" />
+                    <img className="error__box__icon--img" src={error} alt="red exclamation mark stating error"/>
                 </div>
 
                 <div className="error__box__statement">

@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./WarehouseDetailsPage.scss";
-import InventoryModal from "../../components/InventoryModal/InventoryModal"
+import InventoryModal from "../../components/InventoryModal/InventoryModal";
 
 const WarehouseDetailsPage = () => {
   const { id } = useParams();

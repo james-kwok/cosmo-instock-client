@@ -6,6 +6,7 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 import EditInventoryDetails from "../EditInventoryDetails/EditInventoryDetails";
 import EditInventoryAvail from "../EditInventoryAvail/EditInventoryAvail";
 import axios from "axios";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 const InventoryEdit = () => {
   const [itemName, setItemname] = useState("");
@@ -55,7 +56,7 @@ const InventoryEdit = () => {
   }, []);
 
   if (warehouses.length === 0) {
-    return <h1>LOADING...</h1>;
+    return <LoadingScreen />;
   }
  
   let warehouseid;

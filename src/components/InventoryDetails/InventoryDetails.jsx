@@ -37,11 +37,15 @@ function InventoryDetails() {
   }, []);
 
   if (inventory.length === 0) {
-    return <LoadingScreen />;
+    return (
+      <LoadingScreen />
+    );
   }
 
   if (warehouses.length === 0) {
-    return <LoadingScreen />;
+    return (
+      <LoadingScreen />
+    );
   }
 
   let inventoryName = inventory.item_name;

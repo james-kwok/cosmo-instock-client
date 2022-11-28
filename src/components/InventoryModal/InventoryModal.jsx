@@ -2,9 +2,9 @@ import "./InventoryModal.scss";
 import xIcon from "../../assets/icons/close-24px.svg";
 import axios from "axios";
 
-const Modal = ({ inventory, modalHandler }) => {
+const Modal = ({ inventory, modalHandler,inventoryId }) => {
   const URL = "http://localhost:8080/api/inventories";
-  const id = inventory.id;
+  const id = inventory.id || inventoryId;
   console.log(id);
 
   const handleDelete = () => {

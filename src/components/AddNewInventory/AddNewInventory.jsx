@@ -2,6 +2,10 @@ import backIcon from "../../assets/icons/arrow_back-24px.svg";
 import arrowDropdown from "../../assets/icons/arrow_drop_down-24px.svg";
 import "./AddNewInventory.scss";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
+import axios from "axios";
+
 const AddNewInventory = ({
   handleChangeItemName,
   handleChangeDescription,
@@ -19,6 +23,22 @@ const AddNewInventory = ({
   quantity,
   warehouse,
 }) => {
+  const getURL2 = "http://localhost:8080/api/warehouses";
+  const [warehouses, setWarehouses] = useState([]);
+  useEffect(() => {
+    axios
+      .get(getURL2)
+      .then((response) => {
+        setWarehouses(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  if (warehouses.length === 0) {
+    return <LoadingScreen />;
+  }
   return (
     <div className="AddNewInventory">
       <div className="AddNewInventory__title-container">
@@ -69,11 +89,13 @@ const AddNewInventory = ({
             <label htmlFor="itemCategory" className="AddNewInventory__label">
               Category
             </label>
-            <div className={
-                  submit === true && !category
-                    ? "AddNewInventory__dropdown--error"
-                    : "AddNewInventory__dropdown"
-                }>
+            <div
+              className={
+                submit === true && !category
+                  ? "AddNewInventory__dropdown--error"
+                  : "AddNewInventory__dropdown"
+              }
+            >
               <select
                 id="itemCategory"
                 name="itemCategory"
@@ -159,11 +181,13 @@ const AddNewInventory = ({
             <label htmlFor="warehouse" className="AddNewInventory__label">
               Warehouse
             </label>
-            <div className={
-                  submit === true && !warehouse
-                    ? "AddNewInventory__dropdown--error"
-                    : "AddNewInventory__dropdown"
-                }>
+            <div
+              className={
+                submit === true && !warehouse
+                  ? "AddNewInventory__dropdown--error"
+                  : "AddNewInventory__dropdown"
+              }
+            >
               <select
                 id="warehouse"
                 name="warehouse"
@@ -179,13 +203,17 @@ const AddNewInventory = ({
                 >
                   Please select
                 </option>
-                <option value="Washington">Washington</option>
-                <option value="Manhattan">Manhattan</option>
-                <option value="Santa Monica">Santa Monica</option>
-                <option value="Jersey">Jersey</option>
-                <option value="Seattle">Seattle</option>
-                <option value="Miami">Miami</option>
-                <option value="SF">SF</option>
+                {warehouses.length !== 0 ? (
+                  warehouses.map((item, index) => {
+                    return (
+                      <option key={index} value={item.warehouse_name}>
+                        {item.warehouse_name}
+                      </option>
+                    );
+                  })
+                ) : (
+                  <></>
+                )}
               </select>
               <img
                 className="AddNewInventory__dropdown-icon"

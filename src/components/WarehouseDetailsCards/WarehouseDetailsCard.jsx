@@ -108,6 +108,28 @@ const WarehouseDetailsCard = ({
           />
           {submit === true && !country === true && <ErrorState />}
         </div>
+
+        <div className="Warehouse_detail_container__form__box">
+          <label
+            htmlFor="Country"
+            className="Warehouse_detail_container__form__box--label"
+          >
+            Country
+          </label>
+          <input
+            name="Country"
+            className={
+              submit === true && !country
+                ? "Warehouse_detail_container__form__box--error"
+                : "Warehouse_detail_container__form__box--input"
+            }
+            placeholder="Country"
+            type="text"
+            value={country}
+            onChange={handleChangeCountry}
+          />
+          {submit === true && !country === true && <ErrorState />}
+        </div>
       </div>
     </div>
   );

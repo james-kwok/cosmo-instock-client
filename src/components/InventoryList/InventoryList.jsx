@@ -22,8 +22,9 @@ const InventoryList = () => {
       .get(getURL)
       .then((response) => {
         setTimeout(() => {
+          window.scrollTo(0, 0)
           setInventories(response.data);
-        }, 500)
+        }, 500);
       })
       .catch((error) => {
         console.log(error);
@@ -52,7 +53,7 @@ const InventoryList = () => {
   };
 
   if (inventories.length === 0) {
-    return <LoadingScreen />
+    return <LoadingScreen />;
   }
 
   if (warehouses.length === 0) {
@@ -132,105 +133,107 @@ const InventoryList = () => {
     <>
       {showModal ? (
         <>
-          <InventoryModal modalHandler={modalHandler} inventory={toDelete} item={inventories} />
+          <InventoryModal
+            modalHandler={modalHandler}
+            inventory={toDelete}
+            item={inventories}
+          />
           <div className="inventory-list mobile-hider">
-            <div className="inventory-list">
-              <div className="inventory-list__nav">
-                <h2 className="inventory-list__title">Inventory</h2>
-                <div className="inventory-list__search">
-                  <input
-                    type="text"
-                    className="inventory-list__input"
-                    placeholder="Search..."
-                  />
-                  <img
-                    className="inventory-list__search-icon"
-                    src={searchIcon}
-                    alt="search icon"
-                  />
-                </div>
-                <Link to="/inventory/add" className="WarehouseList__button-add">
-                  <div className="inventory-list__button-wrapper">
-                    <span className="inventory-list__button-text">
-                      + Add New Item
-                    </span>
-                  </div>
-                </Link>
+            <div className="inventory-list__nav">
+              <h2 className="inventory-list__title">Inventory</h2>
+              <div className="inventory-list__search">
+                <input
+                  type="text"
+                  className="inventory-list__input"
+                  placeholder="Search..."
+                />
+                <img
+                  className="inventory-list__search-icon"
+                  src={searchIcon}
+                  alt="search icon"
+                />
               </div>
-              <div className="inventory-list__sort-row">
-                <div className="inventory-list__sort-inventory">
-                  <span className="inventory-list__sort-text">
-                    Inventory Item
-                  </span>
-                  <img
-                    className="inventory-list__sort-icon"
-                    src={sortIcon}
-                    alt="sorting icon"
-                  />
-                </div>
-                <div className="inventory-list__sort-category">
-                  <span className="inventory-list__sort-text">Category</span>
-                  <img
-                    className="inventory-list__sort-icon"
-                    src={sortIcon}
-                    alt="sorting icon"
-                  />
-                </div>
-                <div className="inventory-list__sort-status">
-                  <span className="inventory-list__sort-text">Status</span>
-                  <img
-                    className="inventory-list__sort-icon"
-                    src={sortIcon}
-                    alt="sorting icon"
-                  />
-                </div>
-                <div className="inventory-list__sort-quant">
-                  <span className="inventory-list__sort-text">Qty</span>
-                  <img
-                    className="inventory-list__sort-icon"
-                    src={sortIcon}
-                    alt="sorting icon"
-                  />
-                </div>
-                <div className="inventory-list__sort-warehouse">
-                  <span className="inventory-list__sort-text">Warehouse</span>
-                  <img
-                    className="inventory-list__sort-icon"
-                    src={sortIcon}
-                    alt="sorting icon"
-                  />
-                </div>
-                <div className="inventory-list__sort-action">
-                  <span className="inventory-list__sort-action-text">
-                    Actions
+              <Link to="/inventory/add" className="WarehouseList__button-add">
+                <div className="inventory-list__button-wrapper">
+                  <span className="inventory-list__button-text">
+                    + Add New Item
                   </span>
                 </div>
-              </div>
-              {inventories.length !== 0 && warehouses.length !== 0 ? (
-                inventories.map((item) => {
-                  return (
-                    <InventoryItem
-                      key={item.id}
-                      id={item.id}
-                      Inventory={item.item_name}
-                      Category={item.category}
-                      Status={item.status}
-                      Quantity={item.quantity}
-                      Warehouse={
-                        warehouses.find(
-                          (warehouse) => warehouse.id === item.warehouse_id
-                        ).warehouse_name
-                      }
-                      item={item}
-                      modalHandler={modalHandler}
-                      clickedInfo={clickedInfo}
-                    />
-                  );
-                })
-              ) : (
-                <></>
-              )}
+              </Link>
             </div>
+            <div className="inventory-list__sort-row">
+              <div className="inventory-list__sort-inventory">
+                <span className="inventory-list__sort-text">
+                  Inventory Item
+                </span>
+                <img
+                  className="inventory-list__sort-icon"
+                  src={sortIcon}
+                  alt="sorting icon"
+                />
+              </div>
+              <div className="inventory-list__sort-category">
+                <span className="inventory-list__sort-text">Category</span>
+                <img
+                  className="inventory-list__sort-icon"
+                  src={sortIcon}
+                  alt="sorting icon"
+                />
+              </div>
+              <div className="inventory-list__sort-status">
+                <span className="inventory-list__sort-text">Status</span>
+                <img
+                  className="inventory-list__sort-icon"
+                  src={sortIcon}
+                  alt="sorting icon"
+                />
+              </div>
+              <div className="inventory-list__sort-quant">
+                <span className="inventory-list__sort-text">Qty</span>
+                <img
+                  className="inventory-list__sort-icon"
+                  src={sortIcon}
+                  alt="sorting icon"
+                />
+              </div>
+              <div className="inventory-list__sort-warehouse">
+                <span className="inventory-list__sort-text">Warehouse</span>
+                <img
+                  className="inventory-list__sort-icon"
+                  src={sortIcon}
+                  alt="sorting icon"
+                />
+              </div>
+              <div className="inventory-list__sort-action">
+                <span className="inventory-list__sort-action-text">
+                  Actions
+                </span>
+              </div>
+            </div>
+            {inventories.length !== 0 && warehouses.length !== 0 ? (
+              inventories.map((item) => {
+                return (
+                  <InventoryItem
+                    key={item.id}
+                    id={item.id}
+                    Inventory={item.item_name}
+                    Category={item.category}
+                    Status={item.status}
+                    Quantity={item.quantity}
+                    Warehouse={
+                      warehouses.find(
+                        (warehouse) => warehouse.id === item.warehouse_id
+                      ).warehouse_name
+                    }
+                    item={item}
+                    modalHandler={modalHandler}
+                    clickedInfo={clickedInfo}
+                  />
+                );
+              })
+            ) : (
+              <></>
+            )}
           </div>
         </>
       ) : (

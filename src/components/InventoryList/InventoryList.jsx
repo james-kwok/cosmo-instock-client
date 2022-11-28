@@ -22,7 +22,7 @@ const InventoryList = () => {
       .get(getURL)
       .then((response) => {
         setTimeout(() => {
-          window.scrollTo(0, 0)
+          window.scrollTo(0, 0);
           setInventories(response.data);
         }, 500);
       })
@@ -53,7 +53,77 @@ const InventoryList = () => {
   };
 
   if (inventories.length === 0) {
-    return <LoadingScreen />;
+    return (
+      <div className="inventory-list">
+      <div className="inventory-list__nav">
+        <h2 className="inventory-list__title">Inventory</h2>
+        <div className="inventory-list__search">
+          <input
+            type="text"
+            className="inventory-list__input"
+            placeholder="Search..."
+          />
+          <img
+            className="inventory-list__search-icon"
+            src={searchIcon}
+            alt="search icon"
+          />
+        </div>
+        <Link to="/inventory/add" className="WarehouseList__button-add">
+          <div className="inventory-list__button-wrapper">
+            <span className="inventory-list__button-text">
+              + Add New Item
+            </span>
+          </div>
+        </Link>
+      </div>
+      <div className="inventory-list__sort-row">
+        <div className="inventory-list__sort-inventory">
+          <span className="inventory-list__sort-text">Inventory Item</span>
+          <img
+            className="inventory-list__sort-icon"
+            src={sortIcon}
+            alt="sorting icon"
+          />
+        </div>
+        <div className="inventory-list__sort-category">
+          <span className="inventory-list__sort-text">Category</span>
+          <img
+            className="inventory-list__sort-icon"
+            src={sortIcon}
+            alt="sorting icon"
+          />
+        </div>
+        <div className="inventory-list__sort-status">
+          <span className="inventory-list__sort-text">Status</span>
+          <img
+            className="inventory-list__sort-icon"
+            src={sortIcon}
+            alt="sorting icon"
+          />
+        </div>
+        <div className="inventory-list__sort-quant">
+          <span className="inventory-list__sort-text">Qty</span>
+          <img
+            className="inventory-list__sort-icon"
+            src={sortIcon}
+            alt="sorting icon"
+          />
+        </div>
+        <div className="inventory-list__sort-warehouse">
+          <span className="inventory-list__sort-text">Warehouse</span>
+          <img
+            className="inventory-list__sort-icon"
+            src={sortIcon}
+            alt="sorting icon"
+          />
+        </div>
+        <div className="inventory-list__sort-action">
+          <span className="inventory-list__sort-action-text">Actions</span>
+        </div>
+      </div>
+    </div>
+    );
   }
 
   if (warehouses.length === 0) {

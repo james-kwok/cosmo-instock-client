@@ -1,4 +1,5 @@
-import ErrorState from "../EmptyState/EmptyState";
+import EmptyState from "../EmptyState/EmptyState";
+import ErrorState from "../ErrorState.js/ErrorState";
 import "./EditWarehouseForm.scss"
 function EditWarehouseForm ({handleSubmit, handleCancel, handleChangeWarehouse, handleChangeStreetAddress, handleChangeCity, handleChangeCountry, handleChangeContactName, handleChangePosition, handleChangePhoneNumber, handleChangeEmail, submit, warehouse, streetAddress, city, country, contactName, position, phoneNumber, email}){
 

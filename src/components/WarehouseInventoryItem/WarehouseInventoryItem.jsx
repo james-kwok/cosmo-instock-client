@@ -12,7 +12,6 @@ function WarehouseInventoryItem({
   Quantity,
   modalHandler,
 }) {
-  console.log(InventoryId);
   return (
     <div className="inventory-item">
       <div className="inventory-item__inventory">

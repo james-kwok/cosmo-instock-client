@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./WarehouseDetailsPage.scss";
-import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
+import InventoryModal from "../../components/InventoryModal/InventoryModal"
 
 const WarehouseDetailsPage = () => {
   const { id } = useParams();
@@ -41,7 +41,12 @@ const WarehouseDetailsPage = () => {
     <>
       {showModal ? (
         <>
-          
+          <InventoryModal
+            inventory={warehouseInventory}
+            inventoryId={toDelete}
+            modalHandler={modalHandler}
+          />
+
           <div className="WarehouseDetailsPage">
             {warehouseInventory ? (
               <WarehouseDetails warehouseDetails={warehouseInventory} />

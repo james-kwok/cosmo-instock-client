@@ -6,16 +6,33 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 import EditInventoryDetails from "../EditInventoryDetails/EditInventoryDetails";
 import EditInventoryAvail from "../EditInventoryAvail/EditInventoryAvail";
 import axios from "axios";
+import { getDefaultNormalizer } from "@testing-library/react";
 
 const InventoryEdit = () => {
-  const [itemName, setItemname] = useState("");
+  const [itemName,setItemname] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [quant, setQuant] = useState("");
   const [status, setStatus] = useState("");
   const [warehouse, setWarehouse] = useState("");
   const [submit, Setsubmit] = useState(false);
- 
+
+  const params = useParams();
+  const getURL = `http://localhost:8080/api/inventories/${params.id}`;
+  axios
+    .get(getURL)
+    .then((response) => {
+      setItemname(response.data.item_name); 
+      setDescription(response.data.description);
+      setCategory(response.data.category);
+      setQuant(response.data.quantity);
+      setStatus(response.data.status);
+      // setWarehouse(response.data.warehouse_id);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
 
   const navigate = useNavigate();
 
@@ -37,9 +54,6 @@ const InventoryEdit = () => {
   const handleChangeWarehouse = (event) => {
     setWarehouse(event.target.value);
   };
-
-  const params = useParams();
-  const getURL = `http://localhost:8080/api/inventories/${params.id}`;
   
   const getURL2 = "http://localhost:8080/api/warehouses";
   const [warehouses, setWarehouses] = useState([]);

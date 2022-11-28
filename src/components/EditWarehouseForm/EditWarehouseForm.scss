@@ -63,6 +63,25 @@
         border:1px solid $cloud;
         padding: 0 1rem 0 1rem;
         font-size:0.8125rem;
+
+        &:focus {
+            color: $instock-black;    
+            border: 1px solid $instock-indigo;  
+            outline: none;  
+            &::placeholder {
+                color: $instock-black;    
+            }         
+        }
+
+        &--error{
+            font-size: 0.8125rem;
+            height: $form-height-mobile;
+            border: 1px solid red;
+            border-radius: $button-border-radius; 
+            @include tablet {
+            font-size: .875rem;
+            }
+        }
     }
 
     &__bottom{
@@ -114,12 +133,12 @@
             width:4.5rem;
         }
     }
-
+    
     //for .edit-form
     @include tablet{
         display: flex;
         flex-wrap: wrap;
     }
     
-
+    
 }

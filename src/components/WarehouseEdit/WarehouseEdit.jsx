@@ -94,21 +94,18 @@ function WarehouseEdit (){
 
     const isFormValid = () =>{
         if (warehouse ==="" || streetAddress === "" || city === "" || country ===""|| contactName===""|| position===""|| phoneNumber==="" || email ===""){
-            console.log("form incomplete")
             return setEmpty(true);
         }
 
         setEmpty(false);
 
         if(!isPhoneNumberValid() || !isPhoneNumberValidTwo()){
-            console.log("phone incomplete")
             return setPhoneError(true);
         }
 
         setPhoneError(false);
 
         if(!isEmailValid()){
-            console.log("email incomplete")
             return setEmailError(true);
         }
         setEmailError(false);
@@ -121,25 +118,25 @@ function WarehouseEdit (){
         event.preventDefault();
         if (isFormValid()){
             axios
-            .patch(getURL, {
-                warehouse_id:params.id,
-                warehouse_name:warehouse,
-                address:streetAddress,
-                city:city,
-                country:country,
-                contact_name:contactName,
-                contact_position:position,
-                contact_email:email,
-                contact_phone:phoneNumber
-            })
+                .patch(getURL, {
+                    warehouse_id:params.id,
+                    warehouse_name:warehouse,
+                    address:streetAddress,
+                    city:city,
+                    country:country,
+                    contact_name:contactName,
+                    contact_position:position,
+                    contact_email:email,
+                    contact_phone:phoneNumber
+                })
+                .catch((error)=>{
+                    console.log(error.response)
+                });
             setEdit(true);
             return (
                 setTimeout(()=>{
                 navigate("/warehouses")}, 2000))
-            
-            .catch((error)=>{
-                console.log("error")
-            });
+
             
         }
     }

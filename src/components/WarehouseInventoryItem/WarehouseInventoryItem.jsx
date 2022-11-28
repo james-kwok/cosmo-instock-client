@@ -11,7 +11,7 @@ function WarehouseInventoryItem({
   Status,
   Quantity,
 }) {
-  console.log(InventoryId);
+
   return (
     <div className="inventory-item">
       <div className="inventory-item__inventory">

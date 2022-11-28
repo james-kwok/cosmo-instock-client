@@ -18,7 +18,6 @@ const WarehouseList = () => {
     axios
       .get(getURL)
       .then((response) => {
-        console.log(response.data);
         setTimeout(() => {
           setWarehouses(response.data);
         }, 500);
@@ -29,14 +28,10 @@ const WarehouseList = () => {
   }, [showModal]);
 
   const modalHandler = (warehouse, modal) => {
-    console.log(warehouse);
     setShowModal(modal);
     setToDelete(warehouse);
   };
 
-  const clickedInfo = () => {
-    console.log("Clicked");
-  };
 
   if (warehouses.length === 0) {
     return (
@@ -178,7 +173,6 @@ const WarehouseList = () => {
                     warehouse={warehouse}
                     key={index}
                     modalHandler={modalHandler}
-                    clickedInfo={clickedInfo}
                   />
                 );
               })}
@@ -256,7 +250,6 @@ const WarehouseList = () => {
                   warehouse={warehouse}
                   key={index}
                   modalHandler={modalHandler}
-                  clickedInfo={clickedInfo}
                 />
               );
             })}

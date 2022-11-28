@@ -13,7 +13,7 @@
         position: relative;
         bottom: $mobile-overflow;
         z-index: 21;
-        margin:0 $mobile-verticle;
+        margin:0 $mobile-verticle 2rem $mobile-verticle;
         width:100%;
 
         @include tablet{
@@ -62,5 +62,17 @@
         
     }
 
+    &__notification{
+        color: red;
+        font-weight: 700;
+        padding:1rem;
 
+        @include tablet {
+            padding:1rem 2rem;
+        }
+
+        @include desktop{
+            padding: 1rem 2.5rem;
+        }
+    }
 }

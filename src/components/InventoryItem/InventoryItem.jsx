@@ -3,6 +3,7 @@ import deleteImage from "../../assets/icons/delete_outline-24px.svg";
 import editImage from "../../assets/icons/edit-24px.svg";
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import { Link } from "react-router-dom";
+import InventoryEdit from "../InventoryEdit/InventoryEdit";
 
 function InventoryItem({
   Inventory,
@@ -12,8 +13,14 @@ function InventoryItem({
   Warehouse,
   id,
   modalHandler,
-  item
+  item,
+  // warehouseId,
 }) {
+
+  if (Inventory) {
+    <InventoryEdit className="edit-off" warehouseUnique={Warehouse} />;
+  }
+
   return (
     <div className="inventory-item">
       <div className="inventory-item__inventory">
@@ -59,7 +66,7 @@ function InventoryItem({
           src={deleteImage}
           alt="delete inventory"
           onClick={() => {
-            console.log("Clicking")
+            console.log("Clicking");
             modalHandler(item, true);
           }}
         />

@@ -42,6 +42,8 @@ const InventoryList = () => {
       });
   }, []);
 
+  console.log("Warehouses", warehouses)
+
   const modalHandler = (inventory, modal) => {
     console.log(inventory);
     setShowModal(modal);
@@ -295,6 +297,7 @@ const InventoryList = () => {
                         (warehouse) => warehouse.id === item.warehouse_id
                       ).warehouse_name
                     }
+                    warehouseId={item.warehouse_id}
                     item={item}
                     modalHandler={modalHandler}
                     clickedInfo={clickedInfo}
@@ -391,6 +394,7 @@ const InventoryList = () => {
                     ).warehouse_name
                   }
                   item={item}
+                  warehouseId={item.warehouse_id}
                   modalHandler={modalHandler}
                   clickedInfo={clickedInfo}
                 />

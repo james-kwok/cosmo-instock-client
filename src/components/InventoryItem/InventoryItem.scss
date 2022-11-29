@@ -2,6 +2,10 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
+.edit-off {
+  display: none;
+}
+
 .inventory-item {
   display: flex;
   flex-wrap: wrap;

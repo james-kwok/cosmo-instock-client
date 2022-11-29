@@ -16,15 +16,13 @@ const WarehouseDetailsPage = () => {
   const [showModal, setShowModal] = useState(false);
   const [toDelete, setToDelete] = useState(null);
 
+  console.log(warehouseInventory)
   const modalHandler = (id, modal) => {
     console.log("Inventory Id to delete", id);
     setShowModal(modal);
     setToDelete(id);
   };
 
-  console.log("Show Modal", showModal);
-
-  console.log("Warehouse Inventory", warehouseInventory);
   useEffect(() => {
     axios
       .get(getURL)

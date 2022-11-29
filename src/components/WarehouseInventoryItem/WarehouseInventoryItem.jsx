@@ -57,7 +57,7 @@ function WarehouseInventoryItem({
             modalHandler(InventoryId, true)
           }}
         />
-        <Link to="/inventory/edit/:id" className="inventory-item__edit">
+        <Link to={`/inventory/edit/${InventoryId}`} className="inventory-item__edit">
           <img
             className="inventory-item__edit-icon"
             src={editImage}

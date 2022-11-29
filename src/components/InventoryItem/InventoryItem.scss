@@ -1,0 +1,183 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.edit-off {
+  display: none;
+}
+
+.inventory-item {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid $cloud;
+  padding: 1rem 1.5rem 0 1.5rem;
+  justify-content: space-between;
+  @include tablet {
+    height: 6.125rem;
+    padding: 0 2rem;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  @include desktop {
+    cursor: pointer;
+    padding: 0 2.5rem;
+    &:hover {
+      background-color: rgb(46 102 229 / 0.07);
+    }
+  }
+
+  &__inventory {
+    order: 1;
+    width: 37.5%;
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      width: 19.5%;
+    }
+    @include desktop {
+      width: 21%;
+    }
+  }
+  &__category {
+    order: 3;
+    width: 37.5%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      order: 2;
+      width: 16%;
+      margin-top: 0;
+    }
+    @include desktop {
+      width: 18%;
+    }
+  }
+  &__status {
+    order: 2;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      order: 3;
+      width: 16%;
+    }
+    @include desktop {
+      width: 18%;
+    }
+  }
+
+  &__status-text {
+    border-radius: 20px;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+
+    text-align: center;
+  }
+  &__instock {
+    color: $green;
+    background: rgba(21, 132, 99, 0.07);
+    width: 3.8125rem;
+    height: 1.5rem;
+  }
+  &__outofstock {
+    color: $red;
+    background: rgba(201, 69, 21, 0.07);
+    width: 5.75rem;
+    height: 1.625rem;
+  }
+  &__quant {
+    order: 4;
+    width: 50%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      width: 8%;
+      margin-top: 0;
+    }
+    @include desktop {
+      width: 9%;
+    }
+  }
+  &__warehouse {
+    order: 5;
+    width: 50%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      width: 17%;
+      margin-top: 0;
+    }
+    @include desktop {
+      width: 22%;
+    }
+  }
+  &__title {
+    color: $slate;
+    text-transform: uppercase;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+    margin: 0;
+    @include tablet {
+      display: none;
+    }
+  }
+  &__text {
+    color: $instock-black;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    margin: 0.25rem 0 0 0;
+    @include tablet {
+      margin: 0;
+    }
+  }
+  &__link {
+    display: flex;
+    margin-top: 0.25rem;
+    @include tablet {
+      margin: 0;
+    }
+  }
+  &__link-text {
+    color: $instock-indigo;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    margin-right: 0.25rem;
+  }
+  &__chevron {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  &__icons {
+    order: 5;
+    width: 100%;
+    display: flex;
+    margin: 1rem 0 1.5rem 0;
+    @include tablet {
+      width: 12%;
+      justify-content: flex-end;
+    }
+    @include desktop {
+      width: 10%;
+    }
+  }
+  &__delete-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: auto;
+    @include tablet {
+      margin-right: 1rem;
+    }
+  }
+  &__edit-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: auto;
+    @include tablet {
+      margin-left: 0;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.WarehouseDetailsPage {
+  margin: 1rem;
+  padding: 1rem 0 0 0;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgb(19 24 44 / 0.1);
+  // position: relative;
+  z-index: 1;
+  background-color: $white;
+  top: -$mobile-overflow;
+  margin-top: 0rem;
+  // width: 100vw;
+  // height: 100vh;
+  // max-width: 1020px;
+  // margin: 0 auto;
+  top: -5.875rem;
+  margin-top: -5.2rem;
+  z-index: 5;
+  margin: 0 2rem;
+  padding: 0;
+  transform: translateY(-6rem);
+
+
+  @include tablet {
+    padding: 0;
+    margin: 0 2rem;
+    top: -$tablet-overflow;
+    top: -5.875rem;
+    z-index: 5;
+    transform: translateY(-6rem);
+
+  }
+
+  @include desktop {
+    max-width: 1020px;
+    margin: 0 auto;
+    top: -$desktop-overflow;
+    top: -5.875rem;
+    transform: translateY(-6rem);
+    z-index: 5;
+}
+}

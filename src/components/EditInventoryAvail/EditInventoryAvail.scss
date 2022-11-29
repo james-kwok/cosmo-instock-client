@@ -70,6 +70,7 @@
       border-radius: $button-border-radius;
       padding: 0 0 0 1rem;
       margin: 0 1rem $mobile-verticle 1rem;
+      color:$slate;
 
       @include tablet {
         margin: 0 2rem $tablet-verticle 2rem;

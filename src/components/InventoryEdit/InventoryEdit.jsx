@@ -9,16 +9,66 @@ import axios from "axios";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 const InventoryEdit = () => {
-  const [itemName, setItemname] = useState("");
+  const [itemName,setItemname] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [quant, setQuant] = useState("");
   const [status, setStatus] = useState("");
   const [warehouse, setWarehouse] = useState("");
   const [submit, Setsubmit] = useState(false);
- 
 
+  const getURL2 = "http://localhost:8080/api/warehouses";
+  const [warehouses, setWarehouses] = useState([]);
+  useEffect(() => {
+    axios
+      .get(getURL2)
+      .then((response) => {
+      setWarehouses(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  
+
+let warehouseid;
+warehouses.length!==0?warehouseid = warehouses.find(
+ (item) => item.warehouse_name === warehouse
+).id:warehouseid ='150a36cf-f38e-4f59-8e31-39974207372d';
+ 
+const params = useParams();
+const getURL = `http://localhost:8080/api/inventories/${params.id}`;
+useEffect(() => {
+axios
+ .get(getURL)
+ .then((response) => {
+   setItemname(response.data.item_name); 
+   setDescription(response.data.description);
+   setCategory(response.data.category);
+   setQuant(response.data.quantity);
+   if(response.data.status==="In Stock"){
+     setStatus("In Stock")
+   }else{
+     setStatus("Out Of Stock")
+   }
+   ;
+   setWarehouse(warehouses.length!==0?warehouses.find(
+     (item) => item.id === response.data.warehouse_id
+   ).warehouse_name:'SF');
+
+ })
+ .catch((error) => {
+   console.log(error);
+ });
+},[warehouses])
+  
+  
   const navigate = useNavigate();
+
+  if (warehouses.length === 0) {
+    return <LoadingScreen/>;
+  }
+ 
 
   const handleChangeItemname = (event) => {
     setItemname(event.target.value);
@@ -38,33 +88,6 @@ const InventoryEdit = () => {
   const handleChangeWarehouse = (event) => {
     setWarehouse(event.target.value);
   };
-
-  const params = useParams();
-  const getURL = `http://localhost:8080/api/inventories/${params.id}`;
-  
-  const getURL2 = "http://localhost:8080/api/warehouses";
-  const [warehouses, setWarehouses] = useState([]);
-  useEffect(() => {
-    axios
-      .get(getURL2)
-      .then((response) => {
-        setWarehouses(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
-  if (warehouses.length === 0) {
-    return <LoadingScreen />;
-  }
- 
-  let warehouseid;
-  if(warehouse){
-    warehouseid = warehouses.find(
-      (item) => item.warehouse_name === warehouse
-    ).id;
-    }
 
   const isFormValid = () => {
     if (itemName === "" || description === ""|| category==="" || status==="" || warehouse===""|| isNaN(quant) ) {

@@ -23,6 +23,7 @@ function InventoryDetails() {
       .catch((error) => {
         console.log(error);
       });
+      // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -34,6 +35,7 @@ function InventoryDetails() {
       .catch((error) => {
         console.log(error);
       });
+      // eslint-disable-next-line
   }, []);
 
   if (inventory.length === 0) {

@@ -19,14 +19,19 @@
   top: -5.875rem;
   margin-top: -5.2rem;
   z-index: 5;
+  margin: 0 2rem;
+  padding: 0;
+  transform: translateY(-6rem);
+
 
   @include tablet {
     padding: 0;
     margin: 0 2rem;
     top: -$tablet-overflow;
     top: -5.875rem;
-    margin-top: -6rem;
     z-index: 5;
+    transform: translateY(-6rem);
+
   }
 
   @include desktop {

@@ -9,7 +9,7 @@ import axios from "axios";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 const InventoryEdit = () => {
-  const [itemName,setItemname] = useState("");
+  const [itemName, setItemname] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [quant, setQuant] = useState("");
@@ -23,52 +23,46 @@ const InventoryEdit = () => {
     axios
       .get(getURL2)
       .then((response) => {
-      setWarehouses(response.data);
+        setWarehouses(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
-  
 
-let warehouseid;
-warehouses.length!==0?warehouseid = warehouses.find(
- (item) => item.warehouse_name === warehouse
-).id:warehouseid ='150a36cf-f38e-4f59-8e31-39974207372d';
- 
-const params = useParams();
-const getURL = `http://localhost:8080/api/inventories/${params.id}`;
-useEffect(() => {
-axios
- .get(getURL)
- .then((response) => {
-   setItemname(response.data.item_name); 
-   setDescription(response.data.description);
-   setCategory(response.data.category);
-   setQuant(response.data.quantity);
-   if(response.data.status==="In Stock"){
-     setStatus("In Stock")
-   }else{
-     setStatus("Out Of Stock")
-   }
-   ;
-   setWarehouse(warehouses.length!==0?warehouses.find(
-     (item) => item.id === response.data.warehouse_id
-   ).warehouse_name:'SF');
+  const params = useParams();
+  const getURL = `http://localhost:8080/api/inventories/${params.id}`;
+  useEffect(() => {
+    axios
+      .get(getURL)
+      .then((response) => {
+        setItemname(response.data.item_name);
+        setDescription(response.data.description);
+        setCategory(response.data.category);
+        setQuant(response.data.quantity);
+        if (response.data.status === "In Stock") {
+          setStatus("In Stock");
+        } else {
+          setStatus("Out Of Stock");
+        }
+        setWarehouse(
+          warehouses.length !== 0
+            ? warehouses.find((item) => item.id === response.data.warehouse_id)
+                .warehouse_name
+            : "SF"
+        );
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+      // eslint-disable-next-line
+  }, [warehouses]);
 
- })
- .catch((error) => {
-   console.log(error);
- });
-},[warehouses])
-  
-  
   const navigate = useNavigate();
 
   if (warehouses.length === 0) {
-    return <LoadingScreen/>;
+    return <LoadingScreen />;
   }
- 
 
   const handleChangeItemname = (event) => {
     setItemname(event.target.value);
@@ -90,7 +84,14 @@ axios
   };
 
   const isFormValid = () => {
-    if (itemName === "" || description === ""|| category==="" || status==="" || warehouse===""|| isNaN(quant) ) {
+    if (
+      itemName === "" ||
+      description === "" ||
+      category === "" ||
+      status === "" ||
+      warehouse === "" ||
+      isNaN(quant)
+    ) {
       return false;
     }
     return true;
@@ -100,22 +101,24 @@ axios
     Setsubmit(true);
     event.preventDefault();
 
-    if (isFormValid()) {
-    axios
-    .patch(getURL, {
-      "warehouse_id": warehouseid,
-      "item_name": itemName,
-      "description": description,
-      "category": category,
-      "status": status,
-      "quantity": Number(quant)
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-    
-  return setTimeout(() => { navigate("/inventory")}, 2000);
+    const warehouseid = warehouses.find(
+      (item) => item.warehouse_name === warehouse
+    ).id;
 
+    if (isFormValid()) {
+      axios
+        .patch(getURL, {
+          warehouse_id: warehouseid,
+          item_name: itemName,
+          description: description,
+          category: category,
+          status: status,
+          quantity: Number(quant),
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+        navigate("/inventory");
     }
   };
 
@@ -129,11 +132,11 @@ axios
         <div className="edit-inventory__box">
           <div className="edit-inventory__box-titleblock">
             <Link to="/inventory">
-            <img
-              className="edit-inventory__box-titleblock--icons"
-              src={backarrow}
-              alt="back arrow"
-            />
+              <img
+                className="edit-inventory__box-titleblock--icons"
+                src={backarrow}
+                alt="back arrow"
+              />
             </Link>
             <h1 className="edit-inventory__box-titleblock--title">
               Edit Inventory Item
@@ -144,7 +147,8 @@ axios
         {/* onSubmit on form to run front-end validation */}
         <form onSubmit={handleSubmit}>
           <div className="edit-inventory__content">
-            <EditInventoryDetails className="edit-inventory__content-first"
+            <EditInventoryDetails
+              className="edit-inventory__content-first"
               handleChangeItemname={handleChangeItemname}
               handleChangeDescriptions={handleChangeDescription}
               handleChangeCategory={handleChangeCategory}

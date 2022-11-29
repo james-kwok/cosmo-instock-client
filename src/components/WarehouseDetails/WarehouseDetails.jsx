@@ -5,7 +5,12 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 function WarehouseDetails({ warehouseDetails }) {
-  const {id} = useParams();
+  const { id } = useParams();
+
+  
+
+
+  console.log("Id in WD", id)
   return (
     <div className="WarehouseDetails">
       <div className="WarehouseDetails__container">

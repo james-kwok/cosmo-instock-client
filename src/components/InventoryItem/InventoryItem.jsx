@@ -59,6 +59,7 @@ function InventoryItem({
           src={deleteImage}
           alt="delete inventory"
           onClick={() => {
+            console.log("Clicking")
             modalHandler(item, true);
           }}
         />

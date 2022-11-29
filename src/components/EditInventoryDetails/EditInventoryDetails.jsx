@@ -29,7 +29,6 @@ const EditInventoryDetails = ({
             <input
               name="inventoryName"
               className={submit === true && !itemName ? "edit-details__form__box--error" : "edit-details__form__box--input"}
-              // placeholder="Item Name"
               type="text"
               value={itemName}
               onChange={handleChangeItemname}

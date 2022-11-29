@@ -25,7 +25,7 @@ const EditInventoryAvail = ({
         console.log(error);
       });
   }, []);
-
+  
   if (warehouses.length === 0) {
     return <h1>LOADING...</h1>;
   }
@@ -50,6 +50,7 @@ const EditInventoryAvail = ({
                 type="radio"
                 value="In Stock"
                 onChange={handleChangeStatus}
+                checked={status ==='In Stock'? true:false}
               ></input>
               <label className="edit-availability__value" htmlFor="instock">In stock</label>
             </div>
@@ -58,8 +59,9 @@ const EditInventoryAvail = ({
                 id="outstock"
                 name="radio"
                 type="radio"
-                value="Out Of Stock"
+                value='Out Of Stock'
                 onChange={handleChangeStatus}
+                checked={status ==='Out Of Stock'?true:false}
               ></input>
               <label className="edit-availability__value" htmlFor="outstock">Out of stock</label>
             </div>

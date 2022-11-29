@@ -13,28 +13,63 @@ const InventoryEdit = () => {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [quant, setQuant] = useState("");
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState("In Stock");
   const [warehouse, setWarehouse] = useState("");
   const [submit, Setsubmit] = useState(false);
 
-  const params = useParams();
-  const getURL = `http://localhost:8080/api/inventories/${params.id}`;
-  axios
-    .get(getURL)
-    .then((response) => {
-      setItemname(response.data.item_name); 
-      setDescription(response.data.description);
-      setCategory(response.data.category);
-      setQuant(response.data.quantity);
-      setStatus(response.data.status);
-      // setWarehouse(response.data.warehouse_id);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  const getURL2 = "http://localhost:8080/api/warehouses";
+  const [warehouses, setWarehouses] = useState([]);
+  useEffect(() => {
+    axios
+      .get(getURL2)
+      .then((response) => {
+      setWarehouses(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  
+  
 
+let warehouseid;
+warehouse.length!==0?warehouseid = warehouses.find(
+ (item) => item.warehouse_name === warehouse
+).id:warehouseid ='150a36cf-f38e-4f59-8e31-39974207372d';
+ 
+const params = useParams();
+const getURL = `http://localhost:8080/api/inventories/${params.id}`;
+useEffect(() => {
+axios
+ .get(getURL)
+ .then((response) => {
+   setItemname(response.data.item_name); 
+   setDescription(response.data.description);
+   setCategory(response.data.category);
+   setQuant(response.data.quantity);
+   if(response.data.status==="In Stock"){
+     setStatus("In Stock")
+   }else{
+     setStatus("Out Of Stock")
+   }
+   ;
+   setWarehouse(warehouses.length!==0?warehouses.find(
+     (item) => item.id === response.data.warehouse_id
+   ).warehouse_name:'SF');
 
+ })
+ .catch((error) => {
+   console.log(error);
+ });
+},[params.id,warehouses])
+  
+  
   const navigate = useNavigate();
+
+  if (warehouses.length === 0) {
+    return <h1>LOADING...</h1>;
+  }
+ 
 
   const handleChangeItemname = (event) => {
     setItemname(event.target.value);
@@ -54,30 +89,7 @@ const InventoryEdit = () => {
   const handleChangeWarehouse = (event) => {
     setWarehouse(event.target.value);
   };
-  
-  const getURL2 = "http://localhost:8080/api/warehouses";
-  const [warehouses, setWarehouses] = useState([]);
-  useEffect(() => {
-    axios
-      .get(getURL2)
-      .then((response) => {
-        setWarehouses(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
 
-  if (warehouses.length === 0) {
-    return <h1>LOADING...</h1>;
-  }
- 
-  let warehouseid;
-  if(warehouse){
-    warehouseid = warehouses.find(
-      (item) => item.warehouse_name === warehouse
-    ).id;
-    }
 
   const isFormValid = () => {
     if (itemName === "" || description === ""|| category==="" || status==="" || warehouse===""|| isNaN(quant) ) {

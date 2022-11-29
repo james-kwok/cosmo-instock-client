@@ -1,5 +1,5 @@
 import axios from "axios";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 import backarrow from "../../assets/icons/arrow_back-24px.svg";
@@ -28,8 +28,24 @@ function WarehouseEdit (){
     const [empty, setEmpty] = useState (false);
     const [edit, setEdit] = useState(false);
 
+
     const params = useParams();
     const getURL = `http://localhost:8080/api/warehouses/${params.id}`;
+
+    useEffect(()=>{
+        axios
+            .get(getURL)
+            .then ((response)=>{
+                setWarehouse(response.data.warehouse_name);
+                setStreetAddress(response.data.address);
+                setCity(response.data.city);
+                setCountry(response.data.country);
+                setContactName(response.data.contact_name);
+                setPosition(response.data.contact_position);
+                setPhoneNumber(response.data.contact_phone);
+                setEmail(response.data.contact_email);
+            })
+    }, [])
 
     //navigate to warehouse page
     const navigate = useNavigate();
@@ -68,7 +84,7 @@ function WarehouseEdit (){
     }
 
     //phone number validation
-    const specialChars = /^[0-9]*$/.test(phoneNumber);
+    const specialChars = /^[0-9+()]*$/.test(phoneNumber);
     const isPhoneNumberValid = ()=> phoneNumber.length >=7 && phoneNumber.length <= 15;
     const isPhoneNumberValidTwo = () => specialChars;
 
@@ -78,21 +94,18 @@ function WarehouseEdit (){
 
     const isFormValid = () =>{
         if (warehouse ==="" || streetAddress === "" || city === "" || country ===""|| contactName===""|| position===""|| phoneNumber==="" || email ===""){
-            console.log("form incomplete")
             return setEmpty(true);
         }
 
         setEmpty(false);
 
         if(!isPhoneNumberValid() || !isPhoneNumberValidTwo()){
-            console.log("phone incomplete")
             return setPhoneError(true);
         }
 
         setPhoneError(false);
 
         if(!isEmailValid()){
-            console.log("email incomplete")
             return setEmailError(true);
         }
         setEmailError(false);
@@ -105,26 +118,26 @@ function WarehouseEdit (){
         event.preventDefault();
         if (isFormValid()){
             axios
-            .patch(getURL, {
-                warehouse_id:params.id,
-                warehouse_name:warehouse,
-                address:streetAddress,
-                city:city,
-                country:country,
-                contact_name:contactName,
-                contact_position:position,
-                contact_email:email,
-                contact_phone:phoneNumber
-            })
-            .then((response)=>{
-                console.log(response.data);
-            })
-            .catch((error)=>{
-                console.log("error")
-            });
-            setEdit(true)
-            return setTimeout(()=>{
-                navigate("/warehouses")}, 2000) ;
+                .patch(getURL, {
+                    warehouse_id:params.id,
+                    warehouse_name:warehouse,
+                    address:streetAddress,
+                    city:city,
+                    country:country,
+                    contact_name:contactName,
+                    contact_position:position,
+                    contact_email:email,
+                    contact_phone:phoneNumber
+                })
+                .catch((error)=>{
+                    console.log(error.response)
+                });
+            setEdit(true);
+            return (
+                setTimeout(()=>{
+                navigate("/warehouses")}, 2000))
+
+            
         }
     }
 
@@ -132,9 +145,6 @@ function WarehouseEdit (){
         return navigate("/warehouses");
     }
 
-  
-    
-    
     return (
         <div className="edit-warehouse">
             <section className="edit-warehouse__container">
@@ -148,7 +158,7 @@ function WarehouseEdit (){
                 </div>
 
                 <div className="edit-warehouse__notification">
-                    {phoneError && <p>Please enter a 7-15 digit phone number</p>}
+                    {phoneError && <p>Please enter a 7-15 digit phone number, digits only</p>}
                     {emailError && <p>Please enter an email in the following format: info@domain2.domain1</p>}
                     {empty && <p>Please fill all fields</p>}
                     {edit && <p>Successfully edit warehouse {warehouse}! Returning to warehouse page</p>}

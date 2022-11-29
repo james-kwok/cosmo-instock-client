@@ -5,7 +5,6 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 import "./WarehouseCard.scss";
 
 const WarehouseCard = ({ warehouse, modalHandler }) => {
-  console.log(warehouse.id);
   return (
     <div className="WarehouseCard">
       <div className="WarehouseCard__warehouse">

@@ -4,6 +4,7 @@ import backIcon from "../../assets/icons/arrow_back-24px.svg";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 function InventoryDetails() {
   const params = useParams();
@@ -36,11 +37,15 @@ function InventoryDetails() {
   }, []);
 
   if (inventory.length === 0) {
-    return <h1>LOADING...</h1>;
+    return (
+      <LoadingScreen />
+    );
   }
 
   if (warehouses.length === 0) {
-    return <h1>LOADING...</h1>;
+    return (
+      <LoadingScreen />
+    );
   }
 
   let inventoryName = inventory.item_name;

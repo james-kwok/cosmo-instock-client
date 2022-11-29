@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./WarehouseList.scss";
 import Modal from "../Modal/Modal";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 const WarehouseList = () => {
   const getURL = "http://localhost:8080/api/warehouses";
@@ -17,8 +18,9 @@ const WarehouseList = () => {
     axios
       .get(getURL)
       .then((response) => {
-        console.log(response.data);
-        setWarehouses(response.data);
+        setTimeout(() => {
+          setWarehouses(response.data);
+        }, 500);
       })
       .catch((error) => {
         console.log(error);
@@ -26,14 +28,10 @@ const WarehouseList = () => {
   }, [showModal]);
 
   const modalHandler = (warehouse, modal) => {
-    console.log(warehouse);
     setShowModal(modal);
     setToDelete(warehouse);
   };
 
-  const clickedInfo = () => {
-    console.log("Clicked");
-  };
 
   if (warehouses.length === 0) {
     return (
@@ -175,7 +173,6 @@ const WarehouseList = () => {
                     warehouse={warehouse}
                     key={index}
                     modalHandler={modalHandler}
-                    clickedInfo={clickedInfo}
                   />
                 );
               })}
@@ -253,7 +250,6 @@ const WarehouseList = () => {
                   warehouse={warehouse}
                   key={index}
                   modalHandler={modalHandler}
-                  clickedInfo={clickedInfo}
                 />
               );
             })}

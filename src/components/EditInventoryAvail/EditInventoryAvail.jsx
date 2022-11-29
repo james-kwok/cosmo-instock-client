@@ -3,6 +3,7 @@ import ErrorState from "../ErrorState.js/ErrorState";
 import arrowDropdown from "../../assets/icons/arrow_drop_down-24px.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 const EditInventoryAvail = ({
   handleChangeStatus,
@@ -27,7 +28,7 @@ const EditInventoryAvail = ({
   }, []);
   
   if (warehouses.length === 0) {
-    return <h1>LOADING...</h1>;
+    return <LoadingScreen />;
   }
   // console.log(warehouses[0].warehouse_name)
   return (

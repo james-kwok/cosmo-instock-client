@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 const InventoryAdd = () => {
   const [itemName, setItemName] = useState("");
@@ -52,7 +53,7 @@ const InventoryAdd = () => {
   }, []);
 
   if (warehouses.length === 0) {
-    return <h1>LOADING...</h1>;
+    return <LoadingScreen />;
   }
 
   let warehouseid;
@@ -89,15 +90,12 @@ const InventoryAdd = () => {
           "status": status,
           "quantity": Number(quantity),
         })
-        .then((response) => {
-          console.log(response.data);
-        })
         .catch((error) => {
           console.log(error);
         });
       return setTimeout(() => {
         navigate("/inventory");
-      }, 2000);
+      }, 500);
     }
   };
 

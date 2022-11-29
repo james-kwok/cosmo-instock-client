@@ -89,7 +89,6 @@ axios
     setWarehouse(event.target.value);
   };
 
-
   const isFormValid = () => {
     if (itemName === "" || description === ""|| category==="" || status==="" || warehouse===""|| isNaN(quant) ) {
       return false;
@@ -110,9 +109,6 @@ axios
       "category": category,
       "status": status,
       "quantity": Number(quant)
-    })
-    .then((response) => {
-      console.log(response.data);
     })
     .catch((error) => {
       console.log(error);

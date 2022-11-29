@@ -8,11 +8,9 @@ const Modal = ({ warehouse, modalHandler }) => {
   const id = warehouse.id;
 
   const handleDelete = () => {
-    console.log("Warehouse", warehouse);
     axios
       .delete(`${URL}/${id}`)
-      .then((response) => {
-        console.log("Deleted warehouse" + response);
+      .then(() => {
         modalHandler(false);
       })
       .catch((error) => {

@@ -87,9 +87,6 @@ const InventoryEdit = () => {
       "status": status,
       "quantity": Number(quant)
     })
-    .then((response) => {
-      console.log(response.data);
-    })
     .catch((error) => {
       console.log(error);
     });

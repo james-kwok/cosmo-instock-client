@@ -133,9 +133,7 @@ const AddNewWarehouse = () => {
             "contact_email": email
               
         })
-        .then((response) => {
-          console.log(response.data);
-        })
+        
         .catch((error) => {
           console.log(error);
         });

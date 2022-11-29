@@ -13,7 +13,7 @@ const InventoryEdit = () => {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [quant, setQuant] = useState("");
-  const [status, setStatus] = useState("In Stock");
+  const [status, setStatus] = useState("");
   const [warehouse, setWarehouse] = useState("");
   const [submit, Setsubmit] = useState(false);
 
@@ -32,7 +32,7 @@ const InventoryEdit = () => {
   
 
 let warehouseid;
-warehouse.length!==0?warehouseid = warehouses.find(
+warehouses.length!==0?warehouseid = warehouses.find(
  (item) => item.warehouse_name === warehouse
 ).id:warehouseid ='150a36cf-f38e-4f59-8e31-39974207372d';
  
@@ -60,7 +60,7 @@ axios
  .catch((error) => {
    console.log(error);
  });
-},[params.id,warehouses])
+},[warehouses])
   
   
   const navigate = useNavigate();
